@@ -251,15 +251,15 @@
       "livingArea": null
     },
     "photos": [
+      "images/projects/49-rogers-st/04.webp",
+      "images/projects/49-rogers-st/05.webp",
       "images/projects/49-rogers-st/01.webp",
       "images/projects/49-rogers-st/02.webp",
-      "images/projects/49-rogers-st/03.webp",
-      "images/projects/49-rogers-st/04.webp",
-      "images/projects/49-rogers-st/05.webp"
+      "images/projects/49-rogers-st/03.webp"
     ],
     "location": {
-      "lat": 42.3288726,
-      "lng": -71.05539120000002
+      "lat": 42.3288719,
+      "lng": -71.0553896
     }
   },
   {
