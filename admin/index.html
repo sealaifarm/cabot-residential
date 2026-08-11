@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabot Residential — Admin</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   Design tokens — copied 1:1 from the public Cabot site so
+   the admin panel feels like the same product.
+   ========================================================= */
+:root{
+  --ink:#231F1C;
+  --ink-soft:#4A443E;
+  --paper:#FFFFFF;
+  --paper-alt:#F5F3F1;
+  --paper-alt-2:#EFE9E1;
+  --stone:#9C948A;
+  --stone-dark:#6E655C;
+  --hairline:rgba(35,31,28,.10);
+  --hairline-2:rgba(35,31,28,.06);
+  --brass:#C46A4A;
+  --brass-dark:#A6543A;
+  --brass-tint:#F3E1D9;
+  --white:#FFFFFF;
+  --red:#B3453B;
+  --radius-lg:22px;
+  --radius-md:16px;
+  --radius-sm:10px;
+  --shadow:0 20px 44px -24px rgba(35,31,28,.22);
+  --ease:cubic-bezier(.16,.8,.24,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper-alt);
+  color:var(--ink);
+  font-family:'Jost', sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;}
+input,select,textarea{font:inherit;color:inherit;}
+
+.disp{font-family:'Bricolage Grotesque', sans-serif;}
+h1,h2,h3{font-family:'Bricolage Grotesque', sans-serif;font-weight:600;margin:0;letter-spacing:-0.01em;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+@media(max-width:640px){ .wrap{padding:0 18px;} }
+
+.eyebrow{
+  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+  color:var(--stone-dark);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--stone-dark);flex-shrink:0;}
+
+::selection{ background:var(--brass-tint); }
+
+/* scrollbar (subtle) */
+::-webkit-scrollbar{ width:10px; height:10px; }
+::-webkit-scrollbar-thumb{ background:var(--stone); border-radius:10px; border:3px solid var(--paper-alt); }
+::-webkit-scrollbar-track{ background:transparent; }
+
+/* =========================================================
+   Login screen
+   ========================================================= */
+#loginView{
+  min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.login-card{
+  width:100%; max-width:380px; background:var(--paper); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow); padding:44px 40px; text-align:center;
+}
+.login-card .mark{ font-size:19px; font-weight:700; letter-spacing:0.01em; margin-bottom:6px; }
+.login-card p.sub{ color:var(--stone-dark); font-size:13.5px; margin:0 0 30px; font-weight:300; }
+.login-card input{
+  width:100%; padding:14px 16px; border-radius:var(--radius-sm); border:1px solid var(--hairline);
+  background:var(--paper-alt); font-size:14.5px; outline:none; transition:border-color .2s ease, background .2s ease;
+}
+.login-card input:focus{ border-color:var(--brass); background:var(--paper); }
+.login-card .err{ color:var(--red); font-size:12.5px; margin-top:12px; min-height:16px; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:none; cursor:pointer; border-radius:999px; font-size:12.5px; letter-spacing:0.06em;
+  text-transform:uppercase; font-weight:500; transition:transform .25s var(--ease), background .25s ease, opacity .2s ease, box-shadow .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--ink); color:var(--white); padding:14px 26px; }
+.btn-primary:hover{ background:var(--brass-dark); transform:translateY(-1px); }
+.btn-primary:disabled{ opacity:.5; cursor:default; transform:none; }
+.btn-ghost{ background:transparent; color:var(--ink-soft); padding:12px 20px; border:1px solid var(--hairline); }
+.btn-ghost:hover{ border-color:var(--ink); color:var(--ink); }
+.btn-danger{ background:transparent; color:var(--red); padding:12px 20px; border:1px solid rgba(179,69,59,.28); }
+.btn-danger:hover{ background:rgba(179,69,59,.06); border-color:var(--red); }
+.btn-brass{ background:var(--brass); color:var(--white); padding:13px 24px; }
+.btn-brass:hover{ background:var(--brass-dark); transform:translateY(-1px); }
+.btn-block{ width:100%; margin-top:22px; }
+.btn[disabled]{ pointer-events:none; }
+
+/* =========================================================
+   App shell
+   ========================================================= */
+#app{ display:none; min-height:100vh; }
+header.topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:20px;
+  padding:16px 32px; background:rgba(255,255,255,.92); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hairline);
+}
+@media(max-width:640px){ header.topbar{ padding:14px 18px; } }
+header.topbar .mark{ font-size:15.5px; font-weight:700; letter-spacing:.01em; display:flex; align-items:center; gap:9px; }
+header.topbar .mark .tag{
+  font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--stone-dark);
+  border:1px solid var(--hairline); padding:3px 8px; border-radius:999px; font-weight:500; font-family:'Jost',sans-serif;
+}
+header.topbar .spacer{ flex:1; }
+.publish-status{
+  display:flex; align-items:center; gap:8px; font-size:12px; color:var(--stone-dark);
+}
+.publish-status .dot{ width:6px; height:6px; border-radius:50%; background:var(--stone); }
+.publish-status.dirty .dot{ background:var(--brass); box-shadow:0 0 0 4px var(--brass-tint); }
+.publish-status.dirty{ color:var(--ink); }
+
+main{ padding:0 0 100px; }
+
+/* Toolbar */
+.toolbar{
+  display:flex; align-items:center; gap:16px; padding:36px 0 26px; flex-wrap:wrap;
+}
+.toolbar h1{ font-size:clamp(24px,3vw,32px); margin-right:auto; }
+.search-box{
+  position:relative; width:260px; max-width:100%;
+}
+.search-box input{
+  width:100%; padding:11px 16px 11px 38px; border-radius:999px; border:1px solid var(--hairline);
+  background:var(--paper); font-size:13.5px; outline:none; transition:border-color .2s ease;
+}
+.search-box input:focus{ border-color:var(--brass); }
+.search-box svg{ position:absolute; left:13px; top:50%; transform:translateY(-50%); width:15px; height:15px; opacity:.5; }
+
+/* Dev grid */
+.dev-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media(max-width:900px){ .dev-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .dev-grid{ grid-template-columns:1fr; } }
+
+.dcard{
+  background:var(--paper); border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--hairline);
+  cursor:pointer; transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  display:flex; flex-direction:column;
+}
+.dcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+.dcard .thumb{ position:relative; aspect-ratio:4/3; background:var(--paper-alt); overflow:hidden; }
+.dcard .thumb img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.dcard .thumb .noimg{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  color:var(--stone); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+}
+.dcard .badge{
+  position:absolute; top:10px; left:10px; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  padding:5px 10px; border-radius:999px; background:rgba(255,255,255,.92); backdrop-filter:blur(6px);
+  display:flex; align-items:center; gap:6px; font-weight:500; color:var(--ink-soft);
+}
+.dcard .badge .dot{ width:5px; height:5px; border-radius:50%; background:var(--brass); }
+.dcard .body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:3px; flex:1; }
+.dcard .address{ font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; }
+.dcard .meta{ font-size:12px; color:var(--stone-dark); }
+.dcard .row{ margin-top:auto; padding-top:12px; display:flex; gap:8px; }
+.dcard .row button{
+  flex:1; padding:8px 10px; border-radius:999px; font-size:11px; letter-spacing:.05em; text-transform:uppercase;
+  border:1px solid var(--hairline); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all .2s ease;
+}
+.dcard .row button:hover{ border-color:var(--ink); color:var(--ink); }
+.dcard .row button.del:hover{ border-color:var(--red); color:var(--red); }
+
+.add-card{
+  border:1.5px dashed var(--hairline); border-radius:var(--radius-md); background:transparent;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  min-height:230px; cursor:pointer; color:var(--stone-dark); transition:all .25s ease;
+}
+.add-card:hover{ border-color:var(--brass); color:var(--brass-dark); background:var(--brass-tint); }
+.add-card .plus{ width:38px; height:38px; border-radius:50%; border:1px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:300; }
+.add-card span.lbl{ font-size:12.5px; letter-spacing:.04em; }
+
+.state-msg{ padding:100px 32px; text-align:center; color:var(--stone-dark); font-size:14.5px; font-weight:300; }
+
+/* =========================================================
+   Editor view
+   ========================================================= */
+.editor{ display:none; }
+.editor .back{
+  display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--stone-dark);
+  padding:28px 0 6px; cursor:pointer;
+}
+.editor .back:hover{ color:var(--ink); }
+.editor-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding:6px 0 30px; flex-wrap:wrap; }
+.editor-head h1{ font-size:clamp(22px,3vw,30px); }
+.editor-head .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+.panel{
+  background:var(--paper); border-radius:var(--radius-lg); border:1px solid var(--hairline); padding:32px;
+  margin-bottom:22px;
+}
+@media(max-width:640px){ .panel{ padding:22px; } }
+.panel h2{ font-size:15px; margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+.panel h2 .num{
+  width:22px; height:22px; border-radius:50%; background:var(--paper-alt); color:var(--stone-dark);
+  font-size:11px; display:flex; align-items:center; justify-content:center; font-family:'Jost',sans-serif; font-weight:500;
+}
+
+.field-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px 20px; }
+.field-grid.cols-3{ grid-template-columns:repeat(3,1fr); }
+.field-grid.cols-4{ grid-template-columns:repeat(4,1fr); }
+@media(max-width:640px){ .field-grid, .field-grid.cols-3, .field-grid.cols-4{ grid-template-columns:1fr 1fr; } }
+
+.field{ display:flex; flex-direction:column; gap:7px; }
+.field.full{ grid-column:1/-1; }
+.field label{ font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--stone-dark); font-weight:500; }
+.field input, .field select, .field textarea{
+  padding:11px 14px; border-radius:var(--radius-sm); border:1px solid var(--hairline); background:var(--paper-alt);
+  font-size:14px; outline:none; transition:border-color .2s ease, background .2s ease; width:100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--brass); background:var(--paper); }
+.field textarea{ resize:vertical; min-height:110px; line-height:1.7; }
+.field .hint{ font-size:11px; color:var(--stone); }
+.field-inline-btn{ display:flex; gap:8px; }
+.field-inline-btn input{ flex:1; }
+.field-inline-btn button{
+  flex-shrink:0; padding:0 14px; border-radius:var(--radius-sm); border:1px solid var(--hairline);
+  background:var(--paper); font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft); cursor:pointer;
+}
+.field-inline-btn button:hover{ border-color:var(--brass); color:var(--brass-dark); }
+.field-inline-btn button:disabled{ opacity:.5; cursor:default; }
+
+/* Photos */
+.photo-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:14px; }
+.photo-tile{
+  position:relative; aspect-ratio:1; border-radius:var(--radius-sm); overflow:hidden; background:var(--paper-alt);
+  border:1px solid var(--hairline); cursor:grab;
+}
+.photo-tile.dragging{ opacity:.35; }
+.photo-tile.drag-over{ outline:2px solid var(--brass); outline-offset:-2px; }
+.photo-tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.photo-tile .cover-tag{
+  position:absolute; top:7px; left:7px; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
+  background:rgba(255,255,255,.92); padding:3px 8px; border-radius:999px; font-weight:500; color:var(--ink-soft);
+}
+.photo-tile .overlay{
+  position:absolute; inset:0; background:rgba(35,31,28,.55); opacity:0; transition:opacity .2s ease;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.photo-tile:hover .overlay{ opacity:1; }
+.photo-tile .overlay button{
+  width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.95); border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:transform .15s ease;
+}
+.photo-tile .overlay button:hover{ transform:scale(1.08); }
+.photo-tile .overlay button svg{ width:14px; height:14px; }
+.photo-tile .up-progress{
+  position:absolute; inset:0; background:rgba(255,255,255,.85); display:flex; align-items:center; justify-content:center;
+}
+.spinner{ width:20px; height:20px; border-radius:50%; border:2px solid var(--hairline); border-top-color:var(--brass); animation:spin .8s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+.photo-add-tile{
+  aspect-ratio:1; border-radius:var(--radius-sm); border:1.5px dashed var(--hairline); background:transparent;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer;
+  color:var(--stone-dark); transition:all .2s ease; text-align:center; padding:10px;
+}
+.photo-add-tile:hover, .photo-add-tile.drag-over{ border-color:var(--brass); color:var(--brass-dark); background:var(--brass-tint); }
+.photo-add-tile span{ font-size:11px; letter-spacing:.03em; }
+
+/* Danger zone */
+.danger-zone{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.danger-zone p{ font-size:13px; color:var(--stone-dark); margin:0; max-width:420px; font-weight:300; }
+
+/* Toasts */
+#toasts{ position:fixed; bottom:24px; right:24px; z-index:400; display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+.toast{
+  background:var(--ink); color:var(--white); padding:13px 20px; border-radius:999px; font-size:13px;
+  box-shadow:var(--shadow); display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(10px);
+  animation:toastIn .3s var(--ease) forwards;
+}
+.toast.error{ background:var(--red); }
+.toast.success{ background:#3E5C46; }
+@keyframes toastIn{ to{ opacity:1; transform:translateY(0); } }
+
+/* Modal (confirm) */
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(35,31,28,.45); backdrop-filter:blur(3px); z-index:300;
+  display:none; align-items:center; justify-content:center; padding:24px;
+}
+.modal-backdrop.open{ display:flex; }
+.modal{
+  background:var(--paper); border-radius:var(--radius-lg); padding:32px; max-width:400px; width:100%; box-shadow:var(--shadow);
+}
+.modal h3{ font-size:18px; margin-bottom:10px; }
+.modal p{ font-size:13.5px; color:var(--stone-dark); line-height:1.7; font-weight:300; margin:0 0 24px; }
+.modal .row{ display:flex; gap:10px; justify-content:flex-end; }
+
+/* Publish overlay */
+#publishOverlay{
+  position:fixed; inset:0; background:rgba(245,243,241,.9); backdrop-filter:blur(4px); z-index:350;
+  display:none; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+}
+#publishOverlay.open{ display:flex; }
+#publishOverlay .txt{ font-size:13.5px; color:var(--ink-soft); letter-spacing:.02em; }
+
+.hidden{ display:none !important; }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     LOGIN
+     ========================================================= -->
+<div id="loginView">
+  <div class="login-card">
+    <div class="mark">CABOT RESIDENTIAL</div>
+    <p class="sub">Admin panel</p>
+    <input type="password" id="pwInput" placeholder="Password" autocomplete="current-password">
+    <div class="err" id="loginErr"></div>
+    <button class="btn btn-primary btn-block" id="loginBtn">Sign in</button>
+  </div>
+</div>
+
+<!-- =========================================================
+     APP
+     ========================================================= -->
+<div id="app">
+  <header class="topbar">
+    <div class="mark">CABOT RESIDENTIAL <span class="tag">Admin</span></div>
+    <div class="spacer"></div>
+    <div class="publish-status" id="publishStatus"><span class="dot"></span><span id="publishStatusText">All changes published</span></div>
+    <button class="btn btn-brass" id="publishBtn" disabled>Publish changes</button>
+    <button class="btn btn-ghost" id="logoutBtn">Sign out</button>
+  </header>
+
+  <main class="wrap">
+
+    <!-- LIST VIEW -->
+    <div id="listView">
+      <div class="toolbar">
+        <h1>Developments</h1>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" placeholder="Search by address…">
+        </div>
+      </div>
+      <div id="gridWrap"><div class="state-msg">Loading developments…</div></div>
+    </div>
+
+    <!-- EDITOR VIEW -->
+    <div id="editorView" class="editor">
+      <div class="back" id="backBtn">← Back to all developments</div>
+      <div class="editor-head">
+        <h1 id="editorTitle">Edit development</h1>
+        <div class="actions">
+          <button class="btn btn-danger" id="deleteBtn">Delete</button>
+          <button class="btn btn-primary" id="applyBtn">Save changes</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="num">1</span>Basic information</h2>
+        <div class="field-grid">
+          <div class="field full">
+            <label>Address / title</label>
+            <input type="text" id="f_title" placeholder="e.g. 3 Cutler Ct">
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="f_status">
+              <option value="completed">Completed</option>
+              <option value="in-progress">In progress</option>
+              <option value="planned">Planned</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Property type</label>
+            <input type="text" id="f_type" list="typeList" placeholder="e.g. Condo">
+            <datalist id="typeList"></datalist>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="num">2</span>Address</h2>
+        <div class="field-grid cols-4">
+          <div class="field" style="grid-column:1/3;">
+            <label>Street</label>
+            <input type="text" id="f_street">
+          </div>
+          <div class="field">
+            <label>City</label>
+            <input type="text" id="f_city">
+          </div>
+          <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div><label>State</label><input type="text" id="f_state" maxlength="2" style="text-transform:uppercase;"></div>
+            <div><label>ZIP</label><input type="text" id="f_zip"></div>
+          </div>
+        </div>
+        <div class="field full" style="margin-top:18px;">
+          <label>Map coordinates</label>
+          <div class="field-inline-btn">
+            <input type="text" id="f_lat" placeholder="Latitude" style="max-width:160px;">
+            <input type="text" id="f_lng" placeholder="Longitude" style="max-width:160px;">
+            <button id="geocodeBtn" type="button">Look up from address</button>
+          </div>
+          <span class="hint">Used to place the pin on the locations map. Click "Look up from address" to fill these in automatically.</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="num">3</span>Overview</h2>
+        <div class="field full">
+          <label>Description</label>
+          <textarea id="f_overview" placeholder="A short description of the property…"></textarea>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="num">4</span>Specs</h2>
+        <div class="field-grid cols-4">
+          <div class="field"><label>Year built</label><input type="number" id="f_year" placeholder="—"></div>
+          <div class="field"><label>Residences</label><input type="number" id="f_residences" placeholder="1"></div>
+          <div class="field"><label>Bedrooms</label><input type="number" step="1" id="f_bedrooms" placeholder="—"></div>
+          <div class="field"><label>Bathrooms</label><input type="number" step="0.5" id="f_bathrooms" placeholder="—"></div>
+          <div class="field"><label>Living area (sqft)</label><input type="number" id="f_livingArea" placeholder="—"></div>
+        </div>
+        <span class="hint" style="display:block;margin-top:12px;">Leave a field blank if it varies by unit or is unknown — it just won't be shown on the site.</span>
+      </div>
+
+      <div class="panel">
+        <h2><span class="num">5</span>Photos</h2>
+        <div class="photo-grid" id="photoGrid"></div>
+        <input type="file" id="photoFileInput" accept="image/*" multiple style="display:none;">
+      </div>
+
+      <div class="panel">
+        <div class="danger-zone">
+          <div>
+            <h2 style="margin-bottom:6px;">Delete this development</h2>
+            <p>Removes it from the website entirely. This can't be undone once published.</p>
+          </div>
+          <button class="btn btn-danger" id="deleteBtn2">Delete development</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal">
+    <h3 id="confirmTitle">Are you sure?</h3>
+    <p id="confirmBody"></p>
+    <div class="row">
+      <button class="btn btn-ghost" id="confirmCancel">Cancel</button>
+      <button class="btn btn-danger" id="confirmOk" style="background:var(--red);color:#fff;border-color:var(--red);">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div id="publishOverlay">
+  <div class="spinner" style="width:28px;height:28px;border-width:3px;"></div>
+  <div class="txt" id="publishOverlayText">Publishing changes to the website…</div>
+</div>
+
+<div id="toasts"></div>
+
+<script>
+/* =========================================================
+   CONFIGURATION
+   One-time setup only — filled in by whoever deploys this
+   panel. Nothing here is shown to the person using the admin
+   panel day to day.
+   ========================================================= */
+const WORKER_URL = "https://cabot-admin.YOUR-SUBDOMAIN.workers.dev"; // <-- set once during setup
+
+/* =========================================================
+   STATE
+   ========================================================= */
+let session = sessionStorage.getItem('cabot_admin_key') || '';
+let projects = [];      // working copy (source of truth for the UI)
+let fileSha = null;     // GitHub blob sha for optimistic concurrency
+let dirty = false;      // true once local edits differ from last publish
+let currentEditId = null; // id of dev currently open in editor, or '__new__'
+let draft = null;       // the dev object being edited
+
+const $ = (id) => document.getElementById(id);
+
+/* =========================================================
+   API HELPERS
+   ========================================================= */
+async function api(path, opts = {}){
+  const res = await fetch(WORKER_URL + path, {
+    ...opts,
+    headers: {
+      'X-Admin-Key': session,
+      ...(opts.headers || {})
+    }
+  });
+  if(res.status === 401){
+    logout();
+    throw new Error('Session expired. Please sign in again.');
+  }
+  if(!res.ok){
+    const text = await res.text().catch(()=> '');
+    throw new Error(text || ('Request failed (' + res.status + ')'));
+  }
+  const ct = res.headers.get('content-type') || '';
+  return ct.includes('application/json') ? res.json() : res.text();
+}
+
+function toast(msg, type=''){
+  const el = document.createElement('div');
+  el.className = 'toast' + (type ? ' ' + type : '');
+  el.textContent = msg;
+  $('toasts').appendChild(el);
+  setTimeout(()=> el.remove(), 4200);
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+$('loginBtn').addEventListener('click', doLogin);
+$('pwInput').addEventListener('keydown', e => { if(e.key === 'Enter') doLogin(); });
+
+async function doLogin(){
+  const pw = $('pwInput').value;
+  if(!pw) return;
+  $('loginBtn').disabled = true;
+  $('loginErr').textContent = '';
+  try{
+    const res = await fetch(WORKER_URL + '/api/login', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ password: pw })
+    });
+    if(!res.ok) throw new Error('Incorrect password');
+    session = pw;
+    sessionStorage.setItem('cabot_admin_key', pw);
+    boot();
+  }catch(err){
+    $('loginErr').textContent = err.message || 'Something went wrong. Try again.';
+  }finally{
+    $('loginBtn').disabled = false;
+  }
+}
+
+function logout(){
+  sessionStorage.removeItem('cabot_admin_key');
+  session = '';
+  $('app').style.display = 'none';
+  $('loginView').style.display = 'flex';
+  $('pwInput').value = '';
+}
+$('logoutBtn').addEventListener('click', logout);
+
+/* Auto sign-in if we already have a session */
+if(session){ boot(); } 
+
+async function boot(){
+  $('loginView').style.display = 'none';
+  $('app').style.display = 'block';
+  await loadProjects();
+}
+
+/* =========================================================
+   LOAD / SAVE PROJECTS
+   ========================================================= */
+async function loadProjects(){
+  $('gridWrap').innerHTML = '<div class="state-msg">Loading developments…</div>';
+  try{
+    const data = await api('/api/projects');
+    projects = data.projects || [];
+    fileSha = data.sha || null;
+    dirty = false;
+    updatePublishStatus();
+    renderList();
+  }catch(err){
+    $('gridWrap').innerHTML = '<div class="state-msg">Couldn\'t load developments. ' + escapeHtml(err.message) + '</div>';
+  }
+}
+
+function updatePublishStatus(){
+  const badge = $('publishStatus');
+  const btn = $('publishBtn');
+  if(dirty){
+    badge.classList.add('dirty');
+    $('publishStatusText').textContent = 'Unpublished changes';
+    btn.disabled = false;
+  }else{
+    badge.classList.remove('dirty');
+    $('publishStatusText').textContent = 'All changes published';
+    btn.disabled = true;
+  }
+}
+
+function markDirty(){ dirty = true; updatePublishStatus(); }
+
+$('publishBtn').addEventListener('click', async () => {
+  $('publishOverlay').classList.add('open');
+  try{
+    const res = await api('/api/projects', {
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ projects, sha: fileSha, message: 'Update developments via admin panel' })
+    });
+    fileSha = res.sha || fileSha;
+    dirty = false;
+    updatePublishStatus();
+    toast('Published — the website is now updated.', 'success');
+  }catch(err){
+    toast(err.message || 'Publish failed. Please try again.', 'error');
+  }finally{
+    $('publishOverlay').classList.remove('open');
+  }
+});
+
+/* =========================================================
+   LIST VIEW
+   ========================================================= */
+$('searchInput').addEventListener('input', renderList);
+
+function renderList(){
+  const q = $('searchInput').value.trim().toLowerCase();
+  const filtered = projects.filter(p => {
+    if(!q) return true;
+    const hay = [p.title, p.address?.street, p.address?.city, p.specs?.type].filter(Boolean).join(' ').toLowerCase();
+    return hay.includes(q);
+  });
+
+  const wrap = $('gridWrap');
+  wrap.innerHTML = '';
+  const grid = document.createElement('div');
+  grid.className = 'dev-grid';
+
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'dcard';
+    card.addEventListener('click', (e) => {
+      if(e.target.closest('button')) return;
+      openEditor(item.id);
+    });
+
+    const thumb = document.createElement('div');
+    thumb.className = 'thumb';
+    if(item.photos && item.photos[0]){
+      const img = document.createElement('img');
+      img.src = item.photos[0];
+      img.alt = item.title || '';
+      img.onerror = function(){ this.remove(); thumb.querySelector('.noimg') || thumb.appendChild(noImgEl()); };
+      thumb.appendChild(img);
+    }else{
+      thumb.appendChild(noImgEl());
+    }
+    const badge = document.createElement('div');
+    badge.className = 'badge';
+    badge.innerHTML = '<span class="dot"></span>' + statusLabel(item.status);
+    thumb.appendChild(badge);
+    card.appendChild(thumb);
+
+    const body = document.createElement('div');
+    body.className = 'body';
+    body.innerHTML = `
+      <div class="address">${escapeHtml(item.address?.street || item.title || 'Untitled')}</div>
+      <div class="meta">${escapeHtml([item.address?.city, item.specs?.type].filter(Boolean).join(' · '))}</div>
+    `;
+    const row = document.createElement('div');
+    row.className = 'row';
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', () => openEditor(item.id));
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'Delete';
+    delBtn.className = 'del';
+    delBtn.addEventListener('click', () => confirmDelete(item.id));
+    row.appendChild(editBtn); row.appendChild(delBtn);
+    body.appendChild(row);
+    card.appendChild(body);
+
+    grid.appendChild(card);
+  });
+
+  const addCard = document.createElement('div');
+  addCard.className = 'add-card';
+  addCard.innerHTML = '<div class="plus">+</div><span class="lbl">Add a development</span>';
+  addCard.addEventListener('click', () => openEditor('__new__'));
+  grid.appendChild(addCard);
+
+  wrap.appendChild(grid);
+
+  if(filtered.length === 0 && q){
+    const msg = document.createElement('div');
+    msg.className = 'state-msg';
+    msg.textContent = 'No developments match "' + q + '".';
+    wrap.insertBefore(msg, grid);
+  }
+}
+
+function noImgEl(){ const d = document.createElement('div'); d.className = 'noimg'; d.textContent = 'No photo'; return d; }
+function statusLabel(s){ return ({completed:'Completed','in-progress':'In progress',planned:'Planned'})[s] || (s || 'Completed'); }
+function escapeHtml(s){ return (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* =========================================================
+   EDITOR VIEW
+   ========================================================= */
+$('backBtn').addEventListener('click', closeEditor);
+$('deleteBtn').addEventListener('click', () => confirmDelete(currentEditId));
+$('deleteBtn2').addEventListener('click', () => confirmDelete(currentEditId));
+$('applyBtn').addEventListener('click', applyDraft);
+
+function blankDev(){
+  return {
+    id:'', title:'', status:'in-progress',
+    address:{street:'',city:'South Boston',state:'MA',zip:''},
+    overview:'',
+    specs:{type:'', year:null, residences:1, bedrooms:null, bathrooms:null, livingArea:null},
+    photos:[],
+    location:{lat:null, lng:null}
+  };
+}
+
+function openEditor(id){
+  currentEditId = id;
+  if(id === '__new__'){
+    draft = blankDev();
+    $('editorTitle').textContent = 'Add a development';
+    $('deleteBtn').style.display = 'none';
+    $('deleteBtn2').parentElement.parentElement.style.display = 'none';
+  }else{
+    const found = projects.find(p => p.id === id);
+    if(!found){ toast('That development could not be found.', 'error'); return; }
+    draft = JSON.parse(JSON.stringify(found));
+    $('editorTitle').textContent = draft.address?.street || draft.title || 'Edit development';
+    $('deleteBtn').style.display = '';
+    $('deleteBtn2').parentElement.parentElement.style.display = '';
+  }
+  populateTypeList();
+  fillForm(draft);
+  $('listView').style.display = 'none';
+  $('editorView').style.display = 'block';
+  window.scrollTo(0,0);
+}
+
+function closeEditor(){
+  currentEditId = null; draft = null;
+  $('editorView').style.display = 'none';
+  $('listView').style.display = 'block';
+  renderList();
+}
+
+function populateTypeList(){
+  const types = [...new Set(projects.map(p => p.specs?.type).filter(Boolean))];
+  $('typeList').innerHTML = types.map(t => `<option value="${escapeHtml(t)}">`).join('');
+}
+
+function fillForm(d){
+  $('f_title').value = d.title || '';
+  $('f_status').value = d.status || 'in-progress';
+  $('f_type').value = d.specs?.type || '';
+  $('f_street').value = d.address?.street || '';
+  $('f_city').value = d.address?.city || '';
+  $('f_state').value = d.address?.state || '';
+  $('f_zip').value = d.address?.zip || '';
+  $('f_lat').value = d.location?.lat ?? '';
+  $('f_lng').value = d.location?.lng ?? '';
+  $('f_overview').value = d.overview || '';
+  $('f_year').value = d.specs?.year ?? '';
+  $('f_residences').value = d.specs?.residences ?? '';
+  $('f_bedrooms').value = d.specs?.bedrooms ?? '';
+  $('f_bathrooms').value = d.specs?.bathrooms ?? '';
+  $('f_livingArea').value = d.specs?.livingArea ?? '';
+  renderPhotoGrid();
+}
+
+function numOrNull(v){ if(v === '' || v === null || v === undefined) return null; const n = Number(v); return Number.isNaN(n) ? null : n; }
+
+function readForm(){
+  const street = $('f_street').value.trim();
+  const title = $('f_title').value.trim() || street;
+  return {
+    ...draft,
+    title,
+    status: $('f_status').value,
+    address:{ street, city:$('f_city').value.trim(), state:$('f_state').value.trim().toUpperCase(), zip:$('f_zip').value.trim() },
+    overview: $('f_overview').value.trim(),
+    specs:{
+      type: $('f_type').value.trim(),
+      year: numOrNull($('f_year').value),
+      residences: numOrNull($('f_residences').value),
+      bedrooms: numOrNull($('f_bedrooms').value),
+      bathrooms: numOrNull($('f_bathrooms').value),
+      livingArea: numOrNull($('f_livingArea').value)
+    },
+    location:{ lat: numOrNull($('f_lat').value), lng: numOrNull($('f_lng').value) },
+    photos: draft.photos
+  };
+}
+
+function slugify(s){
+  return s.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'') || 'development';
+}
+function uniqueId(base, excludeId){
+  let id = base, n = 2;
+  while(projects.some(p => p.id === id && p.id !== excludeId)) id = base + '-' + (n++);
+  return id;
+}
+
+function applyDraft(){
+  const updated = readForm();
+  if(!updated.title){ toast('Please enter an address or title.', 'error'); return; }
+
+  if(currentEditId === '__new__'){
+    updated.id = uniqueId(slugify(updated.title), null);
+    projects.push(updated);
+    toast('Development added. Don\'t forget to publish.', 'success');
+  }else{
+    const idx = projects.findIndex(p => p.id === currentEditId);
+    if(idx === -1){ toast('Could not find this development.', 'error'); return; }
+    // keep the same id even if the title/address changes, to avoid breaking links
+    updated.id = currentEditId;
+    projects[idx] = updated;
+    toast('Changes saved. Don\'t forget to publish.', 'success');
+  }
+  markDirty();
+  closeEditor();
+}
+
+/* Delete */
+let pendingDeleteId = null;
+function confirmDelete(id){
+  pendingDeleteId = id;
+  const item = projects.find(p => p.id === id);
+  $('confirmTitle').textContent = 'Delete this development?';
+  $('confirmBody').textContent = 'This removes "' + (item?.address?.street || item?.title || 'this development') + '" from the website once you publish. This can\'t be undone.';
+  $('confirmModal').classList.add('open');
+}
+$('confirmCancel').addEventListener('click', () => $('confirmModal').classList.remove('open'));
+$('confirmOk').addEventListener('click', () => {
+  projects = projects.filter(p => p.id !== pendingDeleteId);
+  markDirty();
+  $('confirmModal').classList.remove('open');
+  toast('Development deleted. Don\'t forget to publish.', 'success');
+  if(currentEditId === pendingDeleteId) closeEditor(); else renderList();
+});
+
+/* Geocode (free lookup, no key needed) */
+$('geocodeBtn').addEventListener('click', async () => {
+  const street = $('f_street').value.trim();
+  const city = $('f_city').value.trim();
+  const state = $('f_state').value.trim();
+  if(!street){ toast('Enter a street address first.', 'error'); return; }
+  const btn = $('geocodeBtn');
+  btn.disabled = true; btn.textContent = 'Looking up…';
+  try{
+    const q = encodeURIComponent([street, city, state, 'USA'].filter(Boolean).join(', '));
+    const res = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + q);
+    const data = await res.json();
+    if(!data || !data[0]) throw new Error('No match found');
+    $('f_lat').value = Number(data[0].lat).toFixed(7);
+    $('f_lng').value = Number(data[0].lon).toFixed(7);
+    toast('Coordinates found.', 'success');
+  }catch(err){
+    toast('Couldn\'t find that address. Enter coordinates manually.', 'error');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Look up from address';
+  }
+});
+
+/* =========================================================
+   PHOTOS
+   ========================================================= */
+let dragFromIndex = null;
+
+function renderPhotoGrid(){
+  const grid = $('photoGrid');
+  grid.innerHTML = '';
+  (draft.photos || []).forEach((url, idx) => {
+    const tile = document.createElement('div');
+    tile.className = 'photo-tile';
+    tile.draggable = true;
+    tile.dataset.index = idx;
+
+    const img = document.createElement('img');
+    img.src = url; img.alt = '';
+    tile.appendChild(img);
+
+    if(idx === 0){
+      const tag = document.createElement('div');
+      tag.className = 'cover-tag'; tag.textContent = 'Cover';
+      tile.appendChild(tag);
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+
+    const replaceBtn = iconBtn(svgReplace(), 'Replace photo');
+    replaceBtn.addEventListener('click', () => triggerUpload(idx));
+    const delBtn = iconBtn(svgTrash(), 'Remove photo');
+    delBtn.addEventListener('click', () => { draft.photos.splice(idx,1); renderPhotoGrid(); markDirty(); });
+
+    overlay.appendChild(replaceBtn); overlay.appendChild(delBtn);
+    tile.appendChild(overlay);
+
+    tile.addEventListener('dragstart', () => { dragFromIndex = idx; tile.classList.add('dragging'); });
+    tile.addEventListener('dragend', () => { tile.classList.remove('dragging'); });
+    tile.addEventListener('dragover', (e) => { e.preventDefault(); tile.classList.add('drag-over'); });
+    tile.addEventListener('dragleave', () => tile.classList.remove('drag-over'));
+    tile.addEventListener('drop', (e) => {
+      e.preventDefault(); tile.classList.remove('drag-over');
+      if(dragFromIndex === null || dragFromIndex === idx) return;
+      const moved = draft.photos.splice(dragFromIndex,1)[0];
+      draft.photos.splice(idx,0,moved);
+      dragFromIndex = null;
+      renderPhotoGrid(); markDirty();
+    });
+
+    grid.appendChild(tile);
+  });
+
+  const addTile = document.createElement('div');
+  addTile.className = 'photo-add-tile';
+  addTile.innerHTML = '<div class="plus" style="font-size:22px;">+</div><span>Add photos</span>';
+  addTile.addEventListener('click', () => triggerUpload(null));
+  addTile.addEventListener('dragover', (e) => { e.preventDefault(); addTile.classList.add('drag-over'); });
+  addTile.addEventListener('dragleave', () => addTile.classList.remove('drag-over'));
+  addTile.addEventListener('drop', (e) => {
+    e.preventDefault(); addTile.classList.remove('drag-over');
+    if(e.dataTransfer.files?.length) uploadFiles(e.dataTransfer.files, null);
+  });
+  grid.appendChild(addTile);
+}
+
+function iconBtn(svg, title){
+  const b = document.createElement('button');
+  b.type = 'button'; b.title = title; b.innerHTML = svg;
+  return b;
+}
+function svgTrash(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="#231F1C" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6h16Z"/></svg>'; }
+function svgReplace(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="#231F1C" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>'; }
+
+let replaceIndex = null;
+function triggerUpload(idx){
+  replaceIndex = idx;
+  $('photoFileInput').value = '';
+  $('photoFileInput').click();
+}
+$('photoFileInput').addEventListener('change', (e) => {
+  if(e.target.files?.length) uploadFiles(e.target.files, replaceIndex);
+});
+
+async function uploadFiles(fileList, replaceAtIndex){
+  const files = Array.from(fileList);
+  // show placeholder spinner tiles while uploading
+  for(const file of files){
+    const tempTile = document.createElement('div');
+    tempTile.className = 'photo-tile';
+    tempTile.innerHTML = '<div class="up-progress"><div class="spinner"></div></div>';
+    $('photoGrid').insertBefore(tempTile, $('photoGrid').lastElementChild);
+
+    try{
+      const url = await uploadOne(file);
+      if(replaceAtIndex !== null && replaceAtIndex !== undefined){
+        draft.photos[replaceAtIndex] = url;
+        replaceAtIndex = null; // only replace the first file if multiple were dropped on a single tile
+      }else{
+        draft.photos.push(url);
+      }
+      markDirty();
+    }catch(err){
+      toast('Upload failed for ' + file.name + ': ' + (err.message || 'unknown error'), 'error');
+    }
+    tempTile.remove();
+    renderPhotoGrid();
+  }
+}
+
+async function uploadOne(file){
+  const fd = new FormData();
+  fd.append('file', file);
+  const res = await fetch(WORKER_URL + '/api/upload', {
+    method:'POST',
+    headers:{ 'X-Admin-Key': session },
+    body: fd
+  });
+  if(!res.ok) throw new Error(await res.text().catch(()=> 'upload error'));
+  const data = await res.json();
+  if(!data.url) throw new Error('No URL returned');
+  return data.url;
+}
+
+/* Warn on page close with unsaved changes */
+window.addEventListener('beforeunload', (e) => {
+  if(dirty){ e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>
