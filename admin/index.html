@@ -484,7 +484,7 @@ main{ padding:0 0 100px; }
    panel. Nothing here is shown to the person using the admin
    panel day to day.
    ========================================================= */
-const WORKER_URL = "https://cabot-admin.YOUR-SUBDOMAIN.workers.dev"; // <-- set once during setup
+const WORKER_URL = "https://cabot-admin.sealaifarm.workers.dev/"; // <-- set once during setup
 
 /* =========================================================
    STATE
@@ -541,7 +541,7 @@ async function doLogin(){
   $('loginBtn').disabled = true;
   $('loginErr').textContent = '';
   try{
-    const res = await fetch(WORKER_URL + '/api/login', {
+    const res = await fetch(_URL + '/api/login', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ password: pw })
