@@ -3,7 +3,7 @@
  * ----------------------------------
  * This is a small Cloudflare Worker that sits between the admin panel
  * (admin.html) and two outside services: GitHub (where projects.json
- * lives) and Cloudflare Images (where uploaded photos are stored).
+ * lives) and an R2 bucket (where uploaded photos are stored).
  *
  * It exists so that no API keys, tokens, repo names, or file paths are
  * ever visible to the person using the admin panel — everything
@@ -14,8 +14,9 @@
  *   GET  /api/projects                              -> { projects, sha }
  *   PUT  /api/projects   { projects, sha, message }  -> { sha }
  *   POST /api/upload     multipart file              -> { url }
+ *   GET  /images/<key>   public, no auth             -> the stored photo
  *
- * Every request (except /api/login) must include header:
+ * Every request under /api (except /api/login) must include header:
  *   X-Admin-Key: <the admin password>
  */
 
@@ -31,6 +32,11 @@ export default {
     try {
       if (url.pathname === '/api/login' && request.method === 'POST') {
         return await handleLogin(request, env);
+      }
+
+      // public route — serves uploaded photos from R2, no admin key needed
+      if (url.pathname.startsWith('/images/') && request.method === 'GET') {
+        return await getImage(url, env);
       }
 
       // everything below requires a valid admin key
@@ -153,32 +159,47 @@ function encodeBase64Utf8(str) {
 }
 
 /* ---------------------------------------------------------- */
-/* Cloudflare Images — photo uploads land here and we return the
-   public CDN URL to store in projects.json. */
+/* R2 — photo uploads land in the IMAGES bucket. Since R2 Public
+   Access is disabled, this same Worker serves them back out at
+   GET /images/<key> so the public Netlify site can load them. */
 
 async function uploadImage(request, env) {
   const incoming = await request.formData();
   const file = incoming.get('file');
   if (!file) throw new Error('No file received');
 
-  const fd = new FormData();
-  fd.append('file', file, file.name || 'photo.jpg');
+  const key = makeImageKey(file.name || 'photo.jpg');
 
-  const res = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/images/v1`,
-    {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${env.CF_IMAGES_TOKEN}` },
-      body: fd
+  await env.IMAGES.put(key, file.stream(), {
+    httpMetadata: {
+      contentType: file.type || 'application/octet-stream'
     }
-  );
+  });
 
-  const data = await res.json();
-  if (!res.ok || !data.success) {
-    throw new Error('Photo upload failed');
-  }
-  // Use the first available variant (usually "public") as the stored URL
-  const variantUrl = data.result?.variants?.[0];
-  if (!variantUrl) throw new Error('Upload succeeded but no image URL was returned');
-  return json({ url: variantUrl });
+  const url = new URL(request.url);
+  const publicUrl = `${url.origin}/images/${key}`;
+  return json({ url: publicUrl });
+}
+
+function makeImageKey(originalName) {
+  const dot = originalName.lastIndexOf('.');
+  const ext = dot !== -1 ? originalName.slice(dot + 1).toLowerCase().replace(/[^a-z0-9]/g, '') : '';
+  const id = crypto.randomUUID();
+  return ext ? `${id}.${ext}` : id;
+}
+
+async function getImage(url, env) {
+  const key = decodeURIComponent(url.pathname.replace(/^\/images\//, ''));
+  if (!key) return json({ error: 'Not found' }, 404);
+
+  const object = await env.IMAGES.get(key);
+  if (!object) return json({ error: 'Not found' }, 404);
+
+  const headers = new Headers();
+  object.writeHttpMetadata(headers);
+  headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  headers.set('ETag', object.httpEtag);
+  headers.set('Access-Control-Allow-Origin', '*');
+
+  return new Response(object.body, { headers });
 }
