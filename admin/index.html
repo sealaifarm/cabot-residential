@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cabot Residential — Admin</title>
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" sizes="64x64" href="../favicon-64x64.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -71,23 +71,59 @@ h1,h2,h3{font-family:'Bricolage Grotesque', sans-serif;font-weight:600;margin:0;
 ::-webkit-scrollbar-track{ background:transparent; }
 
 /* =========================================================
-   Login screen
+   Login screen — Airbnb-inspired centered card, Cabot palette
    ========================================================= */
 #loginView{
   min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  background:
+    radial-gradient(1100px 620px at 18% -10%, var(--brass-tint) 0%, transparent 60%),
+    radial-gradient(900px 560px at 100% 110%, var(--paper-alt-2) 0%, transparent 55%),
+    var(--paper-alt);
 }
 .login-card{
-  width:100%; max-width:380px; background:var(--paper); border-radius:var(--radius-lg);
-  box-shadow:var(--shadow); padding:44px 40px; text-align:center;
+  width:100%; max-width:400px; background:var(--paper); border-radius:var(--radius-lg);
+  box-shadow:0 30px 70px -30px rgba(35,31,28,.28), 0 2px 0 rgba(35,31,28,.02);
+  border:1px solid var(--hairline-2);
+  padding:48px 40px 40px; text-align:center;
+  opacity:0; transform:translateY(14px);
+  animation:loginIn .6s cubic-bezier(.16,.8,.24,1) .05s forwards;
 }
+@keyframes loginIn{ to{ opacity:1; transform:translateY(0); } }
+.login-logo{ display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
+.login-logo img{ height:52px; width:auto; }
 .login-card .mark{ font-size:19px; font-weight:700; letter-spacing:0.01em; margin-bottom:6px; }
-.login-card p.sub{ color:var(--stone-dark); font-size:13.5px; margin:0 0 30px; font-weight:300; }
+.login-card p.sub{ color:var(--stone-dark); font-size:14px; margin:0 0 32px; font-weight:300; }
+.login-field{ position:relative; text-align:left; }
 .login-card input{
-  width:100%; padding:14px 16px; border-radius:var(--radius-sm); border:1px solid var(--hairline);
-  background:var(--paper-alt); font-size:14.5px; outline:none; transition:border-color .2s ease, background .2s ease;
+  width:100%; padding:15px 46px 15px 16px; border-radius:var(--radius-sm); border:1.5px solid var(--hairline);
+  background:var(--paper-alt); font-size:15px; outline:none; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;
 }
-.login-card input:focus{ border-color:var(--brass); background:var(--paper); }
-.login-card .err{ color:var(--red); font-size:12.5px; margin-top:12px; min-height:16px; }
+.login-card input:focus{ border-color:var(--brass); background:var(--paper); box-shadow:0 0 0 4px var(--brass-tint); }
+.login-card input.shake{ animation:shake .4s ease; }
+@keyframes shake{
+  10%,90%{ transform:translateX(-1px); } 20%,80%{ transform:translateX(2px); }
+  30%,50%,70%{ transform:translateX(-4px); } 40%,60%{ transform:translateX(4px); }
+}
+.pw-toggle{
+  position:absolute; right:6px; top:50%; transform:translateY(-50%);
+  width:34px; height:34px; border:none; background:transparent; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; color:var(--stone-dark); border-radius:50%;
+  transition:color .2s ease, background .2s ease;
+}
+.pw-toggle:hover{ color:var(--ink); background:var(--paper-alt-2); }
+.pw-toggle svg{ width:18px; height:18px; }
+.login-card .err{
+  color:var(--red); font-size:12.5px; margin-top:12px; min-height:16px; text-align:left;
+  display:flex; align-items:center; gap:6px;
+}
+.login-remember{
+  display:flex; align-items:center; gap:9px; margin-top:18px; text-align:left; cursor:pointer;
+  font-size:13px; color:var(--ink-soft); user-select:none;
+}
+.login-remember input{
+  width:16px; height:16px; padding:0; margin:0; accent-color:var(--brass); cursor:pointer; flex-shrink:0;
+}
+.login-foot{ margin-top:26px; font-size:11.5px; color:var(--stone); letter-spacing:.02em; }
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   border:none; cursor:pointer; border-radius:999px; font-size:12.5px; letter-spacing:0.06em;
@@ -117,7 +153,13 @@ header.topbar{
   border-bottom:1px solid var(--hairline);
 }
 @media(max-width:640px){ header.topbar{ padding:14px 18px; } }
-header.topbar .mark{ font-size:15.5px; font-weight:700; letter-spacing:.01em; display:flex; align-items:center; gap:9px; }
+header.topbar .mark{
+  font-size:15.5px; font-weight:700; letter-spacing:.01em; display:flex; align-items:center; gap:11px;
+  cursor:pointer; padding:4px 6px 4px 0; margin:-4px 0 -4px -6px; border-radius:var(--radius-sm);
+  transition:opacity .2s ease;
+}
+header.topbar .mark:hover{ opacity:.72; }
+header.topbar .mark img{ height:34px; width:auto; display:block; }
 header.topbar .mark .tag{
   font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--stone-dark);
   border:1px solid var(--hairline); padding:3px 8px; border-radius:999px; font-weight:500; font-family:'Jost',sans-serif;
@@ -197,10 +239,16 @@ main{ padding:0 0 100px; }
    ========================================================= */
 .editor{ display:none; }
 .editor .back{
-  display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--stone-dark);
-  padding:28px 0 6px; cursor:pointer;
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12.5px; letter-spacing:.03em; font-weight:500; color:var(--ink-soft);
+  margin:22px 0 6px; padding:10px 18px 10px 14px; cursor:pointer;
+  background:var(--paper); border:1px solid var(--hairline); border-radius:999px;
+  box-shadow:0 8px 20px -14px rgba(35,31,28,.25);
+  transition:border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.editor .back:hover{ color:var(--ink); }
+.editor .back:hover{ color:var(--brass-dark); border-color:var(--brass); transform:translateX(-2px); box-shadow:0 10px 24px -14px rgba(196,106,74,.35); }
+.editor .back svg{ width:14px; height:14px; flex-shrink:0; transition:transform .2s ease; }
+.editor .back:hover svg{ transform:translateX(-2px); }
 .editor-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding:6px 0 30px; flex-wrap:wrap; }
 .editor-head h1{ font-size:clamp(22px,3vw,30px); }
 .editor-head .actions{ display:flex; gap:10px; flex-wrap:wrap; }
@@ -324,11 +372,23 @@ main{ padding:0 0 100px; }
      ========================================================= -->
 <div id="loginView">
   <div class="login-card">
-    <div class="mark">CABOT RESIDENTIAL</div>
-    <p class="sub">Admin panel</p>
-    <input type="password" id="pwInput" placeholder="Password" autocomplete="current-password">
+    <div class="login-logo">
+      <img src="../cri-logo.png" alt="Cabot Residential" onerror="this.closest('.login-logo').innerHTML='<div class=&quot;mark&quot;>CABOT RESIDENTIAL</div>';">
+    </div>
+    <p class="sub">Welcome back — sign in to manage your listings</p>
+    <div class="login-field">
+      <input type="password" id="pwInput" placeholder="Password" autocomplete="current-password">
+      <button type="button" class="pw-toggle" id="pwToggle" title="Show password" aria-label="Show password">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      </button>
+    </div>
     <div class="err" id="loginErr"></div>
+    <label class="login-remember">
+      <input type="checkbox" id="rememberCheck" checked>
+      Keep me signed in on this device
+    </label>
     <button class="btn btn-primary btn-block" id="loginBtn">Sign in</button>
+    <div class="login-foot">Cabot Residential · Admin panel</div>
   </div>
 </div>
 
@@ -337,7 +397,10 @@ main{ padding:0 0 100px; }
      ========================================================= -->
 <div id="app">
   <header class="topbar">
-    <div class="mark">CABOT RESIDENTIAL <span class="tag">Admin</span></div>
+    <div class="mark" id="homeLink" title="Back to admin home">
+      <img src="../cri-logo.png" alt="Cabot Residential" onerror="this.remove();">
+      <span>CABOT RESIDENTIAL</span> <span class="tag">Admin</span>
+    </div>
     <div class="spacer"></div>
     <div class="publish-status" id="publishStatus"><span class="dot"></span><span id="publishStatusText">All changes published</span></div>
     <button class="btn btn-brass" id="publishBtn" disabled>Publish changes</button>
@@ -360,7 +423,10 @@ main{ padding:0 0 100px; }
 
     <!-- EDITOR VIEW -->
     <div id="editorView" class="editor">
-      <div class="back" id="backBtn">← Back to all developments</div>
+      <div class="back" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Back to admin home
+      </div>
       <div class="editor-head">
         <h1 id="editorTitle">Edit development</h1>
         <div class="actions">
@@ -489,7 +555,14 @@ const WORKER_URL = "https://cabot-admin.sealaifarm.workers.dev"; // <-- set once
 /* =========================================================
    STATE
    ========================================================= */
-let session = sessionStorage.getItem('cabot_admin_key') || '';
+/* Persistent session: localStorage keeps the admin signed in across tabs,
+   browser restarts, and days — not just sessionStorage's single-tab lifetime. */
+let session = localStorage.getItem('cabot_admin_key') || sessionStorage.getItem('cabot_admin_key') || '';
+// migrate any old sessionStorage-only session onto the persistent store
+if(session && !localStorage.getItem('cabot_admin_key')){
+  localStorage.setItem('cabot_admin_key', session);
+  sessionStorage.removeItem('cabot_admin_key');
+}
 let projects = [];      // working copy (source of truth for the UI)
 let fileSha = null;     // GitHub blob sha for optimistic concurrency
 let dirty = false;      // true once local edits differ from last publish
@@ -535,10 +608,19 @@ function toast(msg, type=''){
 $('loginBtn').addEventListener('click', doLogin);
 $('pwInput').addEventListener('keydown', e => { if(e.key === 'Enter') doLogin(); });
 
+$('pwToggle').addEventListener('click', () => {
+  const input = $('pwInput');
+  const showing = input.type === 'text';
+  input.type = showing ? 'password' : 'text';
+  $('pwToggle').setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+  $('pwToggle').title = showing ? 'Show password' : 'Hide password';
+});
+
 async function doLogin(){
   const pw = $('pwInput').value;
   if(!pw) return;
   $('loginBtn').disabled = true;
+  $('loginBtn').textContent = 'Signing in…';
   $('loginErr').textContent = '';
   try{
     const res = await fetch(WORKER_URL + '/api/login', {
@@ -548,32 +630,63 @@ async function doLogin(){
     });
     if(!res.ok) throw new Error('Incorrect password');
     session = pw;
-    sessionStorage.setItem('cabot_admin_key', pw);
+    // Checked by default: session persists across visits so you don't have
+    // to log in every time. Uncheck it if this is a shared/public computer.
+    if($('rememberCheck').checked){
+      localStorage.setItem('cabot_admin_key', pw);
+      sessionStorage.removeItem('cabot_admin_key');
+    }else{
+      sessionStorage.setItem('cabot_admin_key', pw);
+      localStorage.removeItem('cabot_admin_key');
+    }
     boot();
   }catch(err){
     $('loginErr').textContent = err.message || 'Something went wrong. Try again.';
+    $('pwInput').classList.remove('shake');
+    void $('pwInput').offsetWidth; // restart animation
+    $('pwInput').classList.add('shake');
   }finally{
     $('loginBtn').disabled = false;
+    $('loginBtn').textContent = 'Sign in';
   }
 }
 
 function logout(){
+  localStorage.removeItem('cabot_admin_key');
   sessionStorage.removeItem('cabot_admin_key');
   session = '';
   $('app').style.display = 'none';
   $('loginView').style.display = 'flex';
   $('pwInput').value = '';
+  history.replaceState({view:'list'}, '', location.pathname);
 }
 $('logoutBtn').addEventListener('click', logout);
 
-/* Auto sign-in if we already have a session */
-if(session){ boot(); } 
+/* Auto sign-in if we already have a session — stays signed in indefinitely. */
+if(session){ boot(); }
 
 async function boot(){
   $('loginView').style.display = 'none';
   $('app').style.display = 'block';
+  history.replaceState({view:'list'}, '', location.pathname);
   await loadProjects();
 }
+
+/* Topbar logo/name always takes you back to admin home */
+$('homeLink').addEventListener('click', () => {
+  if($('editorView').style.display !== 'none') closeEditor();
+});
+
+/* Native browser Back/Forward button support between list and editor */
+window.addEventListener('popstate', (e) => {
+  const state = e.state;
+  if(!session) return;
+  if(state && state.view === 'editor' && state.id){
+    openEditor(state.id, { pushHistory:false });
+  }else{
+    closeEditor({ pushHistory:false });
+  }
+});
 
 /* =========================================================
    LOAD / SAVE PROJECTS
@@ -657,7 +770,7 @@ function renderList(){
     thumb.className = 'thumb';
     if(item.photos && item.photos[0]){
       const img = document.createElement('img');
-      img.src = item.photos[0];
+      img.src = resolveImg(item.photos[0]);
       img.alt = item.title || '';
       img.onerror = function(){ this.remove(); thumb.querySelector('.noimg') || thumb.appendChild(noImgEl()); };
       thumb.appendChild(img);
@@ -708,6 +821,16 @@ function renderList(){
   }
 }
 
+/* The admin panel lives in /admin/, but photo paths are stored relative to
+   the site root (e.g. "images/projects/x.png"). Prefix those with ../ so
+   they resolve correctly here. Absolute URLs (http/https/data/protocol-
+   relative/root-relative) are left untouched. */
+function resolveImg(url){
+  if(!url) return url;
+  if(/^(https?:)?\/\//i.test(url) || url.startsWith('data:') || url.startsWith('/') || url.startsWith('../')) return url;
+  return '../' + url;
+}
+
 function noImgEl(){ const d = document.createElement('div'); d.className = 'noimg'; d.textContent = 'No photo'; return d; }
 function statusLabel(s){ return ({completed:'Completed','in-progress':'In progress',planned:'Planned'})[s] || (s || 'Completed'); }
 function escapeHtml(s){ return (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -731,7 +854,10 @@ function blankDev(){
   };
 }
 
-function openEditor(id){
+function openEditor(id, opts = {}){
+  const found = id !== '__new__' ? projects.find(p => p.id === id) : null;
+  if(id !== '__new__' && !found){ toast('That development could not be found.', 'error'); return; }
+
   currentEditId = id;
   if(id === '__new__'){
     draft = blankDev();
@@ -739,8 +865,6 @@ function openEditor(id){
     $('deleteBtn').style.display = 'none';
     $('deleteBtn2').parentElement.parentElement.style.display = 'none';
   }else{
-    const found = projects.find(p => p.id === id);
-    if(!found){ toast('That development could not be found.', 'error'); return; }
     draft = JSON.parse(JSON.stringify(found));
     $('editorTitle').textContent = draft.address?.street || draft.title || 'Edit development';
     $('deleteBtn').style.display = '';
@@ -751,13 +875,21 @@ function openEditor(id){
   $('listView').style.display = 'none';
   $('editorView').style.display = 'block';
   window.scrollTo(0,0);
+
+  if(opts.pushHistory !== false){
+    history.pushState({view:'editor', id}, '', '#edit/' + encodeURIComponent(id));
+  }
 }
 
-function closeEditor(){
+function closeEditor(opts = {}){
   currentEditId = null; draft = null;
   $('editorView').style.display = 'none';
   $('listView').style.display = 'block';
   renderList();
+
+  if(opts.pushHistory !== false){
+    history.pushState({view:'list'}, '', location.pathname);
+  }
 }
 
 function populateTypeList(){
@@ -893,7 +1025,7 @@ function renderPhotoGrid(){
     tile.dataset.index = idx;
 
     const img = document.createElement('img');
-    img.src = url; img.alt = '';
+    img.src = resolveImg(url); img.alt = '';
     tile.appendChild(img);
 
     if(idx === 0){
