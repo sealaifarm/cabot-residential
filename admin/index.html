@@ -541,7 +541,7 @@ async function doLogin(){
   $('loginBtn').disabled = true;
   $('loginErr').textContent = '';
   try{
-    const res = await fetch(_URL + '/api/login', {
+    const res = await fetch(WORKER_URL + '/api/login', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ password: pw })
