@@ -9,7 +9,7 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "3 Cutler Ct is a single-family home in South Boston that underwent a comprehensive renovation. It offers 2 bedrooms, 2.5 bathrooms, and 1,224 square feet of living space. The modernized residence was completed and sold in 2024.",
+    "overview": "3 Cutler Ct is a single-family home in South Boston that underwent a comprehensive renovation. It offers 2 bedrooms, 2.5 bathrooms, and 1,224 square feet of living space. The modernized residence was completed and sold in 2030.",
     "specs": {
       "type": "Single Family Residence",
       "year": 2024,
@@ -30,8 +30,8 @@
       "images/projects/3-cutler-ct/09.webp"
     ],
     "location": {
-      "lat": 42.3335961,
-      "lng": -71.03433520000002
+      "lat": 42.3335889,
+      "lng": -71.0343275
     }
   },
   {
