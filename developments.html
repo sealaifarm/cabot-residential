@@ -148,6 +148,92 @@
   .page-head h1{ font-size:clamp(30px,3.6vw,46px); margin-top:16px; }
   .page-head p{ margin-top:16px; max-width:480px; font-size:14.5px; line-height:1.8; color:var(--stone-dark); font-weight:300; }
 
+  /* ---------- Toolbar (search + sort) ---------- */
+  .page-head-row{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .page-head-row .intro{ max-width:480px; }
+  .toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+    padding-bottom:4px;
+  }
+  .icon-btn{
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1px solid var(--hairline);
+    background:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    flex-shrink:0;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .icon-btn svg{
+    width:16px; height:16px;
+    stroke:var(--ink-soft);
+    fill:none;
+    transition:stroke .25s ease;
+  }
+  .icon-btn:hover{ background:var(--paper-alt-2); }
+  .icon-btn.active{ background:var(--ink); border-color:var(--ink); }
+  .icon-btn.active svg{ stroke:var(--white); }
+
+  .search-toggle{ display:flex; align-items:center; }
+  .search-toggle input{
+    width:0;
+    opacity:0;
+    padding:0;
+    margin-right:0;
+    border:1px solid transparent;
+    outline:none;
+    background:var(--paper);
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    font-size:13.5px;
+    color:var(--ink);
+    border-radius:999px;
+    transition:width .35s var(--ease), opacity .25s ease, padding .35s var(--ease), margin .35s var(--ease), border-color .3s ease;
+  }
+  .search-toggle input::placeholder{ color:var(--stone); }
+  .search-toggle.open input{
+    width:200px;
+    opacity:1;
+    padding:9px 22px;
+    margin-right:8px;
+    border-color:var(--hairline);
+  }
+  .search-toggle.open input:focus{ border-color:var(--stone); }
+
+  .sort-btn{
+    display:flex; align-items:center; gap:8px;
+    width:auto;
+    padding:0 16px;
+    border-radius:999px;
+    font-family:'Jost', sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .sort-btn:hover{ color:var(--ink); }
+  .sort-btn.active{ color:var(--white); }
+  .sort-btn svg{
+    width:14px; height:14px;
+    stroke:currentColor;
+    transition:transform .35s var(--ease);
+  }
+  .sort-btn.desc svg{ transform:rotate(180deg); }
+
+  @media(max-width:560px){
+    .page-head-row{ flex-direction:column; align-items:flex-start; }
+    .search-toggle.open input{ width:160px; }
+  }
+
   /* ---------- Grid ---------- */
   .grid-section{ padding:0 0 130px; }
   .dev-grid{
@@ -243,8 +329,26 @@
 
 <div class="wrap page-head reveal">
   <span class="eyebrow">All Developments</span>
-  <h1 class="disp">The full portfolio.</h1>
-  <p>Every home Cabot Residential has built or is currently building throughout South Boston.</p>
+  <div class="page-head-row">
+    <div class="intro">
+      <h1 class="disp">The full portfolio.</h1>
+      <p>Every home Cabot Residential has built or is currently building throughout South Boston.</p>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-toggle" id="searchToggle">
+        <input type="text" id="devSearch" placeholder="Search developments…" autocomplete="off">
+      </div>
+      <button type="button" class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+
+      <button type="button" class="icon-btn sort-btn" id="sortBtn" aria-label="Sort by year">
+        <span id="sortLabel">Newest</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+      </button>
+    </div>
+  </div>
 </div>
 
 <section class="grid-section">
@@ -272,6 +376,10 @@
 </footer>
 
 <script>
+let allItems = [];
+let currentQuery = '';
+let currentSort = 'newest'; // null | 'newest' | 'oldest'
+
 async function init(){
   const grid = document.getElementById('devGrid');
   let data;
@@ -283,12 +391,84 @@ async function init(){
     grid.innerHTML = '<div class="state-msg">Developments couldn’t be loaded.</div>';
     return;
   }
-  render(grid, Array.isArray(data) ? data : []);
+  allItems = Array.isArray(data) ? data : [];
+  render(grid, getVisibleItems());
+  initSearch();
+  initSort();
 }
 
-function render(grid, items){
+function getVisibleItems(){
+  let items = currentQuery
+    ? allItems.filter(item => (item.title || '').toLowerCase().includes(currentQuery))
+    : allItems.slice();
+
+  if(currentSort === 'newest'){
+    items.sort((a, b) => (b.specs?.year || 0) - (a.specs?.year || 0));
+  } else if(currentSort === 'oldest'){
+    items.sort((a, b) => (a.specs?.year || 0) - (b.specs?.year || 0));
+  }
+  return items;
+}
+
+function updateGrid(){
+  const grid = document.getElementById('devGrid');
+  render(grid, getVisibleItems(), currentQuery.length > 0);
+}
+
+function initSearch(){
+  const toggle = document.getElementById('searchToggle');
+  const btn = document.getElementById('searchBtn');
+  const input = document.getElementById('devSearch');
+
+  btn.addEventListener('click', () => {
+    const isOpen = toggle.classList.contains('open');
+    if(isOpen && input.value === ''){
+      toggle.classList.remove('open');
+      btn.classList.remove('active');
+    } else if(isOpen){
+      input.value = '';
+      currentQuery = '';
+      updateGrid();
+      input.focus();
+    } else {
+      toggle.classList.add('open');
+      btn.classList.add('active');
+      setTimeout(() => input.focus(), 200);
+    }
+  });
+
+  input.addEventListener('input', () => {
+    currentQuery = input.value.trim().toLowerCase();
+    updateGrid();
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+      input.value = '';
+      currentQuery = '';
+      updateGrid();
+      toggle.classList.remove('open');
+      btn.classList.remove('active');
+    }
+  });
+}
+
+function initSort(){
+  const btn = document.getElementById('sortBtn');
+  const label = document.getElementById('sortLabel');
+
+  btn.addEventListener('click', () => {
+    currentSort = currentSort === 'newest' ? 'oldest' : 'newest';
+    label.textContent = currentSort === 'newest' ? 'Newest' : 'Oldest';
+    btn.classList.add('active');
+    btn.classList.toggle('desc', currentSort === 'oldest');
+    updateGrid();
+  });
+}
+
+function render(grid, items, isSearch){
   if(!items.length){
-    grid.innerHTML = '<div class="state-msg">No developments to show yet.</div>';
+    grid.innerHTML = '<div class="state-msg">' + (isSearch ? 'No developments match your search.' : 'No developments to show yet.') + '</div>';
     return;
   }
 

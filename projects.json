@@ -1,5 +1,460 @@
 [
   {
+    "id": "116-marine-rd",
+    "title": "116 Marine Rd",
+    "status": "completed",
+    "address": {
+      "street": "116 Marine Rd",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "116 Marine Rd is a small apartment building in South Boston, containing three condo units built around 2017. It includes a 3-bedroom, 2-bath 1,600 sqft unit and two 2-bedroom, 2-bath units (~1,000 sqft each). The building’s modern condos were completed in 2017 and feature open layouts and garage parking.",
+    "specs": {
+      "type": "Apartment building",
+      "year": 2017,
+      "residences": 3,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/116-marine-rd/01.webp",
+      "images/projects/116-marine-rd/02.webp",
+      "images/projects/116-marine-rd/03.webp",
+      "images/projects/116-marine-rd/04.webp",
+      "images/projects/116-marine-rd/05.webp",
+      "images/projects/116-marine-rd/06.webp"
+    ],
+    "location": {
+      "lat": 42.3308195,
+      "lng": -71.034402
+    }
+  },
+  {
+    "id": "12-mohawk-st",
+    "title": "12 Mohawk St",
+    "status": "completed",
+    "address": {
+      "street": "12 Mohawk St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "12 Mohawk St is a 25-unit apartment building in South Boston. Constructed in the 2010s, it features contemporary condo units (mostly 2-bed/2-bath, ~879 sqft each). The building offers modern finishes throughout; for example, Unit 5 (a 2-bed/2-bath, 879 sqft unit) sold in 2025, reflecting the new development.",
+    "specs": {
+      "type": "Apartment building",
+      "year": 2014,
+      "residences": 25,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/12-mohawk-st/01.webp",
+      "images/projects/12-mohawk-st/02.webp",
+      "images/projects/12-mohawk-st/03.webp",
+      "images/projects/12-mohawk-st/04.webp",
+      "images/projects/12-mohawk-st/05.webp",
+      "images/projects/12-mohawk-st/06.webp",
+      "images/projects/12-mohawk-st/07.webp",
+      "images/projects/12-mohawk-st/08.webp"
+    ],
+    "location": {
+      "lat": 42.328712,
+      "lng": -71.0554762
+    }
+  },
+  {
+    "id": "14-16-jenkins-st",
+    "title": "14-16 Jenkins St",
+    "status": "completed",
+    "address": {
+      "street": "14-16 Jenkins St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "14-16 Jenkins St is a luxury multi-family property built in 2013 in South Boston. The building contains four upscale condo units totaling around 6,628 square feet (three 3-bedroom units and one 2-bedroom unit). For example, Unit 3 is a 3-bed/3.5-bath, 2,150 sqft condo that sold in 2022. All units feature modern finishes and two garage parking spaces each.",
+    "specs": {
+      "type": "Multi-family",
+      "year": 2013,
+      "residences": 4,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/14-16-jenkins-st/01.webp",
+      "images/projects/14-16-jenkins-st/02.webp",
+      "images/projects/14-16-jenkins-st/03.webp",
+      "images/projects/14-16-jenkins-st/04.webp",
+      "images/projects/14-16-jenkins-st/05.webp",
+      "images/projects/14-16-jenkins-st/06.webp"
+    ],
+    "location": {
+      "lat": 42.3307151,
+      "lng": -71.0533938
+    }
+  },
+  {
+    "id": "160-o-st",
+    "title": "160 O St",
+    "status": "completed",
+    "address": {
+      "street": "160 O St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "160 O St is a 3-unit apartment building in South Boston’s M Street Beach area. The brick structure is older but contains modern condos (for example, a 2-bed/1.5-bath 978 sqft unit and two 1-bed/1-bath units around 500 sqft). The building was constructed early in the 20th century and has no recent redevelopment.",
+    "specs": {
+      "type": "Apartment building",
+      "year": null,
+      "residences": 3,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/160-o-st/01.webp",
+      "images/projects/160-o-st/02.webp",
+      "images/projects/160-o-st/03.webp",
+      "images/projects/160-o-st/04.webp",
+      "images/projects/160-o-st/05.webp",
+      "images/projects/160-o-st/06.webp"
+    ],
+    "location": {
+      "lat": 42.3327359,
+      "lng": -71.0289925
+    }
+  },
+  {
+    "id": "170-w-5th-st",
+    "title": "170 W 5th St",
+    "status": "completed",
+    "address": {
+      "street": "170 W 5th St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "170 W 5th St is a modern four-residence condominium development built from the ground up in 2011. The building contains approximately 4,738 square feet of residential space across four homes, with eight bedrooms and eight bathrooms in total. The residences feature contemporary open layouts, hardwood flooring, modern kitchens, central air conditioning, in-unit laundry, and private outdoor spaces. The property is located just off West Broadway, providing convenient access to restaurants, shops, public transportation, and the Seaport.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2011,
+      "residences": 4,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "livingArea": 4738
+    },
+    "photos": [
+      "images/projects/170-w-5th-st/01.webp",
+      "images/projects/170-w-5th-st/02.webp",
+      "images/projects/170-w-5th-st/03.webp",
+      "images/projects/170-w-5th-st/04.webp",
+      "images/projects/170-w-5th-st/05.webp",
+      "images/projects/170-w-5th-st/06.webp"
+    ],
+    "location": {
+      "lat": 42.33735300000001,
+      "lng": -71.0519401
+    }
+  },
+  {
+    "id": "181-h-st",
+    "title": "181 H St",
+    "status": "completed",
+    "address": {
+      "street": "181 H St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "181 H St is a historic 3-unit building in South Boston. It features two 1-bedroom, 2-bath condos (~526-644 sqft each) and one 2-bedroom, 1-bath condo (~1,000 sqft). Built in 1900, the property remains largely original and functions as a 2/3-family residence without modern redevelopment.",
+    "specs": {
+      "type": "Apartment building",
+      "year": null,
+      "residences": 3,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/181-h-st/01.webp",
+      "images/projects/181-h-st/02.webp",
+      "images/projects/181-h-st/03.webp",
+      "images/projects/181-h-st/04.webp",
+      "images/projects/181-h-st/05.webp",
+      "images/projects/181-h-st/06.webp",
+      "images/projects/181-h-st/07.webp",
+      "images/projects/181-h-st/08.webp"
+    ],
+    "location": {
+      "lat": 42.3316842,
+      "lng": -71.04158699999999
+    }
+  },
+  {
+    "id": "1824-columbia-rd",
+    "title": "1824 Columbia Rd",
+    "status": "completed",
+    "address": {
+      "street": "1824 Columbia Rd",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "1824 Columbia Rd is a high-end condominium building in South Boston overlooking Pleasure Bay. Completed in 2021, it offers luxury units with features like water views and 2-car garages. For example, Unit 3 is a 3-bed/3.5-bath, 2,435 sqft condo that sold for $2.58M in 2022, reflecting the upscale finishes of the development.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2021,
+      "residences": 4,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/1824-columbia-rd/01.webp",
+      "images/projects/1824-columbia-rd/02.webp",
+      "images/projects/1824-columbia-rd/03.webp",
+      "images/projects/1824-columbia-rd/04.webp",
+      "images/projects/1824-columbia-rd/05.webp",
+      "images/projects/1824-columbia-rd/06.webp",
+      "images/projects/1824-columbia-rd/07.webp",
+      "images/projects/1824-columbia-rd/08.webp",
+      "images/projects/1824-columbia-rd/09.webp",
+      "images/projects/1824-columbia-rd/10.webp",
+      "images/projects/1824-columbia-rd/11.webp",
+      "images/projects/1824-columbia-rd/12.webp"
+    ],
+    "location": {
+      "lat": 42.3326894,
+      "lng": -71.0277486
+    }
+  },
+  {
+    "id": "191-w-8th-st",
+    "title": "191 W 8th St",
+    "status": "completed",
+    "address": {
+      "street": "191 W 8th St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "191 W 8th St is a modern six-residence condominium property constructed in 2015 in South Boston's West Side. The building represents the neighborhood's continued residential redevelopment, replacing older building stock with contemporary condominium housing. The property is positioned within a highly walkable residential area close to West Broadway, neighborhood restaurants and retail, public transportation, parks, and the Seaport. Public records confirm six condominium residences, although reliable building-wide totals for bedrooms, bathrooms, and aggregate living area are not consistently reported.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2015,
+      "residences": 6,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/191-w-8th-st/01.webp",
+      "images/projects/191-w-8th-st/02.webp",
+      "images/projects/191-w-8th-st/03.webp",
+      "images/projects/191-w-8th-st/04.webp",
+      "images/projects/191-w-8th-st/05.webp",
+      "images/projects/191-w-8th-st/06.webp",
+      "images/projects/191-w-8th-st/07.webp",
+      "images/projects/191-w-8th-st/08.webp"
+    ],
+    "location": {
+      "lat": 42.33350799999999,
+      "lng": -71.05216759999999
+    }
+  },
+  {
+    "id": "255-e-st",
+    "title": "255 E St",
+    "status": "completed",
+    "address": {
+      "street": "255 E St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "255 E St, part of the 253–255 E St property, is a two-residence condominium development in South Boston. The property underwent a substantial gut renovation around 2007 and contains approximately 3,364 square feet of living space across two residences, with six bedrooms and four and a half bathrooms. The redevelopment reflects the transformation of South Boston's traditional residential building stock into updated condominium housing, while the property's E Street location provides convenient access to West Broadway, Andrew Square, public transportation, restaurants, and the Seaport.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2007,
+      "residences": 2,
+      "bedrooms": 6,
+      "bathrooms": 4.5,
+      "livingArea": 3364
+    },
+    "photos": [
+      "images/projects/255-e-st/01.webp",
+      "images/projects/255-e-st/02.webp",
+      "images/projects/255-e-st/03.webp",
+      "images/projects/255-e-st/04.webp",
+      "images/projects/255-e-st/05.webp"
+    ],
+    "location": {
+      "lat": 42.3358685,
+      "lng": -71.0513192
+    }
+  },
+  {
+    "id": "275-old-colony-ave",
+    "title": "275 Old Colony Ave",
+    "status": "completed",
+    "address": {
+      "street": "275 Old Colony Ave",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "275 Old Colony Ave is a recently constructed 22-unit condominium building in South Boston (built in 2016). It offers modern 2-bedroom, 2-bath apartments (~929-1,000 sqft) with amenities like in-unit laundry and garage parking. For example, Unit 6 (2 beds/2 baths, 929 sqft) sold for $774K in 2026, illustrating the modern features of the development.",
+    "specs": {
+      "type": "Apartment building",
+      "year": 2016,
+      "residences": 22,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/275-old-colony-ave/01.webp",
+      "images/projects/275-old-colony-ave/02.webp",
+      "images/projects/275-old-colony-ave/03.webp",
+      "images/projects/275-old-colony-ave/04.webp",
+      "images/projects/275-old-colony-ave/05.webp"
+    ],
+    "location": {
+      "lat": 42.330633,
+      "lng": -71.0530212
+    }
+  },
+  {
+    "id": "275-w-5th-st",
+    "title": "275 W 5th St",
+    "status": "completed",
+    "address": {
+      "street": "275 W 5th St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "275 W 5th St is a two-residence condominium property in South Boston's West Side. The building underwent residential redevelopment around 2000 and contains approximately 2,441 square feet across two condominium homes. The residences provide a combined six bedrooms and four bathrooms. Situated within the established West Fifth Street neighborhood, the property is close to West Broadway, public transportation, local restaurants, parks, and the Seaport.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2000,
+      "residences": 2,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "livingArea": 2441
+    },
+    "photos": [
+      "images/projects/275-w-5th-st/01.webp",
+      "images/projects/275-w-5th-st/02.webp",
+      "images/projects/275-w-5th-st/03.webp",
+      "images/projects/275-w-5th-st/04.webp",
+      "images/projects/275-w-5th-st/05.webp"
+    ],
+    "location": {
+      "lat": 42.3349862,
+      "lng": -71.04882479999999
+    }
+  },
+  {
+    "id": "280-gold-st",
+    "title": "280 Gold St",
+    "status": "completed",
+    "address": {
+      "street": "280 Gold St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "280 Gold St is a contemporary five-residence condominium development constructed in 2018 on South Boston's West Side. The building contains approximately 5,619 square feet of residential space, with five two-bedroom, two-bathroom residences. The homes feature modern open-concept layouts, hardwood flooring, contemporary kitchens, central air, and high-quality finishes, with select residences offering private roof decks and city views. The property is conveniently located near West Broadway, neighborhood restaurants and retail, public transportation, and the Seaport.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2018,
+      "residences": 5,
+      "bedrooms": 10,
+      "bathrooms": 10,
+      "livingArea": 5619
+    },
+    "photos": [
+      "images/projects/280-gold-st/01.webp",
+      "images/projects/280-gold-st/02.webp",
+      "images/projects/280-gold-st/03.webp",
+      "images/projects/280-gold-st/04.webp",
+      "images/projects/280-gold-st/05.webp",
+      "images/projects/280-gold-st/06.webp"
+    ],
+    "location": {
+      "lat": 42.3350955,
+      "lng": -71.0476362
+    }
+  },
+  {
+    "id": "281-gold-st",
+    "title": "281 Gold St",
+    "status": "completed",
+    "address": {
+      "street": "281 Gold St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "281 Gold St is a renovated three-level townhouse in South Boston's West Side. Originally constructed in 1890, the property underwent a substantial renovation in 2015 and now offers approximately 1,572 square feet of living space with four bedrooms and two and a half bathrooms. The home combines traditional South Boston townhouse character with modern finishes and updated systems, along with outdoor deck and patio space. Its location provides convenient access to West Broadway, neighborhood restaurants, public transportation, and the Seaport.",
+    "specs": {
+      "type": "Townhouse",
+      "year": 2015,
+      "residences": 1,
+      "bedrooms": 4,
+      "bathrooms": 2.5,
+      "livingArea": 1572
+    },
+    "photos": [
+      "images/projects/281-gold-st/01.webp",
+      "images/projects/281-gold-st/02.webp",
+      "images/projects/281-gold-st/03.webp",
+      "images/projects/281-gold-st/04.webp",
+      "images/projects/281-gold-st/05.webp"
+    ],
+    "location": {
+      "lat": 42.3349664,
+      "lng": -71.0478108
+    }
+  },
+  {
+    "id": "283-old-colony-ave",
+    "title": "283 Old Colony Ave",
+    "status": "completed",
+    "address": {
+      "street": "283 Old Colony Ave",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "283 Old Colony Ave is a newly constructed three-residence condominium development completed in 2019. The four-story mixed-use property features three modern one-bedroom residences with contemporary open-concept layouts, updated kitchens and baths, hardwood flooring, in-unit laundry, and modern building systems. Located near Andrew Square and Washington Village, the property offers convenient access to public transportation, Carson Beach, neighborhood restaurants, and the Seaport.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2019,
+      "residences": 3,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "livingArea": 2711
+    },
+    "photos": [
+      "images/projects/283-old-colony-ave/01.webp",
+      "images/projects/283-old-colony-ave/02.webp",
+      "images/projects/283-old-colony-ave/03.webp",
+      "images/projects/283-old-colony-ave/04.webp",
+      "images/projects/283-old-colony-ave/05.webp"
+    ],
+    "location": {
+      "lat": 42.330337,
+      "lng": -71.0528978
+    }
+  },
+  {
     "id": "3-cutler-ct",
     "title": "3 Cutler Ct",
     "status": "completed",
@@ -103,392 +558,34 @@
     }
   },
   {
-    "id": "5-mohawk-st",
-    "title": "5 Mohawk St",
+    "id": "419-w-4th-st",
+    "title": "419 W 4th St",
     "status": "completed",
     "address": {
-      "street": "5 Mohawk St",
+      "street": "419 W 4th St",
       "city": "South Boston",
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "5 Mohawk St #3 is a 2-bedroom, 2-bathroom condominium unit in South Boston built in 2015. The 1,034 sqft condo features modern finishes and in-unit laundry, typical of its construction date. The property remains as originally constructed with no significant redevelopment since its completion.",
+    "overview": "419 W 4th St is a two-residence condominium property in South Boston's West Side. Originally part of the neighborhood's historic residential building stock, the property underwent renovation around 1998 and was configured into two condominium residences. The homes provide approximately 1,911 square feet of combined living space, with four bedrooms and four bathrooms. Its West Fourth Street location offers convenient access to West Broadway, public transportation, neighborhood restaurants, parks, and the Seaport.",
     "specs": {
-      "type": "Condo",
-      "year": 2015,
-      "residences": 1,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "livingArea": 1034
-    },
-    "photos": [
-      "images/projects/5-mohawk-st/01.webp",
-      "images/projects/5-mohawk-st/02.webp",
-      "images/projects/5-mohawk-st/03.webp",
-      "images/projects/5-mohawk-st/04.webp",
-      "images/projects/5-mohawk-st/05.webp"
-    ],
-    "location": {
-      "lat": 42.3291821,
-      "lng": -71.0559214
-    }
-  },
-  {
-    "id": "6-pacific-st",
-    "title": "6 Pacific St",
-    "status": "completed",
-    "address": {
-      "street": "6 Pacific St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "6 Pacific St #2 is a 2-bedroom, 1-bathroom apartment in a multi-unit brick building in South Boston. The unit offers 1,050 square feet of living space. As part of a 19th-century rowhouse, it has not undergone a recent redevelopment and retains its original building structure.",
-    "specs": {
-      "type": "Apartment",
-      "year": null,
-      "residences": 1,
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "livingArea": 1050
-    },
-    "photos": [
-      "images/projects/6-pacific-st/01.webp",
-      "images/projects/6-pacific-st/02.webp",
-      "images/projects/6-pacific-st/03.webp",
-      "images/projects/6-pacific-st/04.webp",
-      "images/projects/6-pacific-st/05.webp",
-      "images/projects/6-pacific-st/06.webp"
-    ],
-    "location": {
-      "lat": 42.334174,
-      "lng": -71.0454318
-    }
-  },
-  {
-    "id": "12-mohawk-st",
-    "title": "12 Mohawk St",
-    "status": "completed",
-    "address": {
-      "street": "12 Mohawk St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "12 Mohawk St is a 25-unit apartment building in South Boston. Constructed in the 2010s, it features contemporary condo units (mostly 2-bed/2-bath, ~879 sqft each). The building offers modern finishes throughout; for example, Unit 5 (a 2-bed/2-bath, 879 sqft unit) sold in 2025, reflecting the new development.",
-    "specs": {
-      "type": "Apartment building",
-      "year": 2014,
-      "residences": 25,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [
-      "images/projects/12-mohawk-st/01.webp",
-      "images/projects/12-mohawk-st/02.webp",
-      "images/projects/12-mohawk-st/03.webp",
-      "images/projects/12-mohawk-st/04.webp",
-      "images/projects/12-mohawk-st/05.webp",
-      "images/projects/12-mohawk-st/06.webp",
-      "images/projects/12-mohawk-st/07.webp",
-      "images/projects/12-mohawk-st/08.webp"
-    ],
-    "location": {
-      "lat": 42.328712,
-      "lng": -71.0554762
-    }
-  },
-  {
-    "id": "14-16-jenkins-st",
-    "title": "14-16 Jenkins St",
-    "status": "completed",
-    "address": {
-      "street": "14-16 Jenkins St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "14-16 Jenkins St is a luxury multi-family property built in 2013 in South Boston. The building contains four upscale condo units totaling around 6,628 square feet (three 3-bedroom units and one 2-bedroom unit). For example, Unit 3 is a 3-bed/3.5-bath, 2,150 sqft condo that sold in 2022. All units feature modern finishes and two garage parking spaces each.",
-    "specs": {
-      "type": "Multi-family",
-      "year": 2013,
-      "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [
-      "images/projects/14-16-jenkins-st/01.webp",
-      "images/projects/14-16-jenkins-st/02.webp",
-      "images/projects/14-16-jenkins-st/03.webp",
-      "images/projects/14-16-jenkins-st/04.webp",
-      "images/projects/14-16-jenkins-st/05.webp",
-      "images/projects/14-16-jenkins-st/06.webp"
-    ],
-    "location": {
-      "lat": 42.3307151,
-      "lng": -71.0533938
-    }
-  },
-  {
-    "id": "49-rogers-st",
-    "title": "49 Rogers St",
-    "status": "completed",
-    "address": {
-      "street": "49 Rogers St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "49 Rogers St is a 7-unit condominium building in South Boston’s M Street Beach area. Completed in 2021, it features modern condos (mostly 2-bedroom, 2-bath units ~950 sqft each) with contemporary finishes. The building includes a mix of unit layouts including a 3-bed/2-bath penthouse, all built as part of the new construction.",
-    "specs": {
-      "type": "Apartment building",
-      "year": 2021,
-      "residences": 7,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [
-      "images/projects/49-rogers-st/01.webp",
-      "images/projects/49-rogers-st/02.webp",
-      "images/projects/49-rogers-st/03.webp",
-      "images/projects/49-rogers-st/04.webp",
-      "images/projects/49-rogers-st/05.webp"
-    ],
-    "location": {
-      "lat": 42.3288726,
-      "lng": -71.05539120000002
-    }
-  },
-  {
-    "id": "58-rogers-st",
-    "title": "58 Rogers St",
-    "status": "completed",
-    "address": {
-      "street": "58 Rogers St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "58 Rogers St is a modern 3-bedroom, 3.5-bathroom townhouse in South Boston. The 1,500 sqft home features a contemporary open layout and two garage parking spots. It appears to be newly built or recently updated (early 2020s) and was marketed for $5,600/month rent, indicating a high-end redevelopment.",
-    "specs": {
-      "type": "Townhouse",
-      "year": null,
-      "residences": 1,
-      "bedrooms": 3,
-      "bathrooms": 3.5,
-      "livingArea": 1500
-    },
-    "photos": [
-      "images/projects/58-rogers-st/01.webp",
-      "images/projects/58-rogers-st/02.webp",
-      "images/projects/58-rogers-st/03.webp",
-      "images/projects/58-rogers-st/04.webp",
-      "images/projects/58-rogers-st/05.webp"
-    ],
-    "location": {
-      "lat": 42.3287919,
-      "lng": -71.0551516
-    }
-  },
-  {
-    "id": "83-old-harbor-st",
-    "title": "83 Old Harbor St",
-    "status": "completed",
-    "address": {
-      "street": "83 Old Harbor St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "83 Old Harbor St is a small multi-unit building in South Boston. It contains multiple condos, including a 3-bed/2-bath 2,013 sqft unit and two 2-bed/2-bath units around 1,000 sqft each. Built in 1905, the building has four residences total and has been converted into condos, all sold individually.",
-    "specs": {
-      "type": "Apartment building",
-      "year": null,
-      "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [],
-    "location": {
-      "lat": 42.33200679999999,
-      "lng": -71.0476606
-    }
-  },
-  {
-    "id": "116-marine-rd",
-    "title": "116 Marine Rd",
-    "status": "completed",
-    "address": {
-      "street": "116 Marine Rd",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "116 Marine Rd is a small apartment building in South Boston, containing three condo units built around 2017. It includes a 3-bedroom, 2-bath 1,600 sqft unit and two 2-bedroom, 2-bath units (~1,000 sqft each). The building’s modern condos were completed in 2017 and feature open layouts and garage parking.",
-    "specs": {
-      "type": "Apartment building",
-      "year": 2017,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [
-      "images/projects/116-marine-rd/01.webp",
-      "images/projects/116-marine-rd/02.webp",
-      "images/projects/116-marine-rd/03.webp",
-      "images/projects/116-marine-rd/04.webp",
-      "images/projects/116-marine-rd/05.webp",
-      "images/projects/116-marine-rd/06.webp"
-    ],
-    "location": {
-      "lat": 42.3308195,
-      "lng": -71.034402
-    }
-  },
-  {
-    "id": "158-k-st",
-    "title": "158 K St",
-    "status": "completed",
-    "address": {
-      "street": "158 K St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "158 K St is a 4-bedroom, 3-bathroom single-family home in South Boston, built in 1995. The 1,372 sqft attached residence was updated with modern features like central AC and a garage. It is currently valued around $1.05M and has not undergone any further redevelopment since its original construction.",
-    "specs": {
-      "type": "Single Family Residence",
-      "year": null,
-      "residences": 1,
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "livingArea": 1372
-    },
-    "photos": [],
-    "location": {
-      "lat": 42.337491,
-      "lng": -71.0373184
-    }
-  },
-  {
-    "id": "160-k-st",
-    "title": "160 K St",
-    "status": "completed",
-    "address": {
-      "street": "160 K St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "160 K St is a multi-family property in South Boston containing two residences. In total it has 4 bedrooms and 4 bathrooms across 2,200 sqft of living space. Built in 1994, it consists of two attached units and has had no major new redevelopment since its construction; it sold for $1.275M in 2020.",
-    "specs": {
-      "type": "Multi-family",
-      "year": null,
+      "type": "Condominium",
+      "year": 1998,
       "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [],
-    "location": {
-      "lat": 42.3374028,
-      "lng": -71.03731499999999
-    }
-  },
-  {
-    "id": "160-o-st",
-    "title": "160 O St",
-    "status": "completed",
-    "address": {
-      "street": "160 O St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "160 O St is a 3-unit apartment building in South Boston’s M Street Beach area. The brick structure is older but contains modern condos (for example, a 2-bed/1.5-bath 978 sqft unit and two 1-bed/1-bath units around 500 sqft). The building was constructed early in the 20th century and has no recent redevelopment.",
-    "specs": {
-      "type": "Apartment building",
-      "year": null,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "livingArea": 1911
     },
     "photos": [
-      "images/projects/160-o-st/01.webp",
-      "images/projects/160-o-st/02.webp",
-      "images/projects/160-o-st/03.webp",
-      "images/projects/160-o-st/04.webp",
-      "images/projects/160-o-st/05.webp",
-      "images/projects/160-o-st/06.webp"
+      "images/projects/419-w-4th-st/01.webp",
+      "images/projects/419-w-4th-st/02.webp",
+      "images/projects/419-w-4th-st/03.webp",
+      "images/projects/419-w-4th-st/04.webp",
+      "images/projects/419-w-4th-st/05.webp"
     ],
     "location": {
-      "lat": 42.3327359,
-      "lng": -71.0289925
-    }
-  },
-  {
-    "id": "181-h-st",
-    "title": "181 H St",
-    "status": "completed",
-    "address": {
-      "street": "181 H St",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "181 H St is a historic 3-unit building in South Boston. It features two 1-bedroom, 2-bath condos (~526-644 sqft each) and one 2-bedroom, 1-bath condo (~1,000 sqft). Built in 1900, the property remains largely original and functions as a 2/3-family residence without modern redevelopment.",
-    "specs": {
-      "type": "Apartment building",
-      "year": null,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [
-      "images/projects/181-h-st/01.webp",
-      "images/projects/181-h-st/02.webp",
-      "images/projects/181-h-st/03.webp",
-      "images/projects/181-h-st/04.webp",
-      "images/projects/181-h-st/05.webp",
-      "images/projects/181-h-st/06.webp",
-      "images/projects/181-h-st/07.webp",
-      "images/projects/181-h-st/08.webp"
-    ],
-    "location": {
-      "lat": 42.3316842,
-      "lng": -71.04158699999999
-    }
-  },
-  {
-    "id": "275-old-colony-ave",
-    "title": "275 Old Colony Ave",
-    "status": "completed",
-    "address": {
-      "street": "275 Old Colony Ave",
-      "city": "South Boston",
-      "state": "MA",
-      "zip": "02127"
-    },
-    "overview": "275 Old Colony Ave is a recently constructed 22-unit condominium building in South Boston (built in 2016). It offers modern 2-bedroom, 2-bath apartments (~929-1,000 sqft) with amenities like in-unit laundry and garage parking. For example, Unit 6 (2 beds/2 baths, 929 sqft) sold for $774K in 2026, illustrating the modern features of the development.",
-    "specs": {
-      "type": "Apartment building",
-      "year": 2016,
-      "residences": 22,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
-    },
-    "photos": [],
-    "location": {
-      "lat": 42.330633,
-      "lng": -71.0530212
+      "lat": 42.335759,
+      "lng": -71.0483082
     }
   },
   {
@@ -510,10 +607,48 @@
       "bathrooms": 2,
       "livingArea": 1720
     },
-    "photos": [],
+    "photos": [
+      "images/projects/447-w-4th-st/01.webp",
+      "images/projects/447-w-4th-st/02.webp",
+      "images/projects/447-w-4th-st/03.webp",
+      "images/projects/447-w-4th-st/04.webp"
+    ],
     "location": {
       "lat": 42.3352826,
       "lng": -71.0475829
+    }
+  },
+  {
+    "id": "449-e-8th-st",
+    "title": "449 E 8th St",
+    "status": "completed",
+    "address": {
+      "street": "449 E 8th St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "449 E 8th St is a three-family residential property in South Boston's established East Side. The building contains approximately 3,642 square feet across three residences, with six bedrooms and three bathrooms in total. Renovated around 2010, the property maintains a traditional multifamily configuration while providing updated residential living within one of South Boston's established neighborhood corridors. Its location offers convenient access to the waterfront, parks, restaurants, public transportation, and East Broadway.",
+    "specs": {
+      "type": "Multifamily",
+      "year": 2010,
+      "residences": 3,
+      "bedrooms": 6,
+      "bathrooms": 3,
+      "livingArea": 3642
+    },
+    "photos": [
+      "images/projects/449-e-8th-st/01.webp",
+      "images/projects/449-e-8th-st/02.webp",
+      "images/projects/449-e-8th-st/03.webp",
+      "images/projects/449-e-8th-st/04.webp",
+      "images/projects/449-e-8th-st/05.webp",
+      "images/projects/449-e-8th-st/06.webp",
+      "images/projects/449-e-8th-st/07.webp"
+    ],
+    "location": {
+      "lat": 42.3311826,
+      "lng": -71.0431041
     }
   },
   {
@@ -579,6 +714,68 @@
     "location": {
       "lat": 42.3346746,
       "lng": -71.04576569999999
+    }
+  },
+  {
+    "id": "49-rogers-st",
+    "title": "49 Rogers St",
+    "status": "completed",
+    "address": {
+      "street": "49 Rogers St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "49 Rogers St is a 7-unit condominium building in South Boston’s M Street Beach area. Completed in 2021, it features modern condos (mostly 2-bedroom, 2-bath units ~950 sqft each) with contemporary finishes. The building includes a mix of unit layouts including a 3-bed/2-bath penthouse, all built as part of the new construction.",
+    "specs": {
+      "type": "Apartment building",
+      "year": 2021,
+      "residences": 7,
+      "bedrooms": null,
+      "bathrooms": null,
+      "livingArea": null
+    },
+    "photos": [
+      "images/projects/49-rogers-st/01.webp",
+      "images/projects/49-rogers-st/02.webp",
+      "images/projects/49-rogers-st/03.webp",
+      "images/projects/49-rogers-st/04.webp",
+      "images/projects/49-rogers-st/05.webp"
+    ],
+    "location": {
+      "lat": 42.3288726,
+      "lng": -71.05539120000002
+    }
+  },
+  {
+    "id": "5-mohawk-st",
+    "title": "5 Mohawk St",
+    "status": "completed",
+    "address": {
+      "street": "5 Mohawk St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "5 Mohawk St #3 is a 2-bedroom, 2-bathroom condominium unit in South Boston built in 2015. The 1,034 sqft condo features modern finishes and in-unit laundry, typical of its construction date. The property remains as originally constructed with no significant redevelopment since its completion.",
+    "specs": {
+      "type": "Condo",
+      "year": 2015,
+      "residences": 1,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "livingArea": 1034
+    },
+    "photos": [
+      "images/projects/5-mohawk-st/01.webp",
+      "images/projects/5-mohawk-st/02.webp",
+      "images/projects/5-mohawk-st/03.webp",
+      "images/projects/5-mohawk-st/04.webp",
+      "images/projects/5-mohawk-st/05.webp"
+    ],
+    "location": {
+      "lat": 42.3291821,
+      "lng": -71.0559214
     }
   },
   {
@@ -680,6 +877,41 @@
     }
   },
   {
+    "id": "581-e-broadway",
+    "title": "581 E Broadway",
+    "status": "completed",
+    "address": {
+      "street": "581 E Broadway",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "581 E Broadway is a two-residence condominium property created through a residential conversion completed in 2002. The historic South Boston structure has been configured into two spacious residences totaling approximately 3,913 square feet, with seven bedrooms and five bathrooms. The property combines the scale and character of an older South Boston building with updated residential interiors and benefits from its prominent East Broadway location near restaurants, retail, public transportation, and the waterfront.",
+    "specs": {
+      "type": "Condominium",
+      "year": 2002,
+      "residences": 2,
+      "bedrooms": 7,
+      "bathrooms": 5,
+      "livingArea": 3913
+    },
+    "photos": [
+      "images/projects/581-e-broadway/01.webp",
+      "images/projects/581-e-broadway/02.webp",
+      "images/projects/581-e-broadway/03.webp",
+      "images/projects/581-e-broadway/04.webp",
+      "images/projects/581-e-broadway/05.webp",
+      "images/projects/581-e-broadway/06.webp",
+      "images/projects/581-e-broadway/07.webp",
+      "images/projects/581-e-broadway/08.webp",
+      "images/projects/581-e-broadway/09.webp"
+    ],
+    "location": {
+      "lat": 42.3353176,
+      "lng": -71.0409536
+    }
+  },
+  {
     "id": "594-e-6th-st",
     "title": "594 E 6th St",
     "status": "completed",
@@ -712,6 +944,38 @@
     }
   },
   {
+    "id": "6-pacific-st",
+    "title": "6 Pacific St",
+    "status": "completed",
+    "address": {
+      "street": "6 Pacific St",
+      "city": "South Boston",
+      "state": "MA",
+      "zip": "02127"
+    },
+    "overview": "6 Pacific St #2 is a 2-bedroom, 1-bathroom apartment in a multi-unit brick building in South Boston. The unit offers 1,050 square feet of living space. As part of a 19th-century rowhouse, it has not undergone a recent redevelopment and retains its original building structure.",
+    "specs": {
+      "type": "Apartment",
+      "year": null,
+      "residences": 1,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "livingArea": 1050
+    },
+    "photos": [
+      "images/projects/6-pacific-st/01.webp",
+      "images/projects/6-pacific-st/02.webp",
+      "images/projects/6-pacific-st/03.webp",
+      "images/projects/6-pacific-st/04.webp",
+      "images/projects/6-pacific-st/05.webp",
+      "images/projects/6-pacific-st/06.webp"
+    ],
+    "location": {
+      "lat": 42.334174,
+      "lng": -71.0454318
+    }
+  },
+  {
     "id": "609-e-5th-st",
     "title": "609 E 5th St",
     "status": "completed",
@@ -739,28 +1003,37 @@
     }
   },
   {
-    "id": "621-e-2nd-st",
-    "title": "621 E 2nd St",
+    "id": "621-e-3rd-st",
+    "title": "621 E 3rd St",
     "status": "completed",
     "address": {
-      "street": "621 E 2nd St",
+      "street": "621 E 3rd St",
       "city": "South Boston",
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "621 E 2nd St is a multi-family building in South Boston comprising two units. The property totals 4 bedrooms and 3 bathrooms over 2,430 sqft on a 6,970 sqft lot. Built in 1910, it was last sold in 1988 and remains in its original configuration with no recent redevelopment.",
+    "overview": "621 E 3rd St is a three-residence condominium property in South Boston's established East Side neighborhood. Originally dating to the late 19th century, the property was substantially renovated and converted into its current residential configuration around 2010. The three residences provide approximately 2,408 square feet of combined living space, with six bedrooms and five bathrooms. Its location offers convenient access to the waterfront, neighborhood restaurants and retail, public transportation, and South Boston's historic residential streets.",
     "specs": {
-      "type": "Multi-family",
-      "year": null,
-      "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Condominium",
+      "year": 2010,
+      "residences": 3,
+      "bedrooms": 6,
+      "bathrooms": 5,
+      "livingArea": 2408
     },
-    "photos": [],
+    "photos": [
+      "images/projects/621-e-3rd-st/01.webp",
+      "images/projects/621-e-3rd-st/02.webp",
+      "images/projects/621-e-3rd-st/03.webp",
+      "images/projects/621-e-3rd-st/04.webp",
+      "images/projects/621-e-3rd-st/05.webp",
+      "images/projects/621-e-3rd-st/06.webp",
+      "images/projects/621-e-3rd-st/07.webp",
+      "images/projects/621-e-3rd-st/08.webp"
+    ],
     "location": {
-      "lat": 42.3369398,
-      "lng": -71.03835579999999
+      "lat": 42.3363522,
+      "lng": -71.0348532
     }
   },
   {
@@ -853,41 +1126,36 @@
     }
   },
   {
-    "id": "1824-columbia-rd",
-    "title": "1824 Columbia Rd",
+    "id": "83-old-harbor-st",
+    "title": "83 Old Harbor St",
     "status": "completed",
     "address": {
-      "street": "1824 Columbia Rd",
+      "street": "83 Old Harbor St",
       "city": "South Boston",
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "1824 Columbia Rd is a high-end condominium building in South Boston overlooking Pleasure Bay. Completed in 2021, it offers luxury units with features like water views and 2-car garages. For example, Unit 3 is a 3-bed/3.5-bath, 2,435 sqft condo that sold for $2.58M in 2022, reflecting the upscale finishes of the development.",
+    "overview": "83 Old Harbor St is a historic three-residence condominium property in South Boston's Thomas Park and Telegraph Hill area. Originally constructed around 1905, the building has been adapted into three spacious residential homes totaling approximately 4,036 square feet, with seven bedrooms and six bathrooms. The property combines the character of early-20th-century South Boston architecture with updated condominium interiors and private residential amenities. Its location provides convenient access to Thomas Park, the waterfront, neighborhood restaurants, shopping, and public transportation.",
     "specs": {
       "type": "Condominium",
-      "year": 2021,
-      "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "year": 1905,
+      "residences": 3,
+      "bedrooms": 7,
+      "bathrooms": 6,
+      "livingArea": 4036
     },
     "photos": [
-      "images/projects/1824-columbia-rd/01.webp",
-      "images/projects/1824-columbia-rd/02.webp",
-      "images/projects/1824-columbia-rd/03.webp",
-      "images/projects/1824-columbia-rd/04.webp",
-      "images/projects/1824-columbia-rd/05.webp",
-      "images/projects/1824-columbia-rd/06.webp",
-      "images/projects/1824-columbia-rd/07.webp",
-      "images/projects/1824-columbia-rd/08.webp",
-      "images/projects/1824-columbia-rd/09.webp",
-      "images/projects/1824-columbia-rd/10.webp",
-      "images/projects/1824-columbia-rd/11.webp",
-      "images/projects/1824-columbia-rd/12.webp"
+      "images/projects/83-old-harbor-st/01.webp",
+      "images/projects/83-old-harbor-st/02.webp",
+      "images/projects/83-old-harbor-st/03.webp",
+      "images/projects/83-old-harbor-st/04.webp",
+      "images/projects/83-old-harbor-st/05.webp",
+      "images/projects/83-old-harbor-st/06.webp",
+      "images/projects/83-old-harbor-st/07.webp"
     ],
     "location": {
-      "lat": 42.3326894,
-      "lng": -71.0277486
+      "lat": 42.33200679999999,
+      "lng": -71.0476606
     }
   }
 ]
