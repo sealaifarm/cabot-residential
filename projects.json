@@ -464,7 +464,7 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "3 Cutler Ct is a single-family home in South Boston that underwent a comprehensive renovation. It offers 2 bedrooms, 2.5 bathrooms, and 1,224 square feet of living space. The modernized residence was completed and sold in 2024.",
+    "overview": "3 Cutler Ct is a single-family home in South Boston that underwent a comprehensive renovation. It offers 2 bedrooms, 2.5 bathrooms, and 1,224 square feet of living space. The modernized residence was completed and sold in 2030.",
     "specs": {
       "type": "Single Family Residence",
       "year": 2024,
@@ -485,8 +485,8 @@
       "images/projects/3-cutler-ct/09.webp"
     ],
     "location": {
-      "lat": 42.3335961,
-      "lng": -71.03433520000002
+      "lat": 42.3335889,
+      "lng": -71.0343275
     }
   },
   {
@@ -1156,6 +1156,36 @@
     "location": {
       "lat": 42.33200679999999,
       "lng": -71.0476606
+    }
+  },
+  {
+    "id": "the-cabin-in-the-woods",
+    "title": "The Cabin in the Woods",
+    "status": "completed",
+    "address": {
+      "street": "1 Whispering Pine Trail",
+      "city": "Blackwood Hollow",
+      "state": "MA",
+      "zip": "00017"
+    },
+    "overview": "Hidden deep within the Blackwood Forest, The Cabin in the Woods is a secluded three-story timber residence surrounded by towering pine trees, mist-covered hills, and a small private lake known as Mirror Lake.\n\nOriginally built as a hunting retreat, the cabin has since been transformed into a comfortable woodland residence while retaining its rustic character. The main living room features a massive stone fireplace, exposed wooden beams, antique-style furnishings, and floor-to-ceiling windows overlooking the forest.\n\nA narrow staircase leads to two upper bedrooms and a small reading loft, while the lower level contains a recreation room, storage area, and a concealed cellar. Outside, a covered porch wraps around the front of the cabin, with a stone fire pit located a short walk from the house.\n\nThe property is accessible by a single winding road through the forest. There are no neighboring residences within several miles, making the cabin exceptionally private.\n\nLocal maps mark the surrounding woodland simply as Blackwood Forest, and several old hiking trails disappear into the trees beyond the property.",
+    "specs": {
+      "type": "Forest Cabin",
+      "year": 1987,
+      "residences": 1,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "livingArea": 2760
+    },
+    "photos": [
+      "https://cabot-admin.sealaifarm.workers.dev/images/c4765ad9-93b8-44cc-8cf3-baf99e5545cb.avif",
+      "https://cabot-admin.sealaifarm.workers.dev/images/f2323d1e-caa1-480c-a9fb-a614c5d19817.jpg",
+      "https://cabot-admin.sealaifarm.workers.dev/images/bef27535-5274-4def-84ce-80f1bbdb912b.jpg",
+      "https://cabot-admin.sealaifarm.workers.dev/images/c8256c6b-a31c-4eff-84c2-22104a751e21.webp"
+    ],
+    "location": {
+      "lat": 47.2194,
+      "lng": -91.8042
     }
   }
 ]
