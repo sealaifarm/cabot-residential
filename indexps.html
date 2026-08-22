@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabot Residential</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" href="favicon-64x64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+    --ink:#231F1C;
+    --ink-2:#4A443E;
+
+    --paper:#FFFFFF;
+    --ivory:#F5F3F1;
+    --ivory-2:#EFE9E1;
+
+    --stone:#9C948A;
+    --stone-dark:#6E655C;
+
+    --accent:#C46A4A;
+    --accent-dark:#A6543A;
+    --accent-tint:#F3E1D9;
+
+    --line:rgba(35,31,28,.10);
+    --line-soft:rgba(35,31,28,.06);
+    --line-dark:rgba(255,255,255,.12);
+
+    --radius-lg:22px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --shadow:0 20px 44px -24px rgba(35,31,28,.22);
+}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .disp{font-family:'Bricolage Grotesque', sans-serif;}
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    font-size:11px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--stone-dark);
+    display:inline-flex; align-items:center; gap:12px;
+  }
+  .eyebrow::before{
+    content:''; width:22px; height:1px; background:var(--stone-dark); flex-shrink:0;
+  }
+  .wrap{max-width:1360px; margin:0 auto; padding:0 56px;}
+  @media(max-width:860px){ .wrap{padding:0 24px;} }
+
+  /* reveal animation */
+  .reveal{
+    opacity:0; transform:translateY(30px); filter:blur(4px);
+    transition:opacity 1.05s cubic-bezier(.16,1,.3,1), transform 1.05s cubic-bezier(.16,1,.3,1), filter 1.05s cubic-bezier(.16,1,.3,1);
+    will-change:opacity, transform, filter;
+  }
+  .reveal.in{opacity:1; transform:translateY(0); filter:blur(0);}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1; transform:none; filter:none; transition:none;}
+  }
+
+  /* ---------------- NAV ---------------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    padding:18px 56px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:padding 0.4s ease, box-shadow 0.4s ease;
+  }
+  /* header.nav.solid{
+    padding:18px 56px;
+    box-shadow:0 12px 34px -24px rgba(33,31,27,.4);
+  } */
+  @media(max-width:860px){
+    header.nav, header.nav.solid{padding:13px 24px;}
+  }
+  .logo{ display:flex; align-items:center; }
+  .logo img{ height:48px; width:auto; display:block; }
+  .logo-fallback{
+    font-family:'Bricolage Grotesque', sans-serif; font-size:17px; letter-spacing:0.01em; color:var(--ink); font-weight:700;
+  }
+  nav.links{display:flex; gap:42px; margin-left:auto;}
+  nav.links a{
+    font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-2);
+    position:relative; padding-bottom:3px; transition:color .3s ease;
+  }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--ink);
+    transition:width 0.35s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+  nav.links a:hover{color:var(--ink);}
+
+  /* ---------------- HAMBURGER ---------------- */
+  .hamburger{
+    display:none; position:relative; width:26px; height:14px;
+    background:none; border:none; padding:0; cursor:pointer; z-index:210;
+  }
+  .hamburger span{
+    position:absolute; left:0; width:100%; height:1.5px; background:var(--ink);
+    transition:transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease;
+  }
+  .hamburger span:nth-child(1){ top:0; }
+  .hamburger span:nth-child(2){ top:100%; transform:translateY(-100%); }
+  .hamburger.open span:nth-child(1){ top:50%; transform:translateY(-50%) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ top:50%; transform:translateY(-50%) rotate(-45deg); }
+
+  /* ---------------- MOBILE MENU ---------------- */
+  .mobile-menu{
+    position:fixed; inset:0; z-index:150;
+    background:rgba(252,250,246,0.98); backdrop-filter:blur(18px);
+    display:flex; flex-direction:column; justify-content:center;
+    padding:32px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity 0.5s cubic-bezier(.16,1,.3,1), visibility 0s linear 0.5s;
+  }
+  .mobile-menu.open{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transition:opacity 0.5s cubic-bezier(.16,1,.3,1), visibility 0s linear 0s;
+  }
+  .mobile-menu a{
+    font-family:'Bricolage Grotesque', sans-serif; font-size:clamp(30px,9vw,44px); font-weight:600;
+    color:var(--ink); padding:12px 0; border-bottom:1px solid var(--line);
+    opacity:0; transform:translateY(16px);
+    transition:opacity 0.5s cubic-bezier(.16,1,.3,1), transform 0.5s cubic-bezier(.16,1,.3,1);
+  }
+  .mobile-menu.open a{ opacity:1; transform:translateY(0); }
+  .mobile-menu.open a:nth-child(1){ transition-delay:0.08s; }
+  .mobile-menu.open a:nth-child(2){ transition-delay:0.14s; }
+  .mobile-menu.open a:nth-child(3){ transition-delay:0.2s; }
+  .mobile-menu.open a:nth-child(4){ transition-delay:0.26s; }
+
+  @media(max-width:860px){
+    nav.links{ display:none; }
+    .hamburger{ display:block; }
+  }
+
+  /* ---------------- HERO (split layout) ---------------- */
+  .hero{
+    display:grid; grid-template-columns:minmax(320px,46%) 1fr;
+    min-height:88vh; background:var(--paper);
+    padding:100px 24px 24px 24px;
+    gap:24px;
+  }
+  .hero-copy{
+    display:flex; flex-direction:column; justify-content:center;
+    padding:126px 64px 64px 56px;
+  }
+  .hero-copy .eyebrow{
+    opacity:0; animation:fadeUp 0.9s 0.15s ease forwards;
+  }
+  h1.hero-title{
+    margin-top:22px;
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:600;
+    font-size:clamp(40px, 4.6vw, 66px);
+    line-height:1.04;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+    opacity:0; animation:fadeUp 1s 0.3s ease forwards;
+  }
+  h1.hero-title .accent{ color:var(--accent); }
+  .hero-sub{
+    margin-top:24px; font-size:16px; line-height:1.75; color:var(--stone-dark);
+    max-width:400px; font-weight:300;
+    opacity:0; animation:fadeUp 1s 0.45s ease forwards;
+  }
+  .hero-cta{
+    margin-top:42px; display:flex; gap:16px; flex-wrap:wrap;
+    opacity:0; animation:fadeUp 1s 0.6s ease forwards;
+  }
+  .btn{
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500;
+    padding:16px 30px; display:inline-flex; align-items:center; justify-content:center;
+    border-radius:var(--radius-sm);
+    transition: all .5s ease;
+  }
+  .btn-dark{ background:var(--accent); color:#fff; }
+  .btn-dark:hover{ background:var(--accent-dark); }
+  .btn-line{ border:1px solid var(--line); color:var(--ink); }
+  .btn-line:hover{ border-color:#EBEBEB; background:#EBEBEB; color: var(--ink); }
+  .hero-media{ position:relative; overflow:hidden; background:var(--ink); border-radius:var(--radius-lg); }
+  .hero-media img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    transform:scale(1.06); animation:heroZoom 18s ease-out forwards;
+  }
+  .hero-media .scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,18,15,0.05) 60%, rgba(20,18,15,0.35) 100%);
+  }
+  .hero-tag{
+    position:absolute; left:20px; bottom:20px; z-index:2;
+    background:rgba(255,255,255,0.94); color:var(--ink);
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:500;
+    padding:9px 16px; border-radius:999px;
+  }
+  @keyframes heroZoom{ from{transform:scale(1.06);} to{transform:scale(1);} }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
+
+  @media(max-width:940px){
+    .hero{ grid-template-columns:1fr; min-height:auto; }
+    .hero-media{ order:-1; height:46vh; }
+    .hero-copy{ padding:44px 8px 56px; }
+  }
+
+  /* ---------------- STORY ---------------- */
+  .story{ padding:170px 0 130px; background:var(--paper); }
+  .story .grid{ display:grid; grid-template-columns:0.9fr 1.4fr; gap:90px; align-items:start; }
+  @media(max-width:940px){ .story .grid{grid-template-columns:1fr; gap:40px;} }
+  .story .label-col .eyebrow{margin-bottom:22px;}
+  .story .label-col .num{ font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:16px; color:var(--stone-dark); line-height:1.5; max-width:220px; }
+  .story p.lead{
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px,2.8vw,36px);
+    line-height:1.32; color:var(--ink); letter-spacing:-0.01em;
+  }
+  .story p.support{ margin-top:28px; font-size:15px; line-height:1.9; color:var(--stone-dark); max-width:560px; font-weight:300; }
+
+  /* ---------------- STATS ---------------- */
+  .stats{ background:var(--paper); padding:0 0 130px; }
+  .stats-card{ background:var(--ivory); border-radius:var(--radius-lg); padding:64px 56px; }
+  .stats .wrap > .stats-card{ display:grid; grid-template-columns:repeat(4,1fr); }
+  @media(max-width:760px){ .stats-card{padding:40px 28px;} .stats .wrap > .stats-card{grid-template-columns:repeat(2,1fr); row-gap:40px;} }
+  .stat{ border-left:1px solid var(--line); padding:0 28px; }
+  .stat:first-child{border-left:none;}
+  @media(max-width:760px){ .stat:nth-child(odd){border-left:none;} .stat{border-left:1px solid var(--line);} }
+  .stat .n{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:clamp(30px,3.8vw,46px); color:var(--ink); letter-spacing:-0.01em;}
+  .stat .l{ margin-top:10px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-dark); }
+
+  /* ---------------- VALUES ---------------- */
+  .values{ background:var(--paper); padding:0 0 150px; color:var(--ink); }
+  .values-head{ margin-bottom:64px; }
+  .values-head .eyebrow{ margin-bottom:18px; }
+  .values-head h2{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:clamp(28px,3.2vw,42px); max-width:600px; letter-spacing:-0.01em; color:var(--ink); }
+  .values-head p{ margin-top:20px; max-width:460px; font-size:14.5px; line-height:1.8; color:var(--stone-dark); font-weight:300; }
+  .value-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  @media(max-width:760px){ .value-grid{grid-template-columns:1fr;} }
+  .value{
+    background:var(--ivory); border-radius:var(--radius-md); padding:44px 40px;
+    transition:box-shadow 0.4s ease, transform 0.4s ease;
+  }
+  .value:hover{ box-shadow:var(--shadow); transform:translateY(-3px); }
+  .value .icon{ width:30px; height:30px; color:var(--ink); margin-bottom:30px; }
+  .value h3{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:19px; margin-bottom:12px; color:var(--ink); }
+  .value p{ font-size:13.5px; line-height:1.85; color:var(--stone-dark); max-width:420px; font-weight:300; }
+
+  /* ---------------- DEVELOPMENTS ---------------- */
+  .dev{ padding:0 0 130px; background:var(--paper); }
+  .dev-head{ margin-bottom:56px; }
+  .dev-head h2{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:clamp(28px,3.2vw,42px); margin-top:16px; letter-spacing:-0.01em;}
+  .dev-more{ margin-top:56px; text-align:center; }
+  .dev-more .btn{ min-width:260px; }
+
+  .dev-block{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .dev-block + .dev-block{ margin-top:28px; }
+  @media(max-width:900px){
+    .dev-block{ grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:600px){
+    .dev-block{ grid-template-columns:1fr; }
+  }
+
+  .card{
+    background:var(--paper); border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+    display:flex; flex-direction:column; box-shadow:0 1px 3px rgba(35,31,28,.08);
+    transition:box-shadow .45s ease, transform .45s ease;
+  }
+  .card:hover{ box-shadow:var(--shadow); transform:translateY(-4px); }
+
+  .card .photo{ position:relative; overflow:hidden; flex-shrink:0; background:var(--ivory); }
+  .card .photo{ aspect-ratio:4 / 5; }
+
+  .card .ph{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    transition:transform 1.1s cubic-bezier(.2,.7,.2,1);
+  }
+  .card:hover .ph{ transform:scale(1.045); }
+  .card .status{
+    position:absolute; top:16px; left:16px; font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--ink); background:rgba(255,255,255,0.92); padding:6px 12px; border-radius:2px;
+    z-index:2; font-family:'Jost',sans-serif; font-weight:500;
+    display:none;
+  }
+  .card .arrow{
+    position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%;
+    background:rgba(255,255,255,0.92); display:flex; align-items:center; justify-content:center;
+    opacity:0; transform:translateY(-6px); transition:all 0.35s ease; color:var(--ink); z-index:2;
+  }
+  .card:hover .arrow{ opacity:1; transform:translateY(0); }
+  .card .arrow svg{width:13px; height:13px;}
+  .card .caption{
+    padding:22px 24px 26px;
+    display:flex; flex-direction:column; justify-content:center; border-top:1px solid var(--line);
+  }
+  .card .caption .tag{
+    display:inline-flex; width: fit-content; font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--stone-dark); background:var(--ivory); padding:4px 10px; border-radius:999px;
+    margin-bottom:11px; font-weight:500;
+  }
+  .card .caption .tag.tag-active{ color:var(--accent-dark); background:var(--accent-tint); }
+  .card .caption h4{
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:18px; color:var(--ink); margin-bottom:6px;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .card .caption p{
+    font-size:12px; color:var(--stone-dark); letter-spacing:0.02em;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+
+  /* ---------------- MAP ---------------- */
+  .map-section{ background:var(--paper); padding:150px 0 130px; color:var(--ink); overflow:hidden; }
+  .map-head{ margin-bottom:60px; }
+  .map-head .eyebrow{ margin-bottom:18px; }
+  .map-head h2{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:clamp(28px,3.2vw,42px); max-width:640px; letter-spacing:-0.01em; color:var(--ink); }
+  .map-head p{ margin-top:20px; max-width:480px; font-size:14.5px; line-height:1.8; color:var(--stone-dark); font-weight:300; }
+
+  .map-body{ display:block; }
+
+  .map-canvas-wrap{
+    position:relative; border-radius:var(--radius-lg); overflow:hidden;
+    height:640px; background:#1a1d1f;
+  }
+  #gmap{ position:absolute; inset:0; width:100%; height:100%; }
+  .map-fallback{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:40px; gap:10px; background:#1a1d1f; z-index:1;
+  }
+  .map-fallback p{ font-size:13px; color:rgba(255,255,255,0.45); max-width:320px; line-height:1.7; }
+  .map-fallback code{ font-size:11px; color:rgba(255,255,255,0.65); background:rgba(255,255,255,0.08); padding:3px 8px; border-radius:4px; }
+
+  /* ---- marker label pin ---- */
+  .map-pin{
+    font-family:'Jost', sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.01em;
+    color:var(--ink); background:var(--paper); padding:8px 14px; border-radius:999px;
+    box-shadow:0 4px 14px rgba(20,18,15,.28); white-space:nowrap; cursor:pointer;
+    border:1px solid rgba(255,255,255,.6); transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .map-pin:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(20,18,15,.34); }
+  .map-pin.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+  /* ---- preview card overlay (Airbnb-style) ---- */
+  .map-preview{
+    position:absolute; width:272px; background:var(--paper); border-radius:var(--radius-md);
+    overflow:hidden; box-shadow:var(--shadow); z-index:50;
+    transform:translate(-50%, calc(-100% - 18px));
+    opacity:0; pointer-events:none; transition:opacity .22s ease, transform .22s ease;
+  }
+  .map-preview.open{ opacity:1; pointer-events:auto; transform:translate(-50%, calc(-100% - 10px)); }
+  .map-preview::after{
+    content:''; position:absolute; left:50%; bottom:-8px; width:16px; height:16px; background:var(--paper);
+    transform:translateX(-50%) rotate(45deg); box-shadow:3px 3px 6px rgba(35,31,28,.06); z-index:-1;
+  }
+  .map-preview .mp-photo{ position:relative; aspect-ratio:1/1; background:var(--ivory); overflow:hidden; }
+  .map-preview .mp-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .map-preview .mp-ribbon{
+    position:absolute; top:12px; left:12px; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink); background:rgba(255,255,255,0.94); padding:6px 11px; border-radius:2px; font-weight:500;
+  }
+  .map-preview .mp-close{
+    position:absolute; top:10px; right:10px; width:26px; height:26px; border-radius:50%;
+    background:rgba(255,255,255,0.94); display:flex; align-items:center; justify-content:center; cursor:pointer;
+    color:var(--ink); transition:background .2s ease;
+  }
+  .map-preview .mp-close:hover{ background:#fff; }
+  .map-preview .mp-close svg{ width:11px; height:11px; }
+  .map-preview .mp-body{ padding:16px 18px 8px; }
+  .map-preview .mp-type{
+    display:inline-flex; font-size:10px; letter-spacing:0.09em; text-transform:uppercase;
+    color:var(--stone-dark); background:var(--ivory); padding:4px 10px; border-radius:999px; margin-bottom:10px; font-weight:500;
+  }
+  .map-preview .mp-title{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:16px; color:var(--ink); margin-bottom:5px; }
+  .map-preview .mp-addr{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; letter-spacing:0.02em; font-size: 16px; color: var(--ink); margin-bottom: 5px; }
+  .map-preview .mp-city{ font-size: 12.5px; letter-spacing:0.02em; color: var(--stone-dark); margin-bottom: 8px; }
+  .map-preview .mp-link{
+    display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink); font-weight:500; border-top:1px solid var(--line); padding-top:13px; width:100%;
+  }
+  .map-preview .mp-link svg{ width:11px; height:11px; transition:transform .3s ease; }
+  .map-preview .mp-link:hover svg{ transform:translateX(3px); }
+
+  /* ---------------- OPPORTUNITIES ---------------- */
+  .opportunities{ padding:0 0 130px; background:var(--paper); }
+  .opp-card{
+    background:var(--ivory); border-radius:var(--radius-lg);
+    padding:56px 64px; display:flex; align-items:center; justify-content:space-between; gap:48px;
+  }
+  .opp-card .opp-text{ max-width:600px; }
+  .opp-card .eyebrow{ margin-bottom:16px; }
+  .opp-card h3{
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:600;
+    font-size:clamp(21px,2.1vw,27px); letter-spacing:-0.01em; color:var(--ink); line-height:1.3;
+  }
+  .opp-card p{ margin-top:14px; font-size:13.5px; line-height:1.85; color:var(--stone-dark); font-weight:300; }
+  .opp-card .btn{ flex-shrink:0; white-space:nowrap; }
+  @media(max-width:760px){
+    .opp-card{ flex-direction:column; align-items:flex-start; padding:40px 28px; gap:28px; }
+    .opp-card .btn{ width:100%; }
+  }
+
+  /* ---------------- CONTACT ---------------- */
+  .contact{ padding:190px 0; text-align:center; background:var(--paper); }
+  .contact .eyebrow{ margin-bottom:26px; justify-content:center; }
+  .contact h2{
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:500;
+    font-size:clamp(28px,4vw,48px); margin-bottom:34px; letter-spacing:-0.01em;
+  }
+  .contact a.email{
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(22px,3.8vw,40px);
+    border-bottom:1px solid var(--ink); padding-bottom:10px; transition:opacity 0.3s ease, border-color 0.3s ease;
+    display:inline-block;
+  }
+  .contact a.email:hover{ opacity:0.55; }
+  .contact .sub{ margin-top:26px; font-size:13px; letter-spacing:.04em; color:var(--stone-dark); }
+
+  /* ---------------- FOOTER ---------------- */
+  footer{ border-top:1px solid var(--line); padding:52px 0; background:var(--paper); }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+  footer .flogo{ font-family:'Bricolage Grotesque', sans-serif; font-size:16px; display:flex; align-items:center; gap:9px; font-weight:700; }
+  footer .flogo img{ height:36px; width:auto; display:block; flex-shrink:0; }
+  footer nav{ display:flex; gap:30px; }
+  footer nav a{ font-size:12px; letter-spacing:.02em; color:var(--stone-dark); }
+  footer nav a:hover{ color:var(--ink); }
+  footer .meta{ font-size:11.5px; color:var(--stone); text-align:right; line-height:1.6; }
+  @media(max-width:760px){ footer .wrap{flex-direction:column; align-items:flex-start;} footer .meta{text-align:left;} }
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="logo">
+    <img src="cri-logo.png" alt="Cabot Residential"
+         onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'CABOT RESIDENTIAL'}))">
+  </div>
+  <nav class="links">
+    <a href="#story">Story</a>
+    <a href="#developments">Developments</a>
+    <a href="#map">Locations</a>
+    <a href="#opportunities">Opportunities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#story">Story</a>
+  <a href="#developments">Developments</a>
+  <a href="#map">Locations</a>
+  <a href="#opportunities">Opportunities</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">South Boston, Massachusetts</span>
+    <h1 class="hero-title">Building <span class="accent">better</span> places.</h1>
+    <p class="hero-sub">Modern residential developments thoughtfully designed and built throughout South Boston.</p>
+    <div class="hero-cta">
+      <a href="#developments" class="btn btn-dark">View Developments</a>
+      <a href="#story" class="btn btn-line">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="hero-bg.png" alt="South Boston skyline at dusk"
+         onerror="this.style.background='linear-gradient(160deg,#3a352c,#1c1916 60%,#241f1a)'; this.style.objectFit='cover';">
+    <div class="scrim"></div>
+    <span class="hero-tag">South Boston, MA</span>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="label-col reveal">
+        <span class="eyebrow">Our Story</span>
+        <div class="num disp">Seventeen Years of Building with Purpose.</div>
+      </div>
+      <div class="reveal">
+        <p class="lead disp">Designed with intention. Built with permanence.</p>
+        <p class="support">Cabot Residential is a Boston based real estate development company specializing in ground-up multi-unit residential construction and full gut renovations across South Boston. Founded in 2010 by Stuart Mullally, Cabot Residential is the continuation of a development career that began in the 1990’s. Under Stuart’s leadership, the South Boston portfolio below spans over three decades of residential development from early rehab  projects to the ground-up multi-unit buildings Cabot Residential delivers today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap reveal">
+    <div class="stats-card">
+      <div class="stat"><div class="n disp">40</div><div class="l">Developments completed</div></div>
+      <div class="stat"><div class="n disp">128+</div><div class="l">Residences delivered</div></div>
+      <div class="stat"><div class="n disp">220K</div><div class="l">Square Feet Developed</div></div>
+      <div class="stat"><div class="n disp">17+</div><div class="l">Years Building South Boston</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="values">
+  <div class="wrap">
+    <div class="values-head reveal">
+      <span class="eyebrow">Our Values</span>
+      <h2 class="disp">The principles behind every address.</h2>
+      <p>Four commitments that carry from our first project to our forty-second.</p>
+    </div>
+    <div class="value-grid reveal">
+      <div class="value">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M100.4 417.8C104.5 403.2 112.2 389.9 123 379.1L417 85.1C430.4 71.6 448.8 64 468 64C487.2 64 505.6 71.6 519.1 85.2L554.8 120.9C568.4 134.4 576 152.8 576 172C576 191.2 568.4 209.6 554.8 223.1L260.8 517.1C250.1 527.8 236.7 535.6 222.1 539.7L94.4 575.1C86.1 577.4 77.1 575.1 71 568.9C64.9 562.7 62.5 553.8 64.8 545.5L100.4 417.8zM450.8 119.1L397.9 172L468 242.1L520.9 189.2C525.5 184.6 528 178.5 528 172C528 165.5 525.4 159.4 520.9 154.8L485.2 119.1C480.6 114.6 474.4 112 468 112C461.6 112 455.4 114.6 450.8 119.1zM364 205.9L156.9 413.1C152 418 148.5 424 146.6 430.7L122.5 517.6L209.4 493.5C216 491.7 222.1 488.1 227 483.2L434.1 276L364 205.9zM448 524.6L524.7 447.9L495.2 418.4L472.8 440.8C463.4 450.2 448.2 450.2 438.9 440.8C429.6 431.4 429.5 416.2 438.9 406.9C452 393.8 470.7 375.1 495.1 350.7L495.3 350.5L564.4 419.6C580 435.2 580 460.5 564.4 476.2L476.4 564.2C460.8 579.8 435.5 579.8 419.8 564.2L350.7 495.1L384.6 461.2L448 524.6zM178.7 255.4L144.8 289.3L75.7 220.2C60.1 204.6 60.1 179.3 75.7 163.6L163.7 75.6C179.3 60 204.6 60 220.3 75.6L289.4 144.7L289 145.1L289 145.1C264.8 169.3 246.1 188 233 201.1C223.6 210.5 208.4 210.5 199.1 201.1C189.8 191.7 189.7 176.5 199.1 167.2L221.5 144.8L192 115.3L115.3 192L178.7 255.4z"/></svg>
+        <h3 class="disp">Design</h3>
+        <p>Every development is thoughtfully planned to create homes that feel timeless, functional, and connected to their surroundings.</p>
+      </div>
+      <div class="value">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M468.8 90C410.2 37.5 326.2 24.3 254.2 56.3L214.2 74.1C206.6 77.5 201.3 84.6 200.2 92.8C199.1 101 202.3 109.3 208.8 114.6L288 179.4L288 222.1L55 455.1C28 482.1 28 526 55 553C82 580 125.9 580 152.9 553L385.9 320L446 320L478 352C469.6 361.4 469.9 375.9 478.9 384.9C488.3 394.3 503.5 394.3 512.8 384.9L608.8 288.9C618.2 279.5 618.2 264.3 608.8 255C599.8 246 585.3 245.6 575.9 254.1L543.9 222.1L543.9 189.5C543.9 169 535.2 149.5 519.9 135.8L468.8 90zM542 288L511.9 318.1L472.9 279.1C468.4 274.6 462.3 272.1 455.9 272.1L401.8 272.1L335.9 206.2L335.9 168.1C335.9 160.9 332.7 154.1 327.1 149.5L269.3 102.2L273.7 100.3C328.4 76 392.2 86 436.8 125.9L488 171.6C493.1 176.2 496 182.7 496 189.5L496 232C496 238.4 498.5 244.5 503 249L542 288zM350 288L119 519C110.7 527.3 97.2 527.3 88.9 519C80.6 510.7 80.6 497.2 88.9 488.9L319.9 257.9L350 288z"/></svg>
+        <h3 class="disp">Craftsmanship</h3>
+        <p>Quality construction is the foundation of every project, ensuring each home is built to perform beautifully for years to come.</p>
+      </div>
+      <div class="value">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M320 113.4L137.1 191C131.2 193.5 128 198.8 128.1 203.8C128.6 295.2 166.5 453.1 314.5 523.9C318.1 525.6 322.3 525.6 325.8 523.9C473.8 453.1 511.7 295.2 512.1 203.8C512.1 198.8 509 193.6 503.1 191L320 113.4zM333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.5 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64C324.6 64 329.2 65 333.4 66.9z"/></svg>
+        <h3 class="disp">Integrity</h3>
+        <p>We believe trust is built through honesty, accountability, and delivering on every promise with professionalism and care.</p>
+      </div>
+      <div class="value">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M320 64C355.3 64 384 92.7 384 128C384 163.3 355.3 192 320 192C284.7 192 256 163.3 256 128C256 92.7 284.7 64 320 64zM104 152C104 121.1 129.1 96 160 96C190.9 96 216 121.1 216 152C216 182.9 190.9 208 160 208C129.1 208 104 182.9 104 152zM167.1 304.6C135.9 308.9 112 335.7 112 368C112 387.9 121 405.6 135.3 417.4C140.8 422 144 428.7 144 435.9L144 520C144 533.3 133.3 544 120 544C106.7 544 96 533.3 96 520L96 446.4C76.2 426.2 64 398.5 64 368C64 306.1 114.1 256 176 256C181.2 256 186.2 256.3 191.2 257C180.7 271.2 172.5 287.3 167.1 304.6zM472.8 304.6C467.4 287.3 459.2 271.3 448.7 257C453.7 256.3 458.8 256 463.9 256C525.8 256 575.9 306.1 575.9 368C575.9 398.5 563.7 426.2 543.9 446.4L543.9 520C543.9 533.3 533.2 544 519.9 544C506.6 544 495.9 533.3 495.9 520L495.9 435.9C495.9 428.7 499.1 422 504.6 417.4C518.9 405.6 527.9 387.9 527.9 368C527.9 335.7 503.9 308.9 472.8 304.6zM536 152C536 182.9 510.9 208 480 208C449.1 208 424 182.9 424 152C424 121.1 449.1 96 480 96C510.9 96 536 121.1 536 152zM320 288C284.7 288 256 316.7 256 352L256 368C256 387.9 265 405.6 279.3 417.4C284.8 422 288 428.7 288 435.9L288 520C288 524.4 291.6 528 296 528L344 528C348.4 528 352 524.4 352 520L352 435.9C352 428.7 355.2 422 360.7 417.4C375 405.6 384 387.9 384 368L384 352C384 316.7 355.3 288 320 288zM208 352C208 290.1 258.1 240 320 240C381.9 240 432 290.1 432 352L432 368C432 398.5 419.8 426.2 400 446.4L400 520C400 550.9 374.9 576 344 576L296 576C265.1 576 240 550.9 240 520L240 446.4C220.2 426.2 208 398.5 208 368L208 352z"/></svg>
+        <h3 class="disp">Community</h3>
+        <p>Every project is an opportunity to contribute positively to the neighborhood and create places people are proud to call home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPMENTS -->
+<section class="dev" id="developments">
+  <div class="wrap">
+    <div class="dev-head reveal">
+      <span class="eyebrow">Featured Developments</span>
+      <h2 class="disp">A portfolio built<br>block by block.</h2>
+    </div>
+
+    <div class="dev-block reveal">
+
+      <a href="project.html#804-e-7th-st" class="card">
+        <div class="photo" style="background:linear-gradient(160deg,#cfd1d3,#f2f3f4 70%)">
+          <img class="ph" src="images/featured/804-e-7th-st.jpg" alt="South Boston Landing" onerror="this.style.display='none'">
+          <span class="status">In Progress</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">In Progress</span>
+          <h4 class="disp">South Boston Landing</h4>
+          <p>South Boston · 15 Residences</p>
+        </div>
+      </a>
+
+      <a href="project.html#1824-columbia-rd" class="card">
+        <div class="photo" style="background:linear-gradient(150deg,#dadcdd,#f2f3f4 75%)">
+          <img class="ph" src="images/featured/1824-columbia-rd.jpg" alt="1824 Columbia Rd" onerror="this.style.display='none'">
+          <span class="status">Completed</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">Completed</span>
+          <h4 class="disp">1824 Columbia Rd</h4>
+          <p>South Boston · Luxury Condominiums</p>
+        </div>
+      </a>
+
+      <a href="project.html#474-e-4th-st" class="card">
+        <div class="photo" style="background:linear-gradient(135deg,#d7d9db,#f2f3f4 75%)">
+          <img class="ph" src="images/featured/474-e-4th-st.jpg" alt="474 E 4th St" onerror="this.style.display='none'">
+          <span class="status">Completed</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">Completed</span>
+          <h4 class="disp">474 E 4th St</h4>
+          <p>South Boston · Condominiums</p>
+        </div>
+      </a>
+
+      <a href="project.html#609-e-5th-st" class="card">
+        <div class="photo" style="background:linear-gradient(150deg,#c9cbce,#f2f3f4 75%)">
+          <img class="ph" src="images/featured/609-e-5th-st.jpg" alt="609 E 5th St" onerror="this.style.display='none'">
+          <span class="status">Completed</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">Completed</span>
+          <h4 class="disp">609 E 5th St</h4>
+          <p>South Boston · 5 Residences</p>
+        </div>
+      </a>
+
+      <a href="project.html#3-dorset-st" class="card">
+        <div class="photo" style="background:linear-gradient(150deg,#c2c5c8,#f2f3f4 75%)">
+          <img class="ph" src="images/featured/3-dorset-st.jpg" alt="3 Dorset St" onerror="this.style.display='none'">
+          <span class="status">Completed</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">Completed</span>
+          <h4 class="disp">3 Dorset St</h4>
+          <p>Boston · Condominium</p>
+        </div>
+      </a>
+
+      <a href="project.html#551-e-7th-st" class="card">
+        <div class="photo" style="background:linear-gradient(150deg,#d0d2d4,#f2f3f4 75%)">
+          <img class="ph" src="images/featured/551-e-7th-st.jpg" alt="551 E 7th St" onerror="this.style.display='none'">
+          <span class="status">Completed</span>
+          <div class="arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="tag">Completed</span>
+          <h4 class="disp">551 E 7th St</h4>
+          <p>South Boston · Boutique Condominiums</p>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="dev-more reveal">
+      <a href="developments.html" class="btn btn-line">View All Developments</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="map">
+  <div class="wrap">
+    <div class="map-head reveal">
+      <span class="eyebrow">Where We Build</span>
+      <h2 class="disp">Our developments across South Boston.</h2>
+      <p>Explore the neighborhoods where Cabot has built homes and continues to shape communities throughout South Boston.</p>
+    </div>
+
+    <div class="map-body reveal">
+      <div class="map-canvas-wrap">
+        <div id="gmap"></div>
+        <div class="map-fallback" id="mapFallback">
+          <p>Add a Google Maps API key in the script at the bottom of this file to load the interactive map.</p>
+          <code>const GOOGLE_MAPS_API_KEY = "YOUR_KEY_HERE";</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<section class="opportunities" id="opportunities">
+  <div class="wrap">
+    <div class="opp-card reveal">
+      <div class="opp-text">
+        <span class="eyebrow">Opportunities</span>
+        <h3 class="disp">Have a site, building, or portfolio to discuss?</h3>
+        <p>Cabot is always glad to hear from brokers, owners, and real estate professionals with a potential development opportunity in South Boston and beyond.</p>
+      </div>
+      <a href="#contact" class="btn btn-line">Discuss an Opportunity →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow">Get in touch</span>
+    <h2 class="disp">Have a site to discuss,<br>or a home to ask about?</h2>
+    <a class="email disp" href="mailto:hello@cabotresidential.com">hello@cabotresidential.com</a>
+    <p class="sub">South Boston, Massachusetts</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flogo">
+      <img src="cri-logo.png" alt="Cabot Residential">
+      Cabot Residential
+    </div>
+    <nav>
+      <a href="#developments">Developments</a>
+      <a href="#story">Story</a>
+      <a href="#values">Values</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="meta">South Boston, MA<br>© 2026 Cabot Residential</div>
+  </div>
+</footer>
+
+<script>
+  // nav shadow on scroll
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // hamburger menu (mobile)
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMobileMenu(){
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = !hamburger.classList.contains('open');
+    hamburger.classList.toggle('open', isOpen);
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+
+  // anchor-link scrolling: offset every jump by the current fixed-nav height
+  function scrollToHash(hash, { pushState = true } = {}){
+    const id = hash.replace('#', '');
+    const target = id ? document.getElementById(id) : null;
+    if (!target) return;
+    const navHeight = nav.getBoundingClientRect().height;
+    const gap = 24; // breathing room below the navbar
+    const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - gap;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    if (pushState) history.pushState(null, '', hash);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const hash = link.getAttribute('href');
+    if (!hash || hash === '#') return;
+    link.addEventListener('click', (e) => {
+      if (!document.getElementById(hash.slice(1))) return;
+      e.preventDefault();
+      scrollToHash(hash);
+    });
+  });
+  // correct the landing position if the page is opened directly with a hash
+  if (location.hash) {
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => scrollToHash(location.hash, { pushState: false }));
+    });
+  }
+
+  // stats count-up
+  function animateCountUp(el){
+    const raw = el.textContent.trim();
+    const match = raw.match(/^([\d.,]+)(.*)$/);
+    if (!match) return;
+    const target = parseFloat(match[1].replace(/,/g, ''));
+    const suffix = match[2];
+    const decimals = (match[1].split('.')[1] || '').length;
+    const duration = 1500;
+    const start = performance.now();
+    function tick(now){
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const current = (target * eased).toFixed(decimals);
+      el.textContent = (decimals ? current : Math.round(current)) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  document.querySelectorAll('.stats').forEach(section => {
+    const statIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.n').forEach(animateCountUp);
+          statIo.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    statIo.observe(section);
+  });
+
+  /* ================= LOCATIONS MAP ================= */
+
+  const GOOGLE_MAPS_API_KEY = "AIzaSyDY4l90Bq5eb1RgZCVoEA0JXURKvcYwZuU";
+  const PROJECTS_DATA_URL = "projects.json";
+
+
+  // Simple ink dot pin, drawn as an SVG data URI so it renders crisp at any zoom.
+  function pinIcon(active){
+    const w = active ? 42 : 34, h = active ? 54 : 44;
+    const fill = active ? '#C46A4A' : '#C46A4A';
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 20 26">
+        <path d="M10 0C4.5 0 0 4.5 0 10c0 7.5 10 16 10 16s10-8.5 10-16c0-5.5-4.5-10-10-10z" fill="${fill}"/>
+        <circle cx="10" cy="10" r="4" fill="#fff"/>
+      </svg>`;
+    return {
+      url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
+      scaledSize: new google.maps.Size(w, h),
+      anchor: new google.maps.Point(w / 2, h),
+    };
+  }
+
+  const closeSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
+  const arrowSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg>`;
+
+  let mapRef = null;
+  let activeMarker = null;
+  let overlay = null;
+  let PreviewOverlay = null; // built lazily inside initGabotMap, once google.maps exists
+
+  // Builds the PreviewOverlay class. Must only be called after the Google Maps
+  // script has loaded (google.maps.OverlayView must exist), otherwise defining
+  // this at parse time throws "google is not defined".
+  function definePreviewOverlay(){
+    function Overlay(map){
+      google.maps.OverlayView.call(this);
+      this.setMap(map);
+      this.position = null;
+      this.div = null;
+    }
+    Overlay.prototype = Object.create(google.maps.OverlayView.prototype);
+    Overlay.prototype.onAdd = function(){
+      const div = document.createElement('div');
+      div.className = 'map-preview';
+      this.div = div;
+      this.getPanes().floatPane.appendChild(div);
+    };
+    Overlay.prototype.draw = function(){
+      if (!this.div || !this.position) return;
+      const projection = this.getProjection();
+      if (!projection) return;
+      const point = projection.fromLatLngToDivPixel(this.position);
+      this.div.style.left = point.x + 'px';
+      this.div.style.top = point.y + 'px';
+    };
+    Overlay.prototype.show = function(item){
+      this.position = new google.maps.LatLng(item.location.lat, item.location.lng);
+      this.div.innerHTML = `
+        <div class="mp-photo">
+          <img src="images/projects/${item.id}.png" alt="${item.title}" onerror="this.style.display='none'">
+          <span class="mp-close" role="button" aria-label="Close">${closeSvg}</span>
+        </div>
+        <div class="mp-body">
+          <div class="mp-addr">${item.address?.street || ''}</div>
+          <div class="mp-city">${item.address?.city || ''}</div>
+        </div>`;
+      this.div.querySelector('.mp-close').addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.hide();
+      });
+      this.div.classList.add('open');
+      this.draw();
+    };
+    Overlay.prototype.hide = function(){
+      this.div && this.div.classList.remove('open');
+      this.position = null;
+    };
+    return Overlay;
+  }
+
+  async function loadMapData(){
+    try {
+      const res = await fetch(PROJECTS_DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('bad response');
+
+      const projects = await res.json();
+
+      return projects.filter(
+        project => project.location?.lat != null &&
+                  project.location?.lng != null
+      );
+
+    } catch (err) {
+      console.warn('Could not load projects.json, no developments to plot.', err);
+      return [];
+    }
+  }
+
+  async function initGabotMap(){
+    const fallback = document.getElementById('mapFallback');
+    if (fallback) fallback.style.display = 'none';
+
+    PreviewOverlay = PreviewOverlay || definePreviewOverlay();
+
+    const map = new google.maps.Map(document.getElementById('gmap'), {
+      center: { lat: 42.3350, lng: -71.0430 },
+      zoom: 14.2,
+      disableDefaultUI: true,
+      zoomControl: true,
+      gestureHandling: "cooperative",
+    });
+    mapRef = map;
+    overlay = new PreviewOverlay(map);
+
+    map.addListener('click', () => {
+      overlay.hide();
+      if (activeMarker) { activeMarker.setIcon(pinIcon(false)); activeMarker = null; }
+    });
+
+    const items = await loadMapData();
+    if (!items.length) return;
+
+    const bounds = new google.maps.LatLngBounds();
+
+    items.forEach((item) => {
+      const position = { lat: item.location.lat, lng: item.location.lng };
+      bounds.extend(position);
+
+      const marker = new google.maps.Marker({
+        position, map,
+        icon: pinIcon(false),
+        title: item.title,
+      });
+
+      marker.addListener('click', () => {
+        if (activeMarker && activeMarker !== marker) activeMarker.setIcon(pinIcon(false));
+        marker.setIcon(pinIcon(true));
+        activeMarker = marker;
+        overlay.show(item);
+        map.panTo(position);
+        map.panBy(0, -180);
+      });
+    });
+
+    map.fitBounds(bounds);
+    google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
+      if (map.getZoom() > 15) map.setZoom(15);
+    });
+  }
+  window.initGabotMap = initGabotMap;
+
+  if (GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== "YOUR_KEY_HERE") {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initGabotMap`;
+    script.async = true;
+    document.head.appendChild(script);
+  }
+</script>
+
+</body>
+</html>
