@@ -3,12 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cabot Residential</title>
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
-<link rel="icon" type="image/png" href="favicon-64x64.png">
+<title>Cabot Residential | South Boston Real Estate Developer Since 2010</title>
+<meta name="description" content="Cabot Residential is a Boston-based real estate development company specializing in ground-up multi-unit residential construction and full gut renovations across South Boston, MA since 2010.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.cabotresidentialboston.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cabot Residential">
+<meta property="og:title" content="Cabot Residential | South Boston Real Estate Developer Since 2010">
+<meta property="og:description" content="Modern residential developments thoughtfully designed and built throughout South Boston. Ground-up construction and full gut renovations from Cabot Residential.">
+<meta property="og:url" content="https://www.cabotresidentialboston.com/">
+<meta property="og:image" content="https://www.cabotresidentialboston.com/hero-bg.webp">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cabot Residential | South Boston Real Estate Developer Since 2010">
+<meta name="twitter:description" content="Modern residential developments thoughtfully designed and built throughout South Boston. Ground-up construction and full gut renovations from Cabot Residential.">
+<meta name="twitter:image" content="https://www.cabotresidentialboston.com/hero-bg.webp">
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.cabotresidentialboston.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="https://www.cabotresidentialboston.com/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.cabotresidentialboston.com/favicon-64x64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.cabotresidentialboston.com/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Cabot Residential",
+  "url": "https://www.cabotresidentialboston.com/",
+  "logo": "https://www.cabotresidentialboston.com/cri-logo.png",
+  "image": "https://www.cabotresidentialboston.com/hero-bg.webp",
+  "description": "Cabot Residential is a Boston-based real estate development company specializing in ground-up multi-unit residential construction and full gut renovations across South Boston.",
+  "email": "hello@cabotresidential.com",
+  "foundingDate": "2010",
+  "founder": {
+    "@type": "Person",
+    "name": "Stuart Mullally"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "South Boston",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "South Boston, MA"
+  }
+}
+</script>
 <style>
 :root{
     --ink:#231F1C;
@@ -113,13 +162,13 @@
     background:none; border:none; padding:0; cursor:pointer; z-index:210;
   }
   .hamburger span{
-    position:absolute; left:0; width:100%; height:1.5px; background:var(--ink);
-    transition:transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease;
+    position:absolute; right:0; height:1.5px; background:var(--ink);
+    transition:width 0.4s cubic-bezier(.16,1,.3,1), transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1);
   }
-  .hamburger span:nth-child(1){ top:0; }
-  .hamburger span:nth-child(2){ top:100%; transform:translateY(-100%); }
-  .hamburger.open span:nth-child(1){ top:50%; transform:translateY(-50%) rotate(45deg); }
-  .hamburger.open span:nth-child(2){ top:50%; transform:translateY(-50%) rotate(-45deg); }
+  .hamburger span:nth-child(1){ top:0; left:0; width:100%; }
+  .hamburger span:nth-child(2){ top:100%; width:60%; transform:translateY(-100%); }
+  .hamburger.open span:nth-child(1){ top:50%; width:100%; transform:translateY(-50%) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ top:50%; width:100%; transform:translateY(-50%) rotate(-45deg); }
 
   /* ---------------- MOBILE MENU ---------------- */
   .mobile-menu{
@@ -482,7 +531,7 @@
     </div>
   </div>
   <div class="hero-media">
-    <img src="hero-bg.png" alt="South Boston skyline at dusk"
+    <img src="hero-bg.webp" alt="South Boston skyline at dusk" fetchpriority="high" decoding="async"
          onerror="this.style.background='linear-gradient(160deg,#3a352c,#1c1916 60%,#241f1a)'; this.style.objectFit='cover';">
     <div class="scrim"></div>
     <span class="hero-tag">South Boston, MA</span>
@@ -495,7 +544,7 @@
     <div class="grid">
       <div class="label-col reveal">
         <span class="eyebrow">Our Story</span>
-        <div class="num disp">Seventeen Years of Building with Purpose.</div>
+        <h2 class="num disp">Seventeen Years of Building with Purpose.</h2>
       </div>
       <div class="reveal">
         <p class="lead disp">Designed with intention. Built with permanence.</p>
@@ -560,9 +609,9 @@
 
     <div class="dev-block reveal">
 
-      <a href="project.html#804-e-7th-st" class="card">
+      <a href="project/804-e-7th-st" class="card">
         <div class="photo" style="background:linear-gradient(160deg,#cfd1d3,#f2f3f4 70%)">
-          <img class="ph" src="images/featured/804-e-7th-st.jpg" alt="South Boston Landing" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/804-e-7th-st.webp" alt="South Boston Landing" loading="lazy" onerror="this.style.display='none'">
           <span class="status">In Progress</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -577,9 +626,9 @@
         </div>
       </a>
 
-      <a href="project.html#1824-columbia-rd" class="card">
+      <a href="project/1824-columbia-rd" class="card">
         <div class="photo" style="background:linear-gradient(150deg,#dadcdd,#f2f3f4 75%)">
-          <img class="ph" src="images/featured/1824-columbia-rd.jpg" alt="1824 Columbia Rd" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/1824-columbia-rd.webp" alt="1824 Columbia Rd" loading="lazy" onerror="this.style.display='none'">
           <span class="status">Completed</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -594,9 +643,9 @@
         </div>
       </a>
 
-      <a href="project.html#474-e-4th-st" class="card">
+      <a href="project/474-e-4th-st" class="card">
         <div class="photo" style="background:linear-gradient(135deg,#d7d9db,#f2f3f4 75%)">
-          <img class="ph" src="images/featured/474-e-4th-st.jpg" alt="474 E 4th St" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/474-e-4th-st.webp" alt="474 E 4th St" loading="lazy" onerror="this.style.display='none'">
           <span class="status">Completed</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -611,9 +660,9 @@
         </div>
       </a>
 
-      <a href="project.html#609-e-5th-st" class="card">
+      <a href="project/609-e-5th-st" class="card">
         <div class="photo" style="background:linear-gradient(150deg,#c9cbce,#f2f3f4 75%)">
-          <img class="ph" src="images/featured/609-e-5th-st.jpg" alt="609 E 5th St" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/609-e-5th-st.webp" alt="609 E 5th St" loading="lazy" onerror="this.style.display='none'">
           <span class="status">Completed</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -628,9 +677,9 @@
         </div>
       </a>
 
-      <a href="project.html#3-dorset-st" class="card">
+      <a href="project/3-dorset-st" class="card">
         <div class="photo" style="background:linear-gradient(150deg,#c2c5c8,#f2f3f4 75%)">
-          <img class="ph" src="images/featured/3-dorset-st.jpg" alt="3 Dorset St" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/3-dorset-st.webp" alt="3 Dorset St" loading="lazy" onerror="this.style.display='none'">
           <span class="status">Completed</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -645,9 +694,9 @@
         </div>
       </a>
 
-      <a href="project.html#551-e-7th-st" class="card">
+      <a href="project/551-e-7th-st" class="card">
         <div class="photo" style="background:linear-gradient(150deg,#d0d2d4,#f2f3f4 75%)">
-          <img class="ph" src="images/featured/551-e-7th-st.jpg" alt="551 E 7th St" onerror="this.style.display='none'">
+          <img class="ph" src="images/featured/551-e-7th-st.webp" alt="551 E 7th St" loading="lazy" onerror="this.style.display='none'">
           <span class="status">Completed</span>
           <div class="arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -983,11 +1032,33 @@
   }
   window.initGabotMap = initGabotMap;
 
-  if (GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== "YOUR_KEY_HERE") {
+  function loadGoogleMapsScript(){
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initGabotMap`;
     script.async = true;
     document.head.appendChild(script);
+  }
+
+  if (GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== "YOUR_KEY_HERE") {
+    const mapSection = document.getElementById('map');
+    if (mapSection && 'IntersectionObserver' in window) {
+      // Start fetching the Maps JS a little before the section is on screen
+      // so it's ready by the time the user scrolls to it, without loading
+      // ~200KB of unused JS on every page view.
+      const mapIo = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            loadGoogleMapsScript();
+            mapIo.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '800px 0px' });
+      mapIo.observe(mapSection);
+    } else {
+      // No IntersectionObserver support (or no #map section) — fall back
+      // to loading it right away so the map still works.
+      loadGoogleMapsScript();
+    }
   }
 </script>
 

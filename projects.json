@@ -20,11 +20,11 @@
     },
     "photos": [
       "images/projects/116-marine-rd/01.webp",
-      "images/projects/116-marine-rd/02.webp",
-      "images/projects/116-marine-rd/03.webp",
-      "images/projects/116-marine-rd/04.webp",
       "images/projects/116-marine-rd/05.webp",
-      "images/projects/116-marine-rd/06.webp"
+      "images/projects/116-marine-rd/04.webp",
+      "images/projects/116-marine-rd/06.webp",
+      "images/projects/116-marine-rd/03.webp",
+      "images/projects/116-marine-rd/02.webp"
     ],
     "location": {
       "lat": 42.3308195,
@@ -55,10 +55,10 @@
       "images/projects/12-mohawk-st/02.webp",
       "images/projects/12-mohawk-st/03.webp",
       "images/projects/12-mohawk-st/04.webp",
-      "images/projects/12-mohawk-st/05.webp",
-      "images/projects/12-mohawk-st/06.webp",
       "images/projects/12-mohawk-st/07.webp",
-      "images/projects/12-mohawk-st/08.webp"
+      "images/projects/12-mohawk-st/08.webp",
+      "images/projects/12-mohawk-st/05.webp",
+      "images/projects/12-mohawk-st/06.webp"
     ],
     "location": {
       "lat": 42.328712,
@@ -87,10 +87,10 @@
     "photos": [
       "images/projects/14-16-jenkins-st/01.webp",
       "images/projects/14-16-jenkins-st/02.webp",
+      "images/projects/14-16-jenkins-st/06.webp",
       "images/projects/14-16-jenkins-st/03.webp",
-      "images/projects/14-16-jenkins-st/04.webp",
       "images/projects/14-16-jenkins-st/05.webp",
-      "images/projects/14-16-jenkins-st/06.webp"
+      "images/projects/14-16-jenkins-st/04.webp"
     ],
     "location": {
       "lat": 42.3307151,
@@ -118,11 +118,10 @@
     },
     "photos": [
       "images/projects/160-o-st/01.webp",
+      "images/projects/160-o-st/06.webp",
       "images/projects/160-o-st/02.webp",
-      "images/projects/160-o-st/03.webp",
       "images/projects/160-o-st/04.webp",
-      "images/projects/160-o-st/05.webp",
-      "images/projects/160-o-st/06.webp"
+      "images/projects/160-o-st/03.webp"
     ],
     "location": {
       "lat": 42.3327359,
@@ -150,9 +149,8 @@
     },
     "photos": [
       "images/projects/170-w-5th-st/01.webp",
-      "images/projects/170-w-5th-st/02.webp",
       "images/projects/170-w-5th-st/03.webp",
-      "images/projects/170-w-5th-st/04.webp",
+      "images/projects/170-w-5th-st/02.webp",
       "images/projects/170-w-5th-st/05.webp",
       "images/projects/170-w-5th-st/06.webp"
     ],
@@ -182,13 +180,13 @@
     },
     "photos": [
       "images/projects/181-h-st/01.webp",
-      "images/projects/181-h-st/02.webp",
-      "images/projects/181-h-st/03.webp",
-      "images/projects/181-h-st/04.webp",
-      "images/projects/181-h-st/05.webp",
       "images/projects/181-h-st/06.webp",
       "images/projects/181-h-st/07.webp",
-      "images/projects/181-h-st/08.webp"
+      "images/projects/181-h-st/05.webp",
+      "images/projects/181-h-st/04.webp",
+      "images/projects/181-h-st/03.webp",
+      "images/projects/181-h-st/08.webp",
+      "images/projects/181-h-st/02.webp"
     ],
     "location": {
       "lat": 42.3316842,
@@ -216,17 +214,12 @@
     },
     "photos": [
       "images/projects/1824-columbia-rd/01.webp",
-      "images/projects/1824-columbia-rd/02.webp",
       "images/projects/1824-columbia-rd/03.webp",
-      "images/projects/1824-columbia-rd/04.webp",
-      "images/projects/1824-columbia-rd/05.webp",
+      "images/projects/1824-columbia-rd/02.webp",
       "images/projects/1824-columbia-rd/06.webp",
-      "images/projects/1824-columbia-rd/07.webp",
-      "images/projects/1824-columbia-rd/08.webp",
+      "images/projects/1824-columbia-rd/04.webp",
       "images/projects/1824-columbia-rd/09.webp",
-      "images/projects/1824-columbia-rd/10.webp",
-      "images/projects/1824-columbia-rd/11.webp",
-      "images/projects/1824-columbia-rd/12.webp"
+      "images/projects/1824-columbia-rd/05.webp"
     ],
     "location": {
       "lat": 42.3326894,
@@ -254,13 +247,13 @@
     },
     "photos": [
       "images/projects/191-w-8th-st/01.webp",
-      "images/projects/191-w-8th-st/02.webp",
       "images/projects/191-w-8th-st/03.webp",
+      "images/projects/191-w-8th-st/02.webp",
       "images/projects/191-w-8th-st/04.webp",
-      "images/projects/191-w-8th-st/05.webp",
-      "images/projects/191-w-8th-st/06.webp",
       "images/projects/191-w-8th-st/07.webp",
-      "images/projects/191-w-8th-st/08.webp"
+      "images/projects/191-w-8th-st/08.webp",
+      "images/projects/191-w-8th-st/05.webp",
+      "images/projects/191-w-8th-st/06.webp"
     ],
     "location": {
       "lat": 42.33350799999999,
@@ -288,9 +281,9 @@
     },
     "photos": [
       "images/projects/255-e-st/01.webp",
+      "images/projects/255-e-st/04.webp",
       "images/projects/255-e-st/02.webp",
       "images/projects/255-e-st/03.webp",
-      "images/projects/255-e-st/04.webp",
       "images/projects/255-e-st/05.webp"
     ],
     "location": {
@@ -319,10 +312,10 @@
     },
     "photos": [
       "images/projects/275-old-colony-ave/01.webp",
-      "images/projects/275-old-colony-ave/02.webp",
-      "images/projects/275-old-colony-ave/03.webp",
+      "images/projects/275-old-colony-ave/05.webp",
       "images/projects/275-old-colony-ave/04.webp",
-      "images/projects/275-old-colony-ave/05.webp"
+      "images/projects/275-old-colony-ave/03.webp",
+      "images/projects/275-old-colony-ave/02.webp"
     ],
     "location": {
       "lat": 42.330633,
@@ -381,11 +374,11 @@
     },
     "photos": [
       "images/projects/280-gold-st/01.webp",
-      "images/projects/280-gold-st/02.webp",
-      "images/projects/280-gold-st/03.webp",
       "images/projects/280-gold-st/04.webp",
+      "images/projects/280-gold-st/02.webp",
+      "images/projects/280-gold-st/06.webp",
       "images/projects/280-gold-st/05.webp",
-      "images/projects/280-gold-st/06.webp"
+      "images/projects/280-gold-st/03.webp"
     ],
     "location": {
       "lat": 42.3350955,
@@ -413,8 +406,8 @@
     },
     "photos": [
       "images/projects/281-gold-st/01.webp",
-      "images/projects/281-gold-st/02.webp",
       "images/projects/281-gold-st/03.webp",
+      "images/projects/281-gold-st/02.webp",
       "images/projects/281-gold-st/04.webp",
       "images/projects/281-gold-st/05.webp"
     ],
@@ -444,9 +437,9 @@
     },
     "photos": [
       "images/projects/283-old-colony-ave/01.webp",
+      "images/projects/283-old-colony-ave/04.webp",
       "images/projects/283-old-colony-ave/02.webp",
       "images/projects/283-old-colony-ave/03.webp",
-      "images/projects/283-old-colony-ave/04.webp",
       "images/projects/283-old-colony-ave/05.webp"
     ],
     "location": {
@@ -475,13 +468,13 @@
     },
     "photos": [
       "images/projects/3-cutler-ct/01.webp",
-      "images/projects/3-cutler-ct/02.webp",
-      "images/projects/3-cutler-ct/03.webp",
+      "images/projects/3-cutler-ct/08.webp",
       "images/projects/3-cutler-ct/04.webp",
       "images/projects/3-cutler-ct/05.webp",
-      "images/projects/3-cutler-ct/06.webp",
       "images/projects/3-cutler-ct/07.webp",
-      "images/projects/3-cutler-ct/08.webp",
+      "images/projects/3-cutler-ct/06.webp",
+      "images/projects/3-cutler-ct/03.webp",
+      "images/projects/3-cutler-ct/02.webp",
       "images/projects/3-cutler-ct/09.webp"
     ],
     "location": {
@@ -512,12 +505,12 @@
       "images/projects/3-dorset-st/01.webp",
       "images/projects/3-dorset-st/02.webp",
       "images/projects/3-dorset-st/03.webp",
-      "images/projects/3-dorset-st/04.webp",
       "images/projects/3-dorset-st/05.webp",
       "images/projects/3-dorset-st/06.webp",
       "images/projects/3-dorset-st/07.webp",
       "images/projects/3-dorset-st/08.webp",
-      "images/projects/3-dorset-st/09.webp"
+      "images/projects/3-dorset-st/09.webp",
+      "images/projects/3-dorset-st/04.webp"
     ],
     "location": {
       "lat": 42.323583,
@@ -546,10 +539,10 @@
     "photos": [
       "images/projects/4-pacific-st/01.webp",
       "images/projects/4-pacific-st/02.webp",
-      "images/projects/4-pacific-st/03.webp",
-      "images/projects/4-pacific-st/04.webp",
       "images/projects/4-pacific-st/05.webp",
       "images/projects/4-pacific-st/06.webp",
+      "images/projects/4-pacific-st/04.webp",
+      "images/projects/4-pacific-st/03.webp",
       "images/projects/4-pacific-st/07.webp"
     ],
     "location": {
@@ -611,7 +604,8 @@
       "images/projects/447-w-4th-st/01.webp",
       "images/projects/447-w-4th-st/02.webp",
       "images/projects/447-w-4th-st/03.webp",
-      "images/projects/447-w-4th-st/04.webp"
+      "images/projects/447-w-4th-st/04.webp",
+      "images/projects/447-w-4th-st/05.webp"
     ],
     "location": {
       "lat": 42.3352826,
@@ -641,8 +635,8 @@
       "images/projects/449-e-8th-st/01.webp",
       "images/projects/449-e-8th-st/02.webp",
       "images/projects/449-e-8th-st/03.webp",
-      "images/projects/449-e-8th-st/04.webp",
       "images/projects/449-e-8th-st/05.webp",
+      "images/projects/449-e-8th-st/04.webp",
       "images/projects/449-e-8th-st/06.webp",
       "images/projects/449-e-8th-st/07.webp"
     ],
@@ -674,9 +668,9 @@
       "images/projects/474-e-4th-st/01.webp",
       "images/projects/474-e-4th-st/02.webp",
       "images/projects/474-e-4th-st/03.webp",
-      "images/projects/474-e-4th-st/04.webp",
+      "images/projects/474-e-4th-st/06.webp",
       "images/projects/474-e-4th-st/05.webp",
-      "images/projects/474-e-4th-st/06.webp"
+      "images/projects/474-e-4th-st/04.webp"
     ],
     "location": {
       "lat": 42.33475199999999,
@@ -704,11 +698,11 @@
     },
     "photos": [
       "images/projects/480-482-e-4th-st/01.webp",
-      "images/projects/480-482-e-4th-st/02.webp",
+      "images/projects/480-482-e-4th-st/05.webp",
       "images/projects/480-482-e-4th-st/03.webp",
       "images/projects/480-482-e-4th-st/04.webp",
-      "images/projects/480-482-e-4th-st/05.webp",
       "images/projects/480-482-e-4th-st/06.webp",
+      "images/projects/480-482-e-4th-st/02.webp",
       "images/projects/480-482-e-4th-st/07.webp"
     ],
     "location": {
@@ -740,7 +734,10 @@
       "images/projects/49-rogers-st/02.webp",
       "images/projects/49-rogers-st/03.webp",
       "images/projects/49-rogers-st/04.webp",
-      "images/projects/49-rogers-st/05.webp"
+      "images/projects/49-rogers-st/05.webp",
+      "images/projects/49-rogers-st/06.webp",
+      "images/projects/49-rogers-st/07.webp",
+      "images/projects/49-rogers-st/08.webp"
     ],
     "location": {
       "lat": 42.3288726,
@@ -799,11 +796,11 @@
     },
     "photos": [
       "images/projects/533-e-5th-st/01.webp",
-      "images/projects/533-e-5th-st/02.webp",
-      "images/projects/533-e-5th-st/03.webp",
-      "images/projects/533-e-5th-st/04.webp",
       "images/projects/533-e-5th-st/05.webp",
-      "images/projects/533-e-5th-st/06.webp"
+      "images/projects/533-e-5th-st/06.webp",
+      "images/projects/533-e-5th-st/02.webp",
+      "images/projects/533-e-5th-st/04.webp",
+      "images/projects/533-e-5th-st/03.webp"
     ],
     "location": {
       "lat": 42.33372019999999,
@@ -832,9 +829,9 @@
     "photos": [
       "images/projects/550-e-8th-st/01.webp",
       "images/projects/550-e-8th-st/02.webp",
-      "images/projects/550-e-8th-st/03.webp",
+      "images/projects/550-e-8th-st/05.webp",
       "images/projects/550-e-8th-st/04.webp",
-      "images/projects/550-e-8th-st/05.webp"
+      "images/projects/550-e-8th-st/03.webp"
     ],
     "location": {
       "lat": 42.3315614,
@@ -864,12 +861,12 @@
       "images/projects/551-e-7th-st/01.webp",
       "images/projects/551-e-7th-st/02.webp",
       "images/projects/551-e-7th-st/03.webp",
+      "images/projects/551-e-7th-st/07.webp",
       "images/projects/551-e-7th-st/04.webp",
       "images/projects/551-e-7th-st/05.webp",
-      "images/projects/551-e-7th-st/06.webp",
-      "images/projects/551-e-7th-st/07.webp",
       "images/projects/551-e-7th-st/08.webp",
-      "images/projects/551-e-7th-st/09.webp"
+      "images/projects/551-e-7th-st/09.webp",
+      "images/projects/551-e-7th-st/06.webp"
     ],
     "location": {
       "lat": 42.3321385,
@@ -899,10 +896,10 @@
       "images/projects/581-e-broadway/01.webp",
       "images/projects/581-e-broadway/02.webp",
       "images/projects/581-e-broadway/03.webp",
-      "images/projects/581-e-broadway/04.webp",
-      "images/projects/581-e-broadway/05.webp",
       "images/projects/581-e-broadway/06.webp",
+      "images/projects/581-e-broadway/04.webp",
       "images/projects/581-e-broadway/07.webp",
+      "images/projects/581-e-broadway/05.webp",
       "images/projects/581-e-broadway/08.webp",
       "images/projects/581-e-broadway/09.webp"
     ],
@@ -932,11 +929,11 @@
     },
     "photos": [
       "images/projects/594-e-6th-st/01.webp",
+      "images/projects/594-e-6th-st/06.webp",
       "images/projects/594-e-6th-st/02.webp",
-      "images/projects/594-e-6th-st/03.webp",
-      "images/projects/594-e-6th-st/04.webp",
       "images/projects/594-e-6th-st/05.webp",
-      "images/projects/594-e-6th-st/06.webp"
+      "images/projects/594-e-6th-st/04.webp",
+      "images/projects/594-e-6th-st/03.webp"
     ],
     "location": {
       "lat": 42.3332309,
@@ -965,10 +962,10 @@
     "photos": [
       "images/projects/6-pacific-st/01.webp",
       "images/projects/6-pacific-st/02.webp",
-      "images/projects/6-pacific-st/03.webp",
       "images/projects/6-pacific-st/04.webp",
-      "images/projects/6-pacific-st/05.webp",
-      "images/projects/6-pacific-st/06.webp"
+      "images/projects/6-pacific-st/06.webp",
+      "images/projects/6-pacific-st/03.webp",
+      "images/projects/6-pacific-st/05.webp"
     ],
     "location": {
       "lat": 42.334174,
@@ -1025,9 +1022,9 @@
       "images/projects/621-e-3rd-st/01.webp",
       "images/projects/621-e-3rd-st/02.webp",
       "images/projects/621-e-3rd-st/03.webp",
-      "images/projects/621-e-3rd-st/04.webp",
       "images/projects/621-e-3rd-st/05.webp",
       "images/projects/621-e-3rd-st/06.webp",
+      "images/projects/621-e-3rd-st/04.webp",
       "images/projects/621-e-3rd-st/07.webp",
       "images/projects/621-e-3rd-st/08.webp"
     ],
@@ -1057,10 +1054,10 @@
     },
     "photos": [
       "images/projects/679-e-7th-st/01.webp",
-      "images/projects/679-e-7th-st/02.webp",
-      "images/projects/679-e-7th-st/03.webp",
+      "images/projects/679-e-7th-st/05.webp",
       "images/projects/679-e-7th-st/04.webp",
-      "images/projects/679-e-7th-st/05.webp"
+      "images/projects/679-e-7th-st/03.webp",
+      "images/projects/679-e-7th-st/02.webp"
     ],
     "location": {
       "lat": 42.3322161,
@@ -1088,10 +1085,10 @@
     },
     "photos": [
       "images/projects/681-e-5th-st/01.webp",
-      "images/projects/681-e-5th-st/02.webp",
       "images/projects/681-e-5th-st/03.webp",
-      "images/projects/681-e-5th-st/04.webp",
-      "images/projects/681-e-5th-st/05.webp"
+      "images/projects/681-e-5th-st/05.webp",
+      "images/projects/681-e-5th-st/02.webp",
+      "images/projects/681-e-5th-st/04.webp"
     ],
     "location": {
       "lat": 42.3338308,
@@ -1156,36 +1153,6 @@
     "location": {
       "lat": 42.33200679999999,
       "lng": -71.0476606
-    }
-  },
-  {
-    "id": "the-cabin-in-the-woods",
-    "title": "The Cabin in the Woods",
-    "status": "completed",
-    "address": {
-      "street": "1 Whispering Pine Trail",
-      "city": "Blackwood Hollow",
-      "state": "MA",
-      "zip": "00017"
-    },
-    "overview": "Hidden deep within the Blackwood Forest, The Cabin in the Woods is a secluded three-story timber residence surrounded by towering pine trees, mist-covered hills, and a small private lake known as Mirror Lake.\n\nOriginally built as a hunting retreat, the cabin has since been transformed into a comfortable woodland residence while retaining its rustic character. The main living room features a massive stone fireplace, exposed wooden beams, antique-style furnishings, and floor-to-ceiling windows overlooking the forest.\n\nA narrow staircase leads to two upper bedrooms and a small reading loft, while the lower level contains a recreation room, storage area, and a concealed cellar. Outside, a covered porch wraps around the front of the cabin, with a stone fire pit located a short walk from the house.\n\nThe property is accessible by a single winding road through the forest. There are no neighboring residences within several miles, making the cabin exceptionally private.\n\nLocal maps mark the surrounding woodland simply as Blackwood Forest, and several old hiking trails disappear into the trees beyond the property.",
-    "specs": {
-      "type": "Forest Cabin",
-      "year": 1987,
-      "residences": 1,
-      "bedrooms": 4,
-      "bathrooms": 2,
-      "livingArea": 2760
-    },
-    "photos": [
-      "https://cabot-admin.sealaifarm.workers.dev/images/c4765ad9-93b8-44cc-8cf3-baf99e5545cb.avif",
-      "https://cabot-admin.sealaifarm.workers.dev/images/f2323d1e-caa1-480c-a9fb-a614c5d19817.jpg",
-      "https://cabot-admin.sealaifarm.workers.dev/images/bef27535-5274-4def-84ce-80f1bbdb912b.jpg",
-      "https://cabot-admin.sealaifarm.workers.dev/images/c8256c6b-a31c-4eff-84c2-22104a751e21.webp"
-    ],
-    "location": {
-      "lat": 47.2194,
-      "lng": -91.8042
     }
   }
 ]

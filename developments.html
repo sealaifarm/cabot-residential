@@ -3,8 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Developments — Cabot Residential</title>
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<title>All Developments | Cabot Residential | South Boston, MA</title>
+<meta name="description" content="Browse the full portfolio of Cabot Residential developments, including ground-up multi-unit residential construction and full gut renovations throughout South Boston, MA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.cabotresidentialboston.com/developments.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cabot Residential">
+<meta property="og:title" content="All Developments | Cabot Residential">
+<meta property="og:description" content="Browse the full portfolio of Cabot Residential developments throughout South Boston, MA.">
+<meta property="og:url" content="https://www.cabotresidentialboston.com/developments.html">
+<meta property="og:image" content="https://www.cabotresidentialboston.com/hero-bg.webp">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Developments | Cabot Residential">
+<meta name="twitter:description" content="Browse the full portfolio of Cabot Residential developments throughout South Boston, MA.">
+<meta name="twitter:image" content="https://www.cabotresidentialboston.com/hero-bg.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cabotresidentialboston.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Developments", "item": "https://www.cabotresidentialboston.com/developments.html" }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.cabotresidentialboston.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="https://www.cabotresidentialboston.com/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.cabotresidentialboston.com/favicon-64x64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.cabotresidentialboston.com/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,6 +72,7 @@
     font-weight:400;
     -webkit-font-smoothing:antialiased;
     line-height:1.6;
+    padding-top:85px;
   }
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
@@ -72,15 +106,17 @@
 
   /* ---------- Nav (matches index.html / project.html) ---------- */
   header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:200;
     display:flex; align-items:center; justify-content:space-between;
-    padding:13px 56px;
+    padding:18px 56px;
     background:rgba(255,255,255,0.9);
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--hairline);
   }
   @media(max-width:860px){ header.nav{ padding:22px 24px; } }
+  @media(max-width:860px){ body{ padding-top:93px; } }
   .logo{ display:flex; align-items:center; }
-  .logo img{ height:58px; width:auto; display:block; }
+  .logo img{ height:48px; width:auto; display:block; }
   .logo-fallback{
     font-family:'Bricolage Grotesque', sans-serif; font-size:17px; letter-spacing:0.01em; color:var(--ink); font-weight:700;
   }
@@ -96,20 +132,21 @@
   nav.links a:hover::after{ width:100%; }
   nav.links a:hover{ color:var(--ink); }
 
-  /* ---------- Hamburger ---------- */
+  /* ---------------- HAMBURGER ---------------- */
   .hamburger{
     display:none; position:relative; width:26px; height:14px;
     background:none; border:none; padding:0; cursor:pointer; z-index:210;
   }
   .hamburger span{
-    position:absolute; left:0; width:100%; height:1.5px; background:var(--ink);
-    transition:transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease;
+    position:absolute; right:0; height:1.5px; background:var(--ink);
+    transition:width 0.4s cubic-bezier(.16,1,.3,1), transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1);
   }
-  .hamburger span:nth-child(1){ top:0; }
-  .hamburger span:nth-child(2){ top:100%; transform:translateY(-100%); }
-  .hamburger.open span:nth-child(1){ top:50%; transform:translateY(-50%) rotate(45deg); }
-  .hamburger.open span:nth-child(2){ top:50%; transform:translateY(-50%) rotate(-45deg); }
+  .hamburger span:nth-child(1){ top:0; left:0; width:100%; }
+  .hamburger span:nth-child(2){ top:100%; width:60%; transform:translateY(-100%); }
+  .hamburger.open span:nth-child(1){ top:50%; width:100%; transform:translateY(-50%) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ top:50%; width:100%; transform:translateY(-50%) rotate(-45deg); }
 
+  /* ---------------- MOBILE MENU ---------------- */
   .mobile-menu{
     position:fixed; inset:0; z-index:150;
     background:rgba(252,250,246,0.98); backdrop-filter:blur(18px);
@@ -124,7 +161,7 @@
   }
   .mobile-menu a{
     font-family:'Bricolage Grotesque', sans-serif; font-size:clamp(30px,9vw,44px); font-weight:600;
-    color:var(--ink); padding:12px 0; border-bottom:1px solid var(--hairline);
+    color:var(--ink); padding:12px 0; border-bottom:1px solid var(--line);
     opacity:0; transform:translateY(16px);
     transition:opacity 0.5s cubic-bezier(.16,1,.3,1), transform 0.5s cubic-bezier(.16,1,.3,1);
   }
@@ -138,6 +175,7 @@
     nav.links{ display:none; }
     .hamburger{ display:block; }
   }
+
 
   /* ---------- Reveal ---------- */
   .reveal{ opacity:0; transform:translateY(20px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
@@ -313,6 +351,7 @@
     <a href="index.html#story">Story</a>
     <a href="index.html#developments">Developments</a>
     <a href="index.html#map">Locations</a>
+    <a href="index.html#opportunities">Opportunities</a>
     <a href="index.html#contact">Contact</a>
   </nav>
   <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
@@ -324,6 +363,7 @@
   <a href="index.html#story">Story</a>
   <a href="index.html#developments">Developments</a>
   <a href="index.html#map">Locations</a>
+  <a href="index.html#opportunities">Opportunities</a>
   <a href="index.html#contact">Contact</a>
 </div>
 
@@ -395,6 +435,26 @@ async function init(){
   render(grid, getVisibleItems());
   initSearch();
   initSort();
+  addItemListSchema(allItems);
+}
+
+// Adds ItemList structured data listing every development, so search engines
+// have a machine-readable view of the full portfolio (not just the visible grid).
+function addItemListSchema(items){
+  if(!items.length) return;
+  const ld = document.createElement('script');
+  ld.type = 'application/ld+json';
+  ld.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.title || '',
+      "url": 'https://www.cabotresidentialboston.com/project/' + encodeURIComponent(item.id || '')
+    }))
+  });
+  document.head.appendChild(ld);
 }
 
 function getVisibleItems(){
@@ -479,8 +539,7 @@ function render(grid, items, isSearch){
   items.forEach(item => {
     const card = document.createElement('a');
     card.className = 'dcard reveal';
-    // card.href = 'developments/' + encodeURIComponent(item.id) + '.html';
-    card.href = 'project.html#' + encodeURIComponent(item.id);
+    card.href = '/project/' + encodeURIComponent(item.id);
 
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
