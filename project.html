@@ -251,6 +251,7 @@
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position: top;
     transform:scale(1);
     transition:transform .7s var(--ease);
   }
@@ -337,7 +338,7 @@
     .bento[data-count="5"] .bento-tile:nth-child(1){
       grid-column:1 / 3;
       grid-row:auto;
-      aspect-ratio:4 / 3;
+      aspect-ratio:4 / 5;
     }
     .bento[data-count="3"] .bento-tile:not(:nth-child(1)),
     .bento[data-count="4"] .bento-tile:not(:nth-child(1)),
@@ -408,10 +409,7 @@
     border:1px solid var(--hairline);
     border-radius:var(--radius-lg);
     overflow:hidden;
-    filter:grayscale(.35) contrast(1.02);
-    transition:filter .5s var(--ease);
   }
-  .map-frame:hover{ filter:grayscale(0); }
   .map-frame iframe{ width:100%; height:100%; border:0; }
   .map-address{
     margin-top:16px;

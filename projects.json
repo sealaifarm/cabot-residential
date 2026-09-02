@@ -9,14 +9,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "116 Marine Rd is a small apartment building in South Boston, containing three condo units built around 2017. It includes a 3-bedroom, 2-bath 1,600 sqft unit and two 2-bedroom, 2-bath units (~1,000 sqft each). The building’s modern condos were completed in 2017 and feature open layouts and garage parking.",
+    "overview": "116 Marine Rd is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": 2017,
+      "type": "Multi-family",
+      "completedYear": 1905,
       "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 7,
+      "bathrooms": 6.5,
+      "livingArea": "3,390 sqft"
     },
     "photos": [
       "images/projects/116-marine-rd/01.webp",
@@ -41,14 +41,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "12 Mohawk St is a 25-unit apartment building in South Boston. Constructed in the 2010s, it features contemporary condo units (mostly 2-bed/2-bath, ~879 sqft each). The building offers modern finishes throughout; for example, Unit 5 (a 2-bed/2-bath, 879 sqft unit) sold in 2025, reflecting the new development.",
+    "overview": "12 Mohawk St is a 5-unit residential development in South Boston. The project involved the renovation and development of the existing property into 5 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Apartment building",
-      "year": 2014,
-      "residences": 25,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": null,
+      "residences": 5,
+      "bedrooms": 10,
+      "bathrooms": 10,
+      "livingArea": "5,623 sqft"
     },
     "photos": [
       "images/projects/12-mohawk-st/01.webp",
@@ -75,14 +75,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "14-16 Jenkins St is a luxury multi-family property built in 2013 in South Boston. The building contains four upscale condo units totaling around 6,628 square feet (three 3-bedroom units and one 2-bedroom unit). For example, Unit 3 is a 3-bed/3.5-bath, 2,150 sqft condo that sold in 2022. All units feature modern finishes and two garage parking spaces each.",
+    "overview": "14-16 Jenkins St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Multi-family",
-      "year": 2013,
-      "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Single Family",
+      "completedYear": 2013,
+      "residences": 3,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "livingArea": "3,257 sqft"
     },
     "photos": [
       "images/projects/14-16-jenkins-st/01.webp",
@@ -107,14 +107,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "160 O St is a 3-unit apartment building in South Boston’s M Street Beach area. The brick structure is older but contains modern condos (for example, a 2-bed/1.5-bath 978 sqft unit and two 1-bed/1-bath units around 500 sqft). The building was constructed early in the 20th century and has no recent redevelopment.",
+    "overview": "160 O St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": null,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Single Family",
+      "completedYear": 1890,
+      "residences": 2,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "livingArea": "2,781 sqft"
     },
     "photos": [
       "images/projects/160-o-st/01.webp",
@@ -138,14 +138,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "170 W 5th St is a modern four-residence condominium development built from the ground up in 2011. The building contains approximately 4,738 square feet of residential space across four homes, with eight bedrooms and eight bathrooms in total. The residences feature contemporary open layouts, hardwood flooring, modern kitchens, central air conditioning, in-unit laundry, and private outdoor spaces. The property is located just off West Broadway, providing convenient access to restaurants, shops, public transportation, and the Seaport.",
+    "overview": "170 W 5th St is a 4-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 4 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": 2011,
+      "completedYear": 2011,
       "residences": 4,
       "bedrooms": 8,
       "bathrooms": 8,
-      "livingArea": 4738
+      "livingArea": "4,738 sqft"
     },
     "photos": [
       "images/projects/170-w-5th-st/01.webp",
@@ -169,14 +169,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "181 H St is a historic 3-unit building in South Boston. It features two 1-bedroom, 2-bath condos (~526-644 sqft each) and one 2-bedroom, 1-bath condo (~1,000 sqft). Built in 1900, the property remains largely original and functions as a 2/3-family residence without modern redevelopment.",
+    "overview": "181 H St is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": null,
+      "type": "Condominium",
+      "completedYear": 1900,
       "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 3,
+      "bathrooms": 5.5,
+      "livingArea": "1,814 sqft"
     },
     "photos": [
       "images/projects/181-h-st/01.webp",
@@ -203,14 +203,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "1824 Columbia Rd is a high-end condominium building in South Boston overlooking Pleasure Bay. Completed in 2021, it offers luxury units with features like water views and 2-car garages. For example, Unit 3 is a 3-bed/3.5-bath, 2,435 sqft condo that sold for $2.58M in 2022, reflecting the upscale finishes of the development.",
+    "overview": "1824 Columbia Rd is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": 2021,
-      "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": 2018,
+      "residences": 3,
+      "bedrooms": 8,
+      "bathrooms": 11,
+      "livingArea": "6,939 sqft"
     },
     "photos": [
       "images/projects/1824-columbia-rd/01.webp",
@@ -236,14 +236,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "191 W 8th St is a modern six-residence condominium property constructed in 2015 in South Boston's West Side. The building represents the neighborhood's continued residential redevelopment, replacing older building stock with contemporary condominium housing. The property is positioned within a highly walkable residential area close to West Broadway, neighborhood restaurants and retail, public transportation, parks, and the Seaport. Public records confirm six condominium residences, although reliable building-wide totals for bedrooms, bathrooms, and aggregate living area are not consistently reported.",
+    "overview": "191 W 8th St is a 6-unit residential development in South Boston. The project involved the renovation and development of the existing property into 6 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 2015,
+      "type": "Apartment building",
+      "completedYear": 2015,
       "residences": 6,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 12,
+      "bathrooms": 12,
+      "livingArea": "7,394 sqft"
     },
     "photos": [
       "images/projects/191-w-8th-st/01.webp",
@@ -270,14 +270,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "255 E St, part of the 253–255 E St property, is a two-residence condominium development in South Boston. The property underwent a substantial gut renovation around 2007 and contains approximately 3,364 square feet of living space across two residences, with six bedrooms and four and a half bathrooms. The redevelopment reflects the transformation of South Boston's traditional residential building stock into updated condominium housing, while the property's E Street location provides convenient access to West Broadway, Andrew Square, public transportation, restaurants, and the Seaport.",
+    "overview": "255 E St is a single-residence residential development in South Boston. The project involved the renovation and development of the existing property into 1 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 2007,
-      "residences": 2,
-      "bedrooms": 6,
-      "bathrooms": 4.5,
-      "livingArea": 3364
+      "type": "Single Family",
+      "completedYear": 1890,
+      "residences": 1,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "livingArea": "1,338 sqft"
     },
     "photos": [
       "images/projects/255-e-st/01.webp",
@@ -301,14 +301,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "275 Old Colony Ave is a recently constructed 22-unit condominium building in South Boston (built in 2016). It offers modern 2-bedroom, 2-bath apartments (~929-1,000 sqft) with amenities like in-unit laundry and garage parking. For example, Unit 6 (2 beds/2 baths, 929 sqft) sold for $774K in 2026, illustrating the modern features of the development.",
+    "overview": "275 Old Colony Ave is a 8-unit residential development in South Boston. The project involved the renovation and development of the existing property into 8 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Apartment building",
-      "year": 2016,
-      "residences": 22,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": 2015,
+      "residences": 8,
+      "bedrooms": 16,
+      "bathrooms": 16.5,
+      "livingArea": "9,249 sqft"
     },
     "photos": [
       "images/projects/275-old-colony-ave/01.webp",
@@ -332,14 +332,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "275 W 5th St is a two-residence condominium property in South Boston's West Side. The building underwent residential redevelopment around 2000 and contains approximately 2,441 square feet across two condominium homes. The residences provide a combined six bedrooms and four bathrooms. Situated within the established West Fifth Street neighborhood, the property is close to West Broadway, public transportation, local restaurants, parks, and the Seaport.",
+    "overview": "275 W 5th St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 2000,
-      "residences": 2,
-      "bedrooms": 6,
-      "bathrooms": 4,
-      "livingArea": 2441
+      "type": "Townhouse",
+      "completedYear": 1920,
+      "residences": 3,
+      "bedrooms": 9,
+      "bathrooms": 4.5,
+      "livingArea": "3,641 sqft"
     },
     "photos": [
       "images/projects/275-w-5th-st/01.webp",
@@ -363,14 +363,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "280 Gold St is a contemporary five-residence condominium development constructed in 2018 on South Boston's West Side. The building contains approximately 5,619 square feet of residential space, with five two-bedroom, two-bathroom residences. The homes feature modern open-concept layouts, hardwood flooring, contemporary kitchens, central air, and high-quality finishes, with select residences offering private roof decks and city views. The property is conveniently located near West Broadway, neighborhood restaurants and retail, public transportation, and the Seaport.",
+    "overview": "280 Gold St is a 5-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 5 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": 2018,
+      "completedYear": 2018,
       "residences": 5,
-      "bedrooms": 10,
+      "bedrooms": 11,
       "bathrooms": 10,
-      "livingArea": 5619
+      "livingArea": "5,619 sqft"
     },
     "photos": [
       "images/projects/280-gold-st/01.webp",
@@ -395,14 +395,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "281 Gold St is a renovated three-level townhouse in South Boston's West Side. Originally constructed in 1890, the property underwent a substantial renovation in 2015 and now offers approximately 1,572 square feet of living space with four bedrooms and two and a half bathrooms. The home combines traditional South Boston townhouse character with modern finishes and updated systems, along with outdoor deck and patio space. Its location provides convenient access to West Broadway, neighborhood restaurants, public transportation, and the Seaport.",
+    "overview": "281 Gold St is a single-residence residential development in South Boston. The project involved the renovation and development of the existing property into 1 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Townhouse",
-      "year": 2015,
+      "type": "Single Family",
+      "completedYear": 1890,
       "residences": 1,
       "bedrooms": 4,
-      "bathrooms": 2.5,
-      "livingArea": 1572
+      "bathrooms": 3,
+      "livingArea": "1,572 sqft"
     },
     "photos": [
       "images/projects/281-gold-st/01.webp",
@@ -426,14 +426,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "283 Old Colony Ave is a newly constructed three-residence condominium development completed in 2019. The four-story mixed-use property features three modern one-bedroom residences with contemporary open-concept layouts, updated kitchens and baths, hardwood flooring, in-unit laundry, and modern building systems. Located near Andrew Square and Washington Village, the property offers convenient access to public transportation, Carson Beach, neighborhood restaurants, and the Seaport.",
+    "overview": "283 Old Colony Ave is a 4-unit residential development in South Boston. The project involved the renovation and development of the existing property into 4 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 2019,
-      "residences": 3,
-      "bedrooms": 3,
-      "bathrooms": 3,
-      "livingArea": 2711
+      "type": "Single Family",
+      "completedYear": 1920,
+      "residences": 4,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "livingArea": "3,538 sqft"
     },
     "photos": [
       "images/projects/283-old-colony-ave/01.webp",
@@ -457,14 +457,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "3 Cutler Ct is a single-family home in South Boston that underwent a comprehensive renovation. It offers 2 bedrooms, 2.5 bathrooms, and 1,224 square feet of living space. The modernized residence was completed and sold in 2030.",
+    "overview": "3 Cutler Ct is a single-residence residential development in South Boston. The project involved the renovation and development of the existing property into 1 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Single Family Residence",
-      "year": 2024,
+      "type": "Single Family",
+      "completedYear": 1900,
       "residences": 1,
       "bedrooms": 2,
-      "bathrooms": 2.5,
-      "livingArea": 1224
+      "bathrooms": 3,
+      "livingArea": "1,224 sqft"
     },
     "photos": [
       "images/projects/3-cutler-ct/01.webp",
@@ -492,14 +492,14 @@
       "state": "MA",
       "zip": "02125"
     },
-    "overview": "3 Dorset St is a 2-bedroom, 2-bathroom condo in Boston (Dorchester) built in 2020. The unit provides 1,193 square feet of living space and includes modern finishes and a detached garage. As a recent construction, it remains essentially new with no significant redevelopment since its completion in 2020.",
+    "overview": "3 Dorset St is a 4-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 4 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condo",
-      "year": 2020,
-      "residences": 1,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "livingArea": 1193
+      "type": "Condominium",
+      "completedYear": 2020,
+      "residences": 4,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "livingArea": "4,415 sqft"
     },
     "photos": [
       "images/projects/3-dorset-st/01.webp",
@@ -527,14 +527,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "4 Pacific St is a 3-bedroom, 2.5-bathroom single-family home in South Boston. It has 2,385 square feet of living area and underwent extensive renovation with completion around 2017. The modern townhome sold in 2025, reflecting the updated interiors and contemporary design of the redeveloped property.",
+    "overview": "4 Pacific St is a single-residence residential development in South Boston. The project involved the renovation and development of the existing property into 1 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Single Family Residence",
-      "year": 2017,
+      "type": "Single Family",
+      "completedYear": 1890,
       "residences": 1,
       "bedrooms": 3,
-      "bathrooms": 2.5,
-      "livingArea": 2385
+      "bathrooms": 3,
+      "livingArea": "2,385 sqft"
     },
     "photos": [
       "images/projects/4-pacific-st/01.webp",
@@ -560,14 +560,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "419 W 4th St is a two-residence condominium property in South Boston's West Side. Originally part of the neighborhood's historic residential building stock, the property underwent renovation around 1998 and was configured into two condominium residences. The homes provide approximately 1,911 square feet of combined living space, with four bedrooms and four bathrooms. Its West Fourth Street location offers convenient access to West Broadway, public transportation, neighborhood restaurants, parks, and the Seaport.",
+    "overview": "419 W 4th St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 1998,
+      "type": "Multi-family",
+      "completedYear": 1890,
       "residences": 2,
       "bedrooms": 4,
-      "bathrooms": 4,
-      "livingArea": 1911
+      "bathrooms": 2.5,
+      "livingArea": "1,948 sqft"
     },
     "photos": [
       "images/projects/419-w-4th-st/01.webp",
@@ -591,14 +591,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "447 W 4th St is a modern 3-bedroom, 2-bath home in South Boston. Completed in 2020, the 1,720 sqft residence features contemporary design and was sold for $2.4M upon completion. The luxurious finish and location near the waterfront characterize this recently built single-family home.",
+    "overview": "447 W 4th St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment",
-      "year": 2020,
-      "residences": 1,
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "livingArea": 1720
+      "type": "Apartment building",
+      "completedYear": 2020,
+      "residences": 2,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "livingArea": "3,440 sqft"
     },
     "photos": [
       "images/projects/447-w-4th-st/01.webp",
@@ -622,14 +622,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "449 E 8th St is a three-family residential property in South Boston's established East Side. The building contains approximately 3,642 square feet across three residences, with six bedrooms and three bathrooms in total. Renovated around 2010, the property maintains a traditional multifamily configuration while providing updated residential living within one of South Boston's established neighborhood corridors. Its location offers convenient access to the waterfront, parks, restaurants, public transportation, and East Broadway.",
+    "overview": "449 E 8th St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Multifamily",
-      "year": 2010,
+      "type": "Apartment building",
+      "completedYear": 1915,
       "residences": 3,
       "bedrooms": 6,
-      "bathrooms": 3,
-      "livingArea": 3642
+      "bathrooms": 6.5,
+      "livingArea": "4,272 sqft"
     },
     "photos": [
       "images/projects/449-e-8th-st/01.webp",
@@ -655,14 +655,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "474 E 4th St is a multi-family home built in 1890 in South Boston. It contains two units (6 bedrooms, 3 bathrooms total) over 3,456 sqft. The property was last transacted in the 2010s and remains a two-family with its historic configuration intact, with no notable new redevelopment.",
+    "overview": "474 E 4th St is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Multi-family",
-      "year": null,
-      "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Condominium",
+      "completedYear": 1890,
+      "residences": 3,
+      "bedrooms": 5,
+      "bathrooms": 5.5,
+      "livingArea": "3,233 sqft"
     },
     "photos": [
       "images/projects/474-e-4th-st/01.webp",
@@ -687,14 +687,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "480-482 E 4th St is a renovated four-unit condominium building in South Boston. Originally built in 1899 and updated in 2016, the structure now houses four condos (e.g., two 2-bed/2.5-bath units of ~1,378 sqft and two 3-bed/3-bath units of ~1,319 sqft). The historic exterior was retained, with each unit fully modernized during the redevelopment.",
+    "overview": "480 482 E 4th St is a 4-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 4 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": 2016,
+      "type": "Condominium",
+      "completedYear": 1899,
       "residences": 4,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 9,
+      "bathrooms": 10,
+      "livingArea": "5,360 sqft"
     },
     "photos": [
       "images/projects/480-482-e-4th-st/01.webp",
@@ -720,14 +720,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "49 Rogers St is a 7-unit condominium building in South Boston’s M Street Beach area. Completed in 2021, it features modern condos (mostly 2-bedroom, 2-bath units ~950 sqft each) with contemporary finishes. The building includes a mix of unit layouts including a 3-bed/2-bath penthouse, all built as part of the new construction.",
+    "overview": "49 Rogers St is a 8-unit residential development in South Boston. The project involved the renovation and development of the existing property into 8 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Apartment building",
-      "year": 2021,
-      "residences": 7,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": 1890,
+      "residences": 8,
+      "bedrooms": 16,
+      "bathrooms": 15,
+      "livingArea": "8,101 sqft"
     },
     "photos": [
       "images/projects/49-rogers-st/01.webp",
@@ -754,14 +754,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "5 Mohawk St #3 is a 2-bedroom, 2-bathroom condominium unit in South Boston built in 2015. The 1,034 sqft condo features modern finishes and in-unit laundry, typical of its construction date. The property remains as originally constructed with no significant redevelopment since its completion.",
+    "overview": "5 Mohawk St is a 4-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 4 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condo",
-      "year": 2015,
-      "residences": 1,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "livingArea": 1034
+      "type": "Condominium",
+      "completedYear": 2015,
+      "residences": 4,
+      "bedrooms": 7,
+      "bathrooms": 7,
+      "livingArea": "3,954 sqft"
     },
     "photos": [
       "images/projects/5-mohawk-st/01.webp",
@@ -785,14 +785,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "533 E 5th St is a three-unit apartment building in South Boston. It contains two large 5-bedroom, 2-bath units (1,500 sqft each) and one 3-bedroom, 2-bath unit (1,315 sqft). All units have been converted into condos with modern interiors. The building is fully sold out as condos, exemplifying a recent condo conversion.",
+    "overview": "533 E 5th St is a 2-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 2 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": null,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Condominium",
+      "completedYear": null,
+      "residences": 2,
+      "bedrooms": 10,
+      "bathrooms": 4,
+      "livingArea": "3,000 sqft"
     },
     "photos": [
       "images/projects/533-e-5th-st/01.webp",
@@ -817,14 +817,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "550 E 8th St is a pair of rowhouse condos in South Boston (two attached units). Each unit is a 2-bedroom, 2-bathroom home of roughly 1,226 sqft. For example, Unit 2 is an upper duplex that sold for $905K in 2025. The building dates from 1900 and remains configured as two garage-equipped condos in a classic rowhouse style.",
+    "overview": "550 E 8th St is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condo",
-      "year": null,
-      "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "type": "Condominium",
+      "completedYear": 1900,
+      "residences": 3,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "livingArea": "2,825 sqft"
     },
     "photos": [
       "images/projects/550-e-8th-st/01.webp",
@@ -848,14 +848,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "551 E 7th St is a single-family home in South Boston that was fully renovated by 2026. It has 3 bedrooms and 1 bathroom over 1,338 sqft, on a 3,920 sqft lot. Originally built in 1900, it was updated with high-end finishes (including a detached garage) and listed for $3.575M in 2026, reflecting its complete redevelopment.",
+    "overview": "551 E 7th St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Single Family Residence",
-      "year": 2026,
-      "residences": 1,
-      "bedrooms": 3,
-      "bathrooms": 1,
-      "livingArea": 1338
+      "type": "Multi-family",
+      "completedYear": 2025,
+      "residences": 3,
+      "bedrooms": 10,
+      "bathrooms": 8,
+      "livingArea": "4,450 sqft"
     },
     "photos": [
       "images/projects/551-e-7th-st/01.webp",
@@ -883,14 +883,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "581 E Broadway is a two-residence condominium property created through a residential conversion completed in 2002. The historic South Boston structure has been configured into two spacious residences totaling approximately 3,913 square feet, with seven bedrooms and five bathrooms. The property combines the scale and character of an older South Boston building with updated residential interiors and benefits from its prominent East Broadway location near restaurants, retail, public transportation, and the waterfront.",
+    "overview": "581 E Broadway is a 2-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 2 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": 2002,
+      "completedYear": 1890,
       "residences": 2,
       "bedrooms": 7,
-      "bathrooms": 5,
-      "livingArea": 3913
+      "bathrooms": 6,
+      "livingArea": "4,676 sqft"
     },
     "photos": [
       "images/projects/581-e-broadway/01.webp",
@@ -918,14 +918,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "594 E 6th St is a brick rowhouse in South Boston containing three apartments (legal 3-family). The building totals 3 bedrooms and 3 bathrooms over 1,938 sqft. Built in 1890, it sold for $490K in 2012 and has had no notable redevelopment since then.",
+    "overview": "594 E 6th St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Multi-family",
-      "year": null,
-      "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": 1890,
+      "residences": 2,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "livingArea": "2,317 sqft"
     },
     "photos": [
       "images/projects/594-e-6th-st/01.webp",
@@ -950,14 +950,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "6 Pacific St #2 is a 2-bedroom, 1-bathroom apartment in a multi-unit brick building in South Boston. The unit offers 1,050 square feet of living space. As part of a 19th-century rowhouse, it has not undergone a recent redevelopment and retains its original building structure.",
+    "overview": "6 Pacific St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment",
-      "year": null,
-      "residences": 1,
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "livingArea": 1050
+      "type": "Apartment building",
+      "completedYear": null,
+      "residences": 2,
+      "bedrooms": 4,
+      "bathrooms": 3.5,
+      "livingArea": "2,045 sqft"
     },
     "photos": [
       "images/projects/6-pacific-st/01.webp",
@@ -982,14 +982,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "609 E 5th St is a two-unit condominium building in South Boston. Unit 1 is a 3-bed/2.5-bath 1,854 sqft condo, and Unit 2 is a 2-bed/2-bath 1,100 sqft condo. Both units feature modern open layouts. The building was completed in the 21st century and both condos remain as-built with no redevelopment.",
+    "overview": "609 E 5th St is a 4-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 4 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": null,
-      "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "completedYear": 2004,
+      "residences": 4,
+      "bedrooms": 9,
+      "bathrooms": 8.5,
+      "livingArea": "4,054 sqft"
     },
     "photos": [
       "images/projects/609-e-5th-st/01.webp"
@@ -1009,14 +1009,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "621 E 3rd St is a three-residence condominium property in South Boston's established East Side neighborhood. Originally dating to the late 19th century, the property was substantially renovated and converted into its current residential configuration around 2010. The three residences provide approximately 2,408 square feet of combined living space, with six bedrooms and five bathrooms. Its location offers convenient access to the waterfront, neighborhood restaurants and retail, public transportation, and South Boston's historic residential streets.",
+    "overview": "621 E 3Rd St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Condominium",
-      "year": 2010,
+      "type": "Apartment building",
+      "completedYear": 1880,
       "residences": 3,
       "bedrooms": 6,
       "bathrooms": 5,
-      "livingArea": 2408
+      "livingArea": "2,523 sqft"
     },
     "photos": [
       "images/projects/621-e-3rd-st/01.webp",
@@ -1043,14 +1043,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "679 E 7th St is a historic multi-family home in South Boston, containing two units with 5 bedrooms and 2.5 bathrooms total (1,923 sqft). Built in 1890, it sold for $335K in 2009. The property remains as a two-family in its original structure, with no notable new redevelopment.",
+    "overview": "679 E 7th St is a 2-unit residential development in South Boston. The project involved the renovation and development of the existing property into 2 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Multi-family",
-      "year": null,
+      "completedYear": 1890,
       "residences": 2,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "livingArea": "2,110 sqft"
     },
     "photos": [
       "images/projects/679-e-7th-st/01.webp",
@@ -1074,14 +1074,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "681 E 5th St is a three-unit building in South Boston built in 1905. It has been converted into condos; for example, Unit 3 is a 2-bed/2-bath, 993 sqft unit. The property contains three residences in total, reflecting early 20th-century construction with modern condominium interiors.",
+    "overview": "681 E 5th St is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-      "type": "Apartment building",
-      "year": 1905,
+      "type": "Condominium",
+      "completedYear": 1905,
       "residences": 3,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": null
+      "bedrooms": 6,
+      "bathrooms": 6,
+      "livingArea": "2,917 sqft"
     },
     "photos": [
       "images/projects/681-e-5th-st/01.webp",
@@ -1097,7 +1097,7 @@
   },
   {
     "id": "804-e-7th-st",
-    "title": "804 E 7th St",
+    "title": "South Boston Landing",
     "status": "in-progress",
     "address": {
       "street": "804 E 7th St",
@@ -1105,14 +1105,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "804 E 7th St is the former South Shore Convalescent Home, a 32,000 sqft building in South Boston’s City Point. Fully approved for redevelopment in 2023-2024, it is being converted into 21 luxury residential condos with views of Boston Harbor. The building (originally early 1900s) will have 21 garage spaces and modern amenities when completed.",
+    "overview": "South Boston Landing is a 15-unit luxury condominium building at 804 East 7th Street in City Point, South Boston. The development offers 1- to 3-bedroom residences and penthouses across three floors, with panoramic harbor and water views. Building amenities include a state-of-the-art fitness center, heated indoor parking garage, private dog washing station, dedicated bike room, private storage, and full elevator access. Many residences feature private decks, patios, or balconies with water views, while select penthouses include multiple balconies, expansive great rooms, and upgraded parking.",
     "specs": {
-      "type": "Multi-family",
-      "year": 2024,
+      "type": "Luxury Condominium",
+      "completedYear": null,
       "residences": 15,
-      "bedrooms": null,
-      "bathrooms": null,
-      "livingArea": 32000
+      "bedrooms": 26,
+      "bathrooms": 26.5,
+      "livingArea": "17,582 sq ft"
     },
     "photos": [
       "images/projects/804-e-7th-st/01.webp"
@@ -1132,14 +1132,14 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "83 Old Harbor St is a historic three-residence condominium property in South Boston's Thomas Park and Telegraph Hill area. Originally constructed around 1905, the building has been adapted into three spacious residential homes totaling approximately 4,036 square feet, with seven bedrooms and six bathrooms. The property combines the character of early-20th-century South Boston architecture with updated condominium interiors and private residential amenities. Its location provides convenient access to Thomas Park, the waterfront, neighborhood restaurants, shopping, and public transportation.",
+    "overview": "83 Old Harbor St is a 3-unit residential development in South Boston. The project involved the renovation and conversion of the existing property into 3 condominium residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
       "type": "Condominium",
-      "year": 1905,
+      "completedYear": 1905,
       "residences": 3,
       "bedrooms": 7,
       "bathrooms": 6,
-      "livingArea": 4036
+      "livingArea": "4,036 sqft"
     },
     "photos": [
       "images/projects/83-old-harbor-st/01.webp",

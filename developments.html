@@ -289,13 +289,13 @@
   }
   .dcard .thumb{
     position:relative;
-    aspect-ratio:3/4;
+    aspect-ratio:4/5;
     border-radius:var(--radius-md);
     overflow:hidden;
     background:var(--paper-alt);
   }
   .dcard .thumb img{
-    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;object-position: top;
     transition:transform .6s var(--ease);
   }
   .dcard:hover .thumb img{ transform:scale(1.045); }
