@@ -77,13 +77,8 @@
     },
     "overview": "14-16 Jenkins St is a 3-unit residential development in South Boston. The project involved the renovation and development of the existing property into 3 residential residences, including interior construction, updated finishes, and improvements throughout the building.",
     "specs": {
-<<<<<<< HEAD
-      "type": "Single Family",
-      "completedYear": "0",
-=======
       "type": null,
       "completedYear": null,
->>>>>>> 5b27c61 (Update Cabot Residential website)
       "residences": 3,
       "bedrooms": 5,
       "bathrooms": 5,
