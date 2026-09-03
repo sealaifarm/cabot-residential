@@ -653,10 +653,15 @@ function render(app, data){
     const gallerySection = document.createElement('div');
     gallerySection.className = 'wrap gallery-section reveal';
 
-    const visibleCount = Math.min(photos.length, 5);
+    const photoCount = photos.length;
+    const visibleCount = Math.min(photoCount, 5);
+
     const bento = document.createElement('div');
     bento.className = 'bento';
-    bento.dataset.count = String(visibleCount);
+
+    // Use the 5-tile layout when there is only 1 real photo
+    bento.dataset.count = photoCount === 1 ? '5' : String(visibleCount);
+    bento.dataset.actualCount = String(photoCount);
 
     for(let i = 0; i < visibleCount; i++){
       const tile = document.createElement('button');

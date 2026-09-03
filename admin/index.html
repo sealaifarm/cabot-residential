@@ -534,11 +534,11 @@ main{ padding:0 0 100px; }
       <div class="panel">
         <h2><span class="num">4</span>Specs</h2>
         <div class="field-grid cols-4">
-          <div class="field"><label>Year built</label><input type="number" id="f_year" placeholder=""></div>
+          <div class="field"><label>Year built</label><input type="text" id="f_year" placeholder=""></div>
           <div class="field"><label>Residences</label><input type="number" id="f_residences" placeholder=""></div>
           <div class="field"><label>Bedrooms</label><input type="number" step="1" id="f_bedrooms" placeholder=""></div>
           <div class="field"><label>Bathrooms</label><input type="number" step="0.5" id="f_bathrooms" placeholder=""></div>
-          <div class="field"><label>Living area (sqft)</label><input type="number" id="f_livingArea" placeholder=""></div>
+          <div class="field"><label>Living area (sqft)</label><input type="text" id="f_livingArea" placeholder=""></div>
         </div>
         <span class="hint" style="display:block;margin-top:12px;">Leave blank if unknown.</span>
       </div>
@@ -876,7 +876,7 @@ function escapeHtml(s){ return (s ?? '').toString().replace(/[&<>"']/g, c => ({'
 /* =========================================================
    EDITOR VIEW
    ========================================================= */
-$('backBtn').addEventListener('click', closeEditor);
+$('backBtn').addEventListener('click', () => history.back());
 $('deleteBtn').addEventListener('click', () => confirmDelete(currentEditId));
 $('deleteBtn2').addEventListener('click', () => confirmDelete(currentEditId));
 $('applyBtn').addEventListener('click', applyDraft);
@@ -946,7 +946,7 @@ function fillForm(d){
   $('f_lat').value = d.location?.lat ?? '';
   $('f_lng').value = d.location?.lng ?? '';
   $('f_overview').value = d.overview || '';
-  $('f_year').value = d.specs?.year ?? '';
+  $('f_year').value = d.specs?.completedYear ?? '';
   $('f_residences').value = d.specs?.residences ?? '';
   $('f_bedrooms').value = d.specs?.bedrooms ?? '';
   $('f_bathrooms').value = d.specs?.bathrooms ?? '';
@@ -967,11 +967,11 @@ function readForm(){
     overview: $('f_overview').value.trim(),
     specs:{
       type: $('f_type').value.trim(),
-      year: numOrNull($('f_year').value),
+      completedYear: $('f_year').value.trim() || null,
       residences: numOrNull($('f_residences').value),
       bedrooms: numOrNull($('f_bedrooms').value),
       bathrooms: numOrNull($('f_bathrooms').value),
-      livingArea: numOrNull($('f_livingArea').value)
+      livingArea: $('f_livingArea').value.trim() || null
     },
     location:{ lat: numOrNull($('f_lat').value), lng: numOrNull($('f_lng').value) },
     photos: draft.photos
