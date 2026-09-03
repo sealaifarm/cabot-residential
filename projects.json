@@ -965,7 +965,8 @@
     "location": {
       "lat": 42.332219722691,
       "lng": -71.036372947416
-    }
+    },
+    "featuredImageIsRendering": true
   },
   {
     "id": "6-pacific-st",
@@ -1062,7 +1063,7 @@
   },
   {
     "id": "624-626-e-2nd-st",
-    "title": "624–626 E 2nd St",
+    "title": "624\u2013626 E 2nd St",
     "status": "in-progress",
     "address": {
       "street": "624-626 E 2nd St",
@@ -1070,7 +1071,7 @@
       "state": "MA",
       "zip": "02127"
     },
-    "overview": "624–626 E 2nd St is a residential development in South Boston. The project involved the renovation and development of the existing property into updated residential residences, with new construction, modern finishes, and improvements throughout the building.",
+    "overview": "624\u2013626 E 2nd St is a residential development in South Boston. The project involved the renovation and development of the existing property into updated residential residences, with new construction, modern finishes, and improvements throughout the building.",
     "specs": {
       "type": null,
       "completedYear": null,
@@ -1234,7 +1235,8 @@
     "location": {
       "lat": 42.334904355819,
       "lng": -71.029999709581
-    }
+    },
+    "featuredImageIsRendering": true
   },
   {
     "id": "836-e-4th-st",
@@ -1261,6 +1263,7 @@
     "location": {
       "lat": 42.334905281103,
       "lng": -71.029928616726
-    }
+    },
+    "featuredImageIsRendering": true
   }
 ]
